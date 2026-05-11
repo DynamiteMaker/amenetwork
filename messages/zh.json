@@ -533,5 +533,265 @@
     "rights": "© 2025 AME Marketing. 版权所有。",
     "tax": "税号 0110699895",
     "addressLabel": "Gemek 1 大厦 2 层, An Khanh, 河内"
+  },
+  "navServices": {
+    "overviewLabel": "服务总览",
+    "overviewDesc": "查看全部 8 个服务领域。"
+  },
+  "servicesOverview": {
+    "cards": [
+      {
+        "slug": "branding",
+        "title": "branding",
+        "desc": ""
+      },
+      {
+        "slug": "digital-marketing",
+        "title": "数字营销",
+        "desc": "多渠道数字运营,可量化、可追踪。"
+      },
+      {
+        "slug": "performance",
+        "title": "效果营销",
+        "desc": "数据驱动增长 - 围绕 CPL、CPA、ROAS 持续优化。"
+      },
+      {
+        "slug": "social-content",
+        "title": "社交媒体与内容",
+        "desc": "具有清晰品牌声音的策略性社交内容。"
+      },
+      {
+        "slug": "web",
+        "title": "官网与落地页",
+        "desc": "面向转化的企业官网与落地页。"
+      },
+      {
+        "slug": "production",
+        "title": "制作 / 创意",
+        "desc": "为品牌精心制作的图片、视频、TVC 与视觉素材。"
+      },
+      {
+        "slug": "pr-imc",
+        "title": "公关 / IMC 整合营销",
+        "desc": "整合品牌、KOL、公关与广告的多渠道战役。"
+      },
+      {
+        "slug": "market-expansion",
+        "title": "市场拓展",
+        "desc": "面向日本、韩国与东南亚的本地化与市场拓展。"
+      }
+    ]
+  },
+  "footerExtra": {
+    "aux": [
+      {
+        "label": "公司介绍",
+        "href": "/capability"
+      },
+      {
+        "label": "招聘",
+        "href": "/careers"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "label": "隐私政策",
+        "href": "/privacy"
+      },
+      {
+        "label": "使用条款",
+        "href": "/terms"
+      }
+    ]
+  },
+  "capability": {
+    "eyebrow": "能力档案",
+    "title": "AME Marketing - ",
+    "titleAccent": "Capability Profile.",
+    "sub": "AME 的能力、服务、团队与代表案例总览 - 适合企业客户在评估合作伙伴时使用。",
+    "sections": [
+      {
+        "heading": "公司简介",
+        "body": "AME Marketing 是一家整合营销传播公司,与越南及国际企业合作,共同构建品牌、实现持续增长。我们以 strategic marketing partner 的方式运作 - 连接战略、创意、技术与运营。"
+      },
+      {
+        "heading": "核心能力",
+        "body": "八个服务领域作为一个团队协同:",
+        "bullets": [
+          "Branding & Identity",
+          "Digital Marketing",
+          "Performance Marketing",
+          "Social Media & Content",
+          "Website & Landing Page",
+          "Production & Creative",
+          "PR / IMC Campaign",
+          "Market Expansion / International"
+        ]
+      },
+      {
+        "heading": "规模与市场",
+        "body": "12 年以上经验,80+ 项目落地,在河内、岘港与东京设有办公室。服务于 APAC 四大核心市场:越南、日本、韩国与东南亚。"
+      },
+      {
+        "heading": "客户构成",
+        "body": "员工规模 50 - 5,000 的成长型企业,涵盖地产、教育、医美、F&B、零售、科技、酒店与专业服务。"
+      }
+    ],
+    "downloadLabel": "下载公司介绍 (PDF)",
+    "downloadNote": "在您留下联系方式后,我们会通过邮件发送详细 PDF。"
+  },
+  "careers": {
+    "eyebrow": "招聘",
+    "title": "一起为行业 ",
+    "titleAccent": "树立新标准。",
+    "sub": "AME 寻找相信讲究、自律,并把客户放在每个决定中心的同行者。",
+    "cultureHeading": "工作文化",
+    "culture": [
+      {
+        "title": "讲究",
+        "desc": "在意每一处细节 - 因为细节造就格调。"
+      },
+      {
+        "title": "诚实",
+        "desc": "对客户与同事讲真话,即便不容易。"
+      },
+      {
+        "title": "持续学习",
+        "desc": "每周一份心得,每季一项新技能。"
+      },
+      {
+        "title": "并肩同行",
+        "desc": "我们彼此协作 - 而非彼此服侍。"
+      }
+    ],
+    "openingsHeading": "在招职位",
+    "openings": [
+      {
+        "role": "Senior Brand Strategist",
+        "team": "Strategy",
+        "location": "河内",
+        "type": "全职"
+      },
+      {
+        "role": "Performance Marketing Lead",
+        "team": "Performance",
+        "location": "河内 / 远程",
+        "type": "全职"
+      },
+      {
+        "role": "Senior Content Writer (越英双语)",
+        "team": "Content",
+        "location": "河内",
+        "type": "全职"
+      },
+      {
+        "role": "Motion Designer",
+        "team": "Production",
+        "location": "岘港",
+        "type": "全职"
+      }
+    ],
+    "emptyNote": "暂时没有合适的职位?把简历发到 careers@amemartech.com - 我们随时欢迎。",
+    "applyLabel": "投递"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "常见 ",
+    "titleAccent": "问题。",
+    "sub": "若在此找不到答案,请联系 AME - 我们将在一个工作日内回复。",
+    "items": [
+      {
+        "q": "AME 适合什么样的企业?",
+        "a": "我们最适合需要重建品牌基础、跨渠道增长或拓展新市场的企业,客户规模通常在 50 至 5,000 人。"
+      },
+      {
+        "q": "项目通常如何启动?",
+        "a": "第 1 步 - 30 分钟通话理解需求;第 2 步 - 免费审计与方向建议;第 3 步 - 报价与 SOW;第 4 步 - 明确启动会。"
+      },
+      {
+        "q": "项目的平均周期?",
+        "a": "品牌 8 - 12 周,官网 6 - 10 周,效果营销 2 - 3 周内启动并持续优化,IMC 战役 6 - 16 周(视规模而定)。"
+      },
+      {
+        "q": "AME 是否支持国际市场?",
+        "a": "是。我们在东京设有日本团队,在韩国与东南亚拥有合作伙伴网络,可支持越、英、日、中的本地化。"
+      },
+      {
+        "q": "可以单独购买战略咨询吗?",
+        "a": "可以。我们为有内部团队的企业提供独立的战略 retainer。"
+      },
+      {
+        "q": "费用通常如何?",
+        "a": "每个项目都有自己的范围。免费审计后,我们会按项目逐项发送透明报价 - 没有隐藏费用。"
+      }
+    ]
+  },
+  "legal": {
+    "privacy": {
+      "title": "隐私政策",
+      "updated": "最后更新: 2026.04.18",
+      "sections": [
+        {
+          "heading": "1. 我们收集的信息",
+          "body": "AME Marketing 通过联系表单、订阅、邮件等方式收集您主动提供的信息(姓名、邮箱、电话、公司及需求描述),并通过 Cookie 与分析工具记录基本技术数据,如 IP、浏览器类型与浏览行为。"
+        },
+        {
+          "heading": "2. 使用目的",
+          "body": "数据用于回应咨询请求、推送您订阅的内容、改善网站体验与度量传播效果,我们不向第三方出售个人数据。"
+        },
+        {
+          "heading": "3. 存储与安全",
+          "body": "数据存储在具有安全承诺的基础设施上,仅授权成员可访问。我们采取合理的技术与流程措施保护您的信息。"
+        },
+        {
+          "heading": "4. 您的权利",
+          "body": "您有权随时请求访问、更正或删除个人数据,并撤回订阅同意。请联系 amemartech@gmail.com。"
+        },
+        {
+          "heading": "5. Cookie",
+          "body": "本网站使用必要 Cookie 与分析 Cookie。您可以通过浏览器关闭 - 部分功能可能受限。"
+        },
+        {
+          "heading": "6. 联系方式",
+          "body": "有关本政策的问题,请发送至 amemartech@gmail.com。"
+        }
+      ]
+    },
+    "terms": {
+      "title": "使用条款",
+      "updated": "最后更新: 2026.04.18",
+      "sections": [
+        {
+          "heading": "1. 接受条款",
+          "body": "访问与使用 ame-marketing 网站即表示您同意遵守以下条款。如不同意,请停止使用。"
+        },
+        {
+          "heading": "2. 知识产权",
+          "body": "网站上的所有内容(包括文字、图像、视频、Logo 与源代码)除另有注明外,均归 AME Marketing 有限公司所有。复制、分发或商用须经书面同意。"
+        },
+        {
+          "heading": "3. 合理使用",
+          "body": "您承诺不将网站用于非法目的,不发送有害内容,不尝试未经授权访问 AME 的系统或数据。"
+        },
+        {
+          "heading": "4. 外部链接",
+          "body": "网站可能包含第三方链接,AME 对其内容与政策不承担责任。"
+        },
+        {
+          "heading": "5. 责任限制",
+          "body": "AME 致力于确保信息准确,但不作绝对保证,不对因使用网站信息而产生的损失承担责任。"
+        },
+        {
+          "heading": "6. 条款变更",
+          "body": "AME 可能不时更新本条款,新版本自发布之日起立即生效。"
+        },
+        {
+          "heading": "7. 联系方式",
+          "body": "如有任何问题,请发送至 amemartech@gmail.com。"
+        }
+      ]
+    }
   }
 }

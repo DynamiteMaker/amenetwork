@@ -533,5 +533,265 @@
     "rights": "© 2025 AME Marketing. All rights reserved.",
     "tax": "MST 0110699895",
     "addressLabel": "Tầng 2, Tòa Gemek 1, An Khánh, Hà Nội"
+  },
+  "navServices": {
+    "overviewLabel": "Tổng quan dịch vụ",
+    "overviewDesc": "Xem toàn bộ 8 mảng dịch vụ."
+  },
+  "servicesOverview": {
+    "cards": [
+      {
+        "slug": "branding",
+        "title": "branding",
+        "desc": ""
+      },
+      {
+        "slug": "digital-marketing",
+        "title": "Digital Marketing",
+        "desc": "Vận hành truyền thông số đa kênh, đo lường minh bạch."
+      },
+      {
+        "slug": "performance",
+        "title": "Performance Marketing",
+        "desc": "Tăng trưởng theo dữ liệu - tối ưu CPL, CPA, ROAS."
+      },
+      {
+        "slug": "social-content",
+        "title": "Social Media & Content",
+        "desc": "Hệ thống nội dung mạng xã hội có chiến lược và bản sắc."
+      },
+      {
+        "slug": "web",
+        "title": "Website & Landing Page",
+        "desc": "Corporate profile và landing tối ưu chuyển đổi."
+      },
+      {
+        "slug": "production",
+        "title": "Production / Creative",
+        "desc": "Hình ảnh, video, TVC và visual asset chỉn chu cho thương hiệu."
+      },
+      {
+        "slug": "pr-imc",
+        "title": "PR / IMC Campaign",
+        "desc": "Chiến dịch tích hợp đa kênh - kết nối thương hiệu, KOL, PR và quảng cáo."
+      },
+      {
+        "slug": "market-expansion",
+        "title": "Market Expansion",
+        "desc": "Bản địa hóa và mở rộng marketing sang Nhật, Hàn, Đông Nam Á."
+      }
+    ]
+  },
+  "footerExtra": {
+    "aux": [
+      {
+        "label": "Hồ sơ năng lực",
+        "href": "/capability"
+      },
+      {
+        "label": "Tuyển dụng",
+        "href": "/careers"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "label": "Chính sách bảo mật",
+        "href": "/privacy"
+      },
+      {
+        "label": "Điều khoản",
+        "href": "/terms"
+      }
+    ]
+  },
+  "capability": {
+    "eyebrow": "HỒ SƠ NĂNG LỰC",
+    "title": "AME Marketing - ",
+    "titleAccent": "Capability Profile.",
+    "sub": "Tổng hợp năng lực, dịch vụ, đội ngũ và case study tiêu biểu của AME - phù hợp cho khách hàng doanh nghiệp đánh giá đối tác.",
+    "sections": [
+      {
+        "heading": "Giới thiệu",
+        "body": "AME Marketing là công ty truyền thông marketing tích hợp, đồng hành cùng doanh nghiệp Việt Nam và quốc tế trong xây dựng thương hiệu và tăng trưởng bền vững. Chúng tôi vận hành theo mô hình strategic marketing partner - kết nối chiến lược, sáng tạo, công nghệ và vận hành."
+      },
+      {
+        "heading": "Năng lực cốt lõi",
+        "body": "Tám mảng dịch vụ phối hợp như một đội ngũ thống nhất:",
+        "bullets": [
+          "Branding & Identity",
+          "Digital Marketing",
+          "Performance Marketing",
+          "Social Media & Content",
+          "Website & Landing Page",
+          "Production & Creative",
+          "PR / IMC Campaign",
+          "Market Expansion / International"
+        ]
+      },
+      {
+        "heading": "Quy mô & thị trường",
+        "body": "Hơn 12 năm kinh nghiệm, 80+ dự án đã triển khai, hiện diện tại Hà Nội, Đà Nẵng và Tokyo. Phục vụ khách hàng tại 4 thị trường APAC chính: Việt Nam, Nhật Bản, Hàn Quốc và Đông Nam Á."
+      },
+      {
+        "heading": "Tệp khách hàng",
+        "body": "Doanh nghiệp tăng trưởng từ 50 - 5.000 nhân sự trong các ngành: bất động sản, giáo dục, thẩm mỹ, F&B, bán lẻ, công nghệ, hospitality và dịch vụ chuyên môn."
+      }
+    ],
+    "downloadLabel": "Tải company profile (PDF)",
+    "downloadNote": "Bản PDF chi tiết sẽ được gửi qua email sau khi bạn để lại thông tin."
+  },
+  "careers": {
+    "eyebrow": "TUYỂN DỤNG",
+    "title": "Cùng xây ",
+    "titleAccent": "tiêu chuẩn mới cho ngành.",
+    "sub": "AME tìm những con người tin vào sự chỉn chu, có kỷ luật và đặt khách hàng vào trung tâm của mọi quyết định.",
+    "cultureHeading": "Văn hóa làm việc",
+    "culture": [
+      {
+        "title": "Chỉn chu",
+        "desc": "Chú ý từng chi tiết - vì chi tiết tạo nên đẳng cấp."
+      },
+      {
+        "title": "Trung thực",
+        "desc": "Nói thật với khách hàng và với nhau, kể cả khi khó."
+      },
+      {
+        "title": "Học liên tục",
+        "desc": "Mỗi tuần một bài học, mỗi quý một kỹ năng mới."
+      },
+      {
+        "title": "Đồng hành",
+        "desc": "Làm việc cùng nhau - không làm việc cho nhau."
+      }
+    ],
+    "openingsHeading": "Vị trí đang tuyển",
+    "openings": [
+      {
+        "role": "Senior Brand Strategist",
+        "team": "Strategy",
+        "location": "Hà Nội",
+        "type": "Full-time"
+      },
+      {
+        "role": "Performance Marketing Lead",
+        "team": "Performance",
+        "location": "Hà Nội / Remote",
+        "type": "Full-time"
+      },
+      {
+        "role": "Senior Content Writer (Song ngữ Việt - Anh)",
+        "team": "Content",
+        "location": "Hà Nội",
+        "type": "Full-time"
+      },
+      {
+        "role": "Motion Designer",
+        "team": "Production",
+        "location": "Đà Nẵng",
+        "type": "Full-time"
+      }
+    ],
+    "emptyNote": "Chưa thấy vị trí phù hợp? Gửi CV tới careers@amemartech.com - chúng tôi luôn lắng nghe.",
+    "applyLabel": "Ứng tuyển"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Những câu hỏi ",
+    "titleAccent": "thường gặp.",
+    "sub": "Nếu bạn không tìm thấy câu trả lời ở đây, hãy nhắn cho AME - chúng tôi sẽ phản hồi trong vòng 24h làm việc.",
+    "items": [
+      {
+        "q": "AME phù hợp với loại hình doanh nghiệp nào?",
+        "a": "Chúng tôi phục vụ tốt nhất cho doanh nghiệp đang ở giai đoạn cần xây dựng lại nền tảng thương hiệu, tăng trưởng đa kênh hoặc mở rộng sang thị trường mới. Quy mô khách hàng phổ biến từ 50 đến 5.000 nhân sự."
+      },
+      {
+        "q": "Quy trình bắt đầu một dự án như thế nào?",
+        "a": "Bước 1 - Trao đổi 30 phút để hiểu nhu cầu. Bước 2 - Audit miễn phí và đề xuất hướng. Bước 3 - Báo giá và scope of work. Bước 4 - Khởi chạy với kick-off rõ ràng."
+      },
+      {
+        "q": "Thời gian triển khai trung bình bao lâu?",
+        "a": "Branding 8 - 12 tuần, website 6 - 10 tuần, performance khởi chạy trong 2 - 3 tuần và tối ưu liên tục, IMC campaign 6 - 16 tuần tùy quy mô."
+      },
+      {
+        "q": "AME có hỗ trợ thị trường quốc tế không?",
+        "a": "Có. Chúng tôi có Japan desk tại Tokyo và mạng lưới đối tác tại Hàn Quốc, Đông Nam Á. Hỗ trợ bản địa hóa cho Việt - Anh - Nhật - Trung."
+      },
+      {
+        "q": "AME có nhận tư vấn chiến lược riêng không?",
+        "a": "Có. Chúng tôi cung cấp gói tư vấn chiến lược độc lập (strategy retainer) cho doanh nghiệp có in-house team nhưng cần đối tác chiến lược bên ngoài."
+      },
+      {
+        "q": "Chi phí dự án thường ra sao?",
+        "a": "Mỗi dự án có scope riêng. Sau buổi audit miễn phí, chúng tôi sẽ gửi báo giá minh bạch theo từng hạng mục - không có chi phí ẩn."
+      }
+    ]
+  },
+  "legal": {
+    "privacy": {
+      "title": "Chính sách bảo mật",
+      "updated": "Cập nhật lần cuối: 18.04.2026",
+      "sections": [
+        {
+          "heading": "1. Thông tin chúng tôi thu thập",
+          "body": "AME Marketing thu thập thông tin bạn cung cấp tự nguyện qua form liên hệ, đăng ký newsletter hoặc email - bao gồm họ tên, email, số điện thoại, công ty và mô tả nhu cầu. Chúng tôi cũng ghi nhận dữ liệu kỹ thuật cơ bản như IP, loại trình duyệt và hành vi duyệt website thông qua cookie và công cụ phân tích."
+        },
+        {
+          "heading": "2. Mục đích sử dụng",
+          "body": "Dữ liệu được dùng để phản hồi yêu cầu tư vấn, gửi nội dung bạn đăng ký, cải thiện trải nghiệm website và đo lường hiệu quả truyền thông. Chúng tôi không bán dữ liệu cá nhân cho bên thứ ba."
+        },
+        {
+          "heading": "3. Lưu trữ và bảo mật",
+          "body": "Dữ liệu được lưu trữ trên hạ tầng có cam kết bảo mật, chỉ những thành viên được phân quyền mới truy cập được. Chúng tôi áp dụng các biện pháp kỹ thuật và quy trình hợp lý để bảo vệ thông tin."
+        },
+        {
+          "heading": "4. Quyền của bạn",
+          "body": "Bạn có quyền yêu cầu truy cập, chỉnh sửa hoặc xóa dữ liệu cá nhân của mình, cũng như rút lại sự đồng ý nhận newsletter bất kỳ lúc nào. Liên hệ amemartech@gmail.com để thực hiện."
+        },
+        {
+          "heading": "5. Cookie",
+          "body": "Website sử dụng cookie cần thiết và cookie phân tích. Bạn có thể tắt cookie qua cài đặt trình duyệt - một số tính năng có thể bị giới hạn."
+        },
+        {
+          "heading": "6. Liên hệ",
+          "body": "Mọi câu hỏi về chính sách bảo mật, vui lòng gửi tới amemartech@gmail.com."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Điều khoản sử dụng",
+      "updated": "Cập nhật lần cuối: 18.04.2026",
+      "sections": [
+        {
+          "heading": "1. Chấp nhận điều khoản",
+          "body": "Bằng việc truy cập và sử dụng website ame-marketing, bạn đồng ý tuân thủ các điều khoản dưới đây. Nếu không đồng ý, vui lòng dừng sử dụng."
+        },
+        {
+          "heading": "2. Quyền sở hữu trí tuệ",
+          "body": "Toàn bộ nội dung trên website - bao gồm văn bản, hình ảnh, video, logo và mã nguồn - thuộc quyền sở hữu của Công ty TNHH AME Marketing, trừ khi có ghi chú khác. Mọi hình thức sao chép, phát tán hoặc sử dụng thương mại đều phải có sự đồng ý bằng văn bản."
+        },
+        {
+          "heading": "3. Sử dụng hợp lệ",
+          "body": "Bạn cam kết không sử dụng website cho mục đích bất hợp pháp, không gửi nội dung gây hại, không cố gắng truy cập trái phép vào hệ thống hoặc dữ liệu của AME."
+        },
+        {
+          "heading": "4. Liên kết bên ngoài",
+          "body": "Website có thể chứa liên kết tới bên thứ ba. AME không chịu trách nhiệm về nội dung và chính sách của các website đó."
+        },
+        {
+          "heading": "5. Giới hạn trách nhiệm",
+          "body": "AME nỗ lực đảm bảo thông tin trên website chính xác, nhưng không cam kết tuyệt đối. Chúng tôi không chịu trách nhiệm cho thiệt hại phát sinh từ việc sử dụng thông tin trên website."
+        },
+        {
+          "heading": "6. Thay đổi điều khoản",
+          "body": "AME có thể cập nhật điều khoản theo thời gian. Phiên bản mới có hiệu lực ngay khi được đăng tải."
+        },
+        {
+          "heading": "7. Liên hệ",
+          "body": "Mọi thắc mắc xin gửi tới amemartech@gmail.com."
+        }
+      ]
+    }
   }
 }

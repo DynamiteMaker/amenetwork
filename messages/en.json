@@ -533,5 +533,265 @@
     "rights": "© 2025 AME Marketing. All rights reserved.",
     "tax": "Tax ID 0110699895",
     "addressLabel": "Floor 2, Gemek 1 Tower, An Khanh, Hanoi"
+  },
+  "navServices": {
+    "overviewLabel": "Services overview",
+    "overviewDesc": "See all eight service areas."
+  },
+  "servicesOverview": {
+    "cards": [
+      {
+        "slug": "branding",
+        "title": "branding",
+        "desc": ""
+      },
+      {
+        "slug": "digital-marketing",
+        "title": "Digital Marketing",
+        "desc": "Multi-channel digital operations with transparent measurement."
+      },
+      {
+        "slug": "performance",
+        "title": "Performance Marketing",
+        "desc": "Data-driven growth - optimised on CPL, CPA and ROAS."
+      },
+      {
+        "slug": "social-content",
+        "title": "Social Media & Content",
+        "desc": "Strategic social content with a clear brand voice."
+      },
+      {
+        "slug": "web",
+        "title": "Website & Landing Page",
+        "desc": "Corporate sites and landing pages built for conversion."
+      },
+      {
+        "slug": "production",
+        "title": "Production / Creative",
+        "desc": "Photography, video, TVC and visual assets crafted for brands."
+      },
+      {
+        "slug": "pr-imc",
+        "title": "PR / IMC Campaign",
+        "desc": "Integrated multi-channel campaigns connecting brand, KOL, PR and ads."
+      },
+      {
+        "slug": "market-expansion",
+        "title": "Market Expansion",
+        "desc": "Localisation and marketing expansion into Japan, Korea and SEA."
+      }
+    ]
+  },
+  "footerExtra": {
+    "aux": [
+      {
+        "label": "Capability profile",
+        "href": "/capability"
+      },
+      {
+        "label": "Careers",
+        "href": "/careers"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "label": "Privacy policy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Terms of use",
+        "href": "/terms"
+      }
+    ]
+  },
+  "capability": {
+    "eyebrow": "CAPABILITY PROFILE",
+    "title": "AME Marketing - ",
+    "titleAccent": "Capability Profile.",
+    "sub": "An overview of AME's capabilities, services, team and signature case studies - built for enterprise clients evaluating partners.",
+    "sections": [
+      {
+        "heading": "Introduction",
+        "body": "AME Marketing is an integrated marketing communications company partnering with Vietnamese and international businesses to build brands and grow sustainably. We operate as a strategic marketing partner - connecting strategy, creative, technology and operations."
+      },
+      {
+        "heading": "Core capabilities",
+        "body": "Eight service areas working together as one team:",
+        "bullets": [
+          "Branding & Identity",
+          "Digital Marketing",
+          "Performance Marketing",
+          "Social Media & Content",
+          "Website & Landing Page",
+          "Production & Creative",
+          "PR / IMC Campaign",
+          "Market Expansion / International"
+        ]
+      },
+      {
+        "heading": "Scale & markets",
+        "body": "Over 12 years of experience, 80+ projects delivered, with offices in Hanoi, Da Nang and Tokyo. Serving clients across four core APAC markets: Vietnam, Japan, Korea and Southeast Asia."
+      },
+      {
+        "heading": "Client portfolio",
+        "body": "Growth-stage businesses with 50 to 5,000 employees across real estate, education, aesthetics, F&B, retail, technology, hospitality and professional services."
+      }
+    ],
+    "downloadLabel": "Download company profile (PDF)",
+    "downloadNote": "The detailed PDF will be sent to your email after you leave your details."
+  },
+  "careers": {
+    "eyebrow": "CAREERS",
+    "title": "Help us set ",
+    "titleAccent": "a new standard for the industry.",
+    "sub": "AME is looking for people who believe in craft, hold themselves to discipline and put the customer at the centre of every decision.",
+    "cultureHeading": "How we work",
+    "culture": [
+      {
+        "title": "Craft",
+        "desc": "Care about every detail - because details create class."
+      },
+      {
+        "title": "Honesty",
+        "desc": "Tell the truth to clients and to each other, even when it is hard."
+      },
+      {
+        "title": "Always learning",
+        "desc": "A new lesson every week, a new skill every quarter."
+      },
+      {
+        "title": "Side by side",
+        "desc": "We work with each other - not for each other."
+      }
+    ],
+    "openingsHeading": "Open positions",
+    "openings": [
+      {
+        "role": "Senior Brand Strategist",
+        "team": "Strategy",
+        "location": "Hanoi",
+        "type": "Full-time"
+      },
+      {
+        "role": "Performance Marketing Lead",
+        "team": "Performance",
+        "location": "Hanoi / Remote",
+        "type": "Full-time"
+      },
+      {
+        "role": "Senior Content Writer (Vietnamese - English)",
+        "team": "Content",
+        "location": "Hanoi",
+        "type": "Full-time"
+      },
+      {
+        "role": "Motion Designer",
+        "team": "Production",
+        "location": "Da Nang",
+        "type": "Full-time"
+      }
+    ],
+    "emptyNote": "Don't see a role that fits? Send your CV to careers@amemartech.com - we always listen.",
+    "applyLabel": "Apply"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked ",
+    "titleAccent": "questions.",
+    "sub": "If you don't find the answer here, message AME - we respond within one business day.",
+    "items": [
+      {
+        "q": "Who is AME a good fit for?",
+        "a": "We work best with businesses that need to rebuild their brand foundation, grow across channels or expand into new markets. Most of our clients have 50 to 5,000 employees."
+      },
+      {
+        "q": "How does a project usually start?",
+        "a": "Step 1 - a 30-minute call to understand your needs. Step 2 - a free audit and direction. Step 3 - a quote and scope of work. Step 4 - kick off with a clear plan."
+      },
+      {
+        "q": "How long does a typical engagement take?",
+        "a": "Branding 8 - 12 weeks, websites 6 - 10 weeks, performance launches in 2 - 3 weeks and is optimised continuously, IMC campaigns 6 - 16 weeks depending on scale."
+      },
+      {
+        "q": "Does AME support international markets?",
+        "a": "Yes. We have a Japan desk in Tokyo and partner networks in Korea and Southeast Asia. We support localisation across Vietnamese, English, Japanese and Chinese."
+      },
+      {
+        "q": "Does AME offer standalone strategy advisory?",
+        "a": "Yes. We offer a strategy retainer for companies with in-house teams that need an external strategic partner."
+      },
+      {
+        "q": "How is pricing structured?",
+        "a": "Every project has its own scope. After the free audit we send a transparent quote broken down by line item - no hidden costs."
+      }
+    ]
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: 18.04.2026",
+      "sections": [
+        {
+          "heading": "1. Information we collect",
+          "body": "AME Marketing collects information you voluntarily provide via contact forms, newsletter sign-up or email - including name, email, phone, company and a description of your needs. We also record basic technical data such as IP, browser type and browsing behaviour through cookies and analytics tools."
+        },
+        {
+          "heading": "2. Purpose of use",
+          "body": "Data is used to respond to consultation requests, deliver content you have subscribed to, improve the website experience and measure communications. We do not sell personal data to third parties."
+        },
+        {
+          "heading": "3. Storage and security",
+          "body": "Data is stored on infrastructure with security commitments and is accessible only to authorised team members. We apply reasonable technical and procedural measures to protect your information."
+        },
+        {
+          "heading": "4. Your rights",
+          "body": "You have the right to request access, correction or deletion of your personal data, and to withdraw consent for newsletters at any time. Contact amemartech@gmail.com to do so."
+        },
+        {
+          "heading": "5. Cookies",
+          "body": "The website uses essential and analytics cookies. You can disable cookies in your browser - some features may then be limited."
+        },
+        {
+          "heading": "6. Contact",
+          "body": "Any questions about this policy can be sent to amemartech@gmail.com."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "updated": "Last updated: 18.04.2026",
+      "sections": [
+        {
+          "heading": "1. Acceptance of terms",
+          "body": "By accessing and using the ame-marketing website you agree to comply with the terms below. If you do not agree, please stop using the site."
+        },
+        {
+          "heading": "2. Intellectual property",
+          "body": "All content on the website - including text, images, video, logos and source code - is owned by AME Marketing Co., Ltd unless otherwise noted. Any copying, distribution or commercial use requires written consent."
+        },
+        {
+          "heading": "3. Acceptable use",
+          "body": "You agree not to use the website for unlawful purposes, not to submit harmful content and not to attempt unauthorised access to AME's systems or data."
+        },
+        {
+          "heading": "4. External links",
+          "body": "The website may contain links to third parties. AME is not responsible for the content or policies of those websites."
+        },
+        {
+          "heading": "5. Limitation of liability",
+          "body": "AME makes reasonable efforts to ensure information on the website is accurate but does not guarantee it absolutely. We are not liable for damages arising from use of the information on the website."
+        },
+        {
+          "heading": "6. Changes to the terms",
+          "body": "AME may update these terms from time to time. The new version takes effect immediately upon publication."
+        },
+        {
+          "heading": "7. Contact",
+          "body": "Please send any enquiries to amemartech@gmail.com."
+        }
+      ]
+    }
   }
 }

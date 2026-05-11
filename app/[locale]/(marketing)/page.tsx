@@ -15,7 +15,7 @@ export default async function HomePage({
 function HomeContent() {
   const t = useTranslations();
   return (
-    <div className="flex min-h-screen items-center justify-center">
+    <div className="flex min-h-[60vh] items-center justify-center">
       <div className="text-center">
         <h1 className="display-xl">{t("seo.siteName")}</h1>
         <p className="lead mt-6 max-w-xl mx-auto">
