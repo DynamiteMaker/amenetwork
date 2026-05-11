@@ -1,0 +1,537 @@
+{
+  "seo": {
+    "siteName": "AME Marketing",
+    "home": {
+      "title": "AME Marketing - Clear strategy. Refined execution.",
+      "description": "A strategic marketing agency bridging Vietnamese and Japanese brands. Branding, digital, performance, PR/IMC, production and market expansion."
+    },
+    "services": {
+      "title": "End-to-end marketing services | AME",
+      "description": "Eight practices: Branding, Digital, Performance, Social & Content, Web, Production, PR/IMC, Market Expansion."
+    },
+    "cases": {
+      "title": "Featured case studies | AME Marketing",
+      "description": "Selected work of AME with Vietnamese and Japanese brands across industries."
+    },
+    "about": {
+      "title": "About AME Marketing | Clear strategy",
+      "description": "Our story, values, team and two offices in Hanoi and Ho Chi Minh City."
+    },
+    "insights": {
+      "title": "Insights & articles | AME Marketing",
+      "description": "Perspectives, trends and on-the-ground learnings from the AME team."
+    },
+    "contact": {
+      "title": "Contact AME Marketing",
+      "description": "Send a brief, book a free consultation or visit our offices in Hanoi & HCMC."
+    },
+    "capability": {
+      "title": "Capability statement | AME Marketing",
+      "description": "Capabilities, scale, service depth and market experience at AME."
+    },
+    "careers": {
+      "title": "Careers | Join AME Marketing",
+      "description": "Career opportunities at AME - a strategic, cross-cultural Vietnam–Japan marketing environment."
+    },
+    "faq": {
+      "title": "Frequently asked questions | AME Marketing",
+      "description": "How AME works: process, pricing, commitments and collaboration model."
+    },
+    "privacy": {
+      "title": "Privacy Policy | AME Marketing",
+      "description": "How AME handles and protects personal data."
+    },
+    "terms": {
+      "title": "Terms of Use | AME Marketing",
+      "description": "Terms and conditions for using the AME website."
+    },
+    "offices": {
+      "title": "Our offices | AME Marketing",
+      "description": "AME Marketing head office in Hanoi with branches in Da Nang, Ho Chi Minh City and Tokyo."
+    },
+    "serviceDetailSuffix": "AME Services",
+    "caseDetailSuffix": "AME Case Study"
+  },
+  "nav": {
+    "services": "Services",
+    "cases": "Cases",
+    "about": "About",
+    "insights": "Insights",
+    "offices": "Offices",
+    "contact": "Contact",
+    "cta": "Let's talk"
+  },
+  "common": {
+    "startProject": "Free consultation",
+    "seeWork": "See our work",
+    "learnMore": "Learn more",
+    "getInTouch": "Get in touch",
+    "readMore": "Read more",
+    "allCases": "View all cases",
+    "caseChallenge": "Challenge",
+    "caseSolution": "Solution",
+    "caseResults": "Results",
+    "viewCaseStudy": "View case study"
+  },
+  "home": {
+    "eyebrow": "STRATEGIC MARKETING",
+    "h1a": "Strategic clarity.",
+    "h1b": "Refined",
+    "h1c": "execution.",
+    "h1cAccent": "execution.",
+    "lead": "AME Marketing partners with businesses across Vietnam, Japan and APAC to build brands, craft creative work and run campaigns that compound - quietly, over time.",
+    "metaYears": "12 years of practice",
+    "metaProjects": "80+ projects shipped",
+    "metaMarkets": "4 APAC markets",
+    "trust": "Trusted by",
+    "trustHeadline": "200+ brands partner with AME to",
+    "trustHeadlineAccent": "grow sustainably.",
+    "servicesEyebrow": "SERVICES",
+    "servicesTitle": "One team, three core ",
+    "servicesTitleAccent": "capabilities.",
+    "services": [
+      {
+        "title": "Brand Strategy",
+        "desc": "Positioning, brand architecture and growth roadmaps grounded in market evidence."
+      },
+      {
+        "title": "Creative Production",
+        "desc": "Identity systems, content, visuals and TVC - crafted, never decorative."
+      },
+      {
+        "title": "Digital & Performance",
+        "desc": "Multi-channel execution, transparent measurement and continuous optimisation."
+      }
+    ],
+    "seeAllServices": "See all services",
+    "featuredEyebrow": "FEATURED CASE",
+    "featuredTitle": "Repositioning ",
+    "featuredTitleAccent": "KAISHI Travel",
+    "featuredDesc": "A new brand strategy, identity system and launch campaign helped KAISHI enter the Japanese market and expand its APAC audience.",
+    "featuredStats": [
+      {
+        "value": "+182%",
+        "label": "Organic traffic"
+      },
+      {
+        "value": "3.4×",
+        "label": "Online bookings"
+      },
+      {
+        "value": "28",
+        "label": "Markets reached"
+      }
+    ],
+    "featuredCta": "Read the case",
+    "processEyebrow": "HOW WE WORK",
+    "processTitle": "Four steps, one long road.",
+    "processSteps": [
+      {
+        "title": "Listen",
+        "desc": "We understand the business, the goal and the market before proposing."
+      },
+      {
+        "title": "Strategy",
+        "desc": "Clear positioning, message and a measurable roadmap."
+      },
+      {
+        "title": "Craft",
+        "desc": "Content and design that serve the strategy - not decoration."
+      },
+      {
+        "title": "Operate",
+        "desc": "Continuous measurement and optimisation against real data."
+      }
+    ],
+    "quote": "AME isn't just an agency - they became part of our team, patient and ",
+    "quoteAccent": "refined",
+    "quoteAuthor": "Le Ha",
+    "quoteRole": "Marketing Director, KAISHI Travel",
+    "ctaTitle": "Ready to start a ",
+    "ctaTitleAccent": "new chapter?",
+    "ctaSub": "Tell us about your brand and your goals. The first conversation is always on us."
+  },
+  "services": {
+    "eyebrow": "SERVICES",
+    "title": "End-to-end marketing, ",
+    "titleAccent": "calmly delivered.",
+    "sub": "Four capabilities working in concert - from strategy to execution - for businesses at any stage.",
+    "items": [
+      {
+        "title": "Strategy Consulting",
+        "desc": "Market analysis, brand positioning and a long-term growth roadmap.",
+        "bullets": [
+          "Market analysis",
+          "Brand positioning",
+          "Growth roadmap"
+        ]
+      },
+      {
+        "title": "Digital Marketing",
+        "desc": "Multi-channel execution across Meta, Google and TikTok - measured and continuously optimised.",
+        "bullets": [
+          "Performance Ads",
+          "SEO & Analytics",
+          "CRM & Automation"
+        ]
+      },
+      {
+        "title": "Content Marketing",
+        "desc": "Editorial, visuals, video and infographics - on-strategy and on-SEO.",
+        "bullets": [
+          "Content Strategy",
+          "Editorial & Social",
+          "Visual design"
+        ]
+      },
+      {
+        "title": "Media Production",
+        "desc": "Product photography, TVC and animation - elevating the brand image with craft.",
+        "bullets": [
+          "TVC & Reportage",
+          "Product Photography",
+          "Motion & Animation"
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "CASES",
+    "title": "Stories from brands ",
+    "titleAccent": "we partner with.",
+    "sub": "Filter by discipline to explore.",
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "branding",
+        "label": "Branding"
+      },
+      {
+        "id": "digital",
+        "label": "Digital"
+      },
+      {
+        "id": "growth",
+        "label": "Growth"
+      },
+      {
+        "id": "healthcare",
+        "label": "Healthcare"
+      },
+      {
+        "id": "apac",
+        "label": "APAC"
+      }
+    ],
+    "items": [
+      {
+        "title": "VinFast - For a Green Future",
+        "client": "VinFast",
+        "tag": "growth",
+        "metric": "20M",
+        "metricLabel": "reach"
+      },
+      {
+        "title": "Smartweb Auto 5.0 launch",
+        "client": "Bizfly VCCorp",
+        "tag": "growth",
+        "metric": "200",
+        "metricLabel": "event guests"
+      },
+      {
+        "title": "TikTok virality for Shooting Sports Club",
+        "client": "Shooting Sports Club",
+        "tag": "digital",
+        "metric": "5×",
+        "metricLabel": "revenue"
+      },
+      {
+        "title": "FB Ads push sale for Honya Books",
+        "client": "Honya Books",
+        "tag": "digital",
+        "metric": "−50%",
+        "metricLabel": "ads cost"
+      },
+      {
+        "title": "FB Ads push sale for An Dien",
+        "client": "An Dien Co.",
+        "tag": "digital",
+        "metric": "−50%",
+        "metricLabel": "ads cost"
+      },
+      {
+        "title": "Brand awareness for SHINBI Dental",
+        "client": "SHINBI Dental",
+        "tag": "branding",
+        "metric": "OOH+TV",
+        "metricLabel": "multi-channel"
+      },
+      {
+        "title": "US SEO for KoolSoft",
+        "client": "KoolSoft",
+        "tag": "digital",
+        "metric": "7K",
+        "metricLabel": "traffic/day"
+      },
+      {
+        "title": "Homegy Smarthome ecosystem",
+        "client": "Homegy",
+        "tag": "branding",
+        "metric": "Multi",
+        "metricLabel": "integrated channels"
+      },
+      {
+        "title": "International fundraising for CSM Hospital",
+        "client": "CSM General Hospital",
+        "tag": "healthcare",
+        "metric": "12",
+        "metricLabel": "legal filings"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "ABOUT",
+    "title": "A team that believes in ",
+    "titleAccent": "refinement.",
+    "story": [
+      "AME Marketing was founded in Hanoi with a simple belief: good marketing starts with clear strategy, is delivered with craft, and is measured by real outcomes.",
+      "For twelve years we have worked alongside Vietnamese and Japanese businesses - from startups to enterprises - building durable brands and growing them responsibly."
+    ],
+    "valuesEyebrow": "VALUES",
+    "valuesTitle": "Four principles guide us.",
+    "values": [
+      {
+        "title": "Clarity",
+        "desc": "Every strategy starts with the right question and a compelling reason."
+      },
+      {
+        "title": "Craft",
+        "desc": "Detail matters - because the detail is where the difference lives."
+      },
+      {
+        "title": "Partnership",
+        "desc": "We work with our clients, not just for them."
+      },
+      {
+        "title": "Growth",
+        "desc": "Performance isn't luck - it's the result of disciplined execution."
+      }
+    ],
+    "teamEyebrow": "TEAM",
+    "teamTitle": "The people behind AME.",
+    "team": [
+      {
+        "name": "Nguyen An",
+        "role": "Founder & Strategy"
+      },
+      {
+        "name": "Tran Mai",
+        "role": "Creative Director"
+      },
+      {
+        "name": "Pham Khoi",
+        "role": "Head of Performance"
+      },
+      {
+        "name": "Yamada Kenji",
+        "role": "Japan Market Lead"
+      }
+    ],
+    "officesEyebrow": "OFFICES",
+    "officesTitle": "Present in three cities.",
+    "offices": [
+      {
+        "city": "Hanoi",
+        "address": "Floor 2, Gemek 1 Tower, An Khanh, Hoai Duc",
+        "meta": "Headquarters"
+      },
+      {
+        "city": "Da Nang",
+        "address": "Production & creative studio, central Vietnam",
+        "meta": "Production hub"
+      },
+      {
+        "city": "Tokyo",
+        "address": "Japan & APAC market representation",
+        "meta": "Japan desk"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "Let's start the ",
+    "titleAccent": "first conversation.",
+    "sub": "Send us a brief or message us on WhatsApp; we reply within one business day.",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "company": "Company",
+      "type": "Project type",
+      "typeOptions": [
+        "Brand Strategy",
+        "Digital & Performance",
+        "Creative & Production",
+        "Other"
+      ],
+      "message": "Tell us briefly about the project",
+      "submit": "Send message",
+      "via": "Or reach us directly:",
+      "whatsapp": "Chat via WhatsApp",
+      "mail": "Send an email"
+    },
+    "info": {
+      "heading": "AME Marketing",
+      "tagline": "Strategic clarity. Refined execution.",
+      "businessTitle": "Business",
+      "businessLines": [
+        "AME Marketing Co., Ltd.",
+        "Tax ID: 0110699895"
+      ],
+      "directTitle": "Direct",
+      "directLines": [
+        "amemartech@gmail.com",
+        "+84 941 076 762"
+      ],
+      "officeTitle": "Office",
+      "officeLines": [
+        "Floor 2, Gemek 1 Tower",
+        "An Khanh, Hoai Duc, Hanoi"
+      ]
+    },
+    "mapEyebrow": "MAP",
+    "mapTitle": "Visit our office",
+    "mapSub": "Our HQ sits inside Gemek 1 Tower, An Khanh - 25 minutes from central Hanoi.",
+    "mapCta": "Open in Google Maps"
+  },
+  "insights": {
+    "eyebrow": "INSIGHTS",
+    "title": "News & ",
+    "titleAccent": "perspectives.",
+    "sub": "Marketing trends, branding studies and field notes from Vietnam, Japan and the wider APAC region.",
+    "stats": [
+      {
+        "value": "50+",
+        "label": "In-depth articles"
+      },
+      {
+        "value": "100K+",
+        "label": "Monthly reads"
+      },
+      {
+        "value": "24/7",
+        "label": "Continuously updated"
+      }
+    ],
+    "featuredLabel": "FEATURED ARTICLE",
+    "featuredCategory": "Strategy",
+    "featuredDate": "Apr 15, 2025",
+    "featuredTitle": "CRM & Marketing Automation: why 2025 is the breakout year",
+    "featuredExcerpt": "As media costs keep rising, brands are forced to optimise the customer lifecycle. We unpack how CRM and automation are quietly changing the game.",
+    "featuredAuthor": "Nguyen An - Founder, AME",
+    "trendsTitle": "Marketing trends to watch",
+    "trends": [
+      {
+        "title": "AI Marketing",
+        "desc": "Personalisation at scale with generative AI.",
+        "growth": "+340%"
+      },
+      {
+        "title": "Voice Commerce",
+        "desc": "Voice-driven search and ordering surging in APAC.",
+        "growth": "+128%"
+      },
+      {
+        "title": "Sustainable Brand",
+        "desc": "Young consumers favour brands with real ESG.",
+        "growth": "+89%"
+      },
+      {
+        "title": "Micro-Influencer",
+        "desc": "Higher ROI than mega-KOLs through trust and engagement.",
+        "growth": "+215%"
+      }
+    ],
+    "trendCtaTitle": "Need a strategy for your brand?",
+    "trendCtaSub": "Book a free 30-minute consult with an AME specialist.",
+    "trendCtaBtn": "Free consult",
+    "postsTitle": "Latest articles",
+    "postsSub": "Selected from the AME blog - quick reads, ready to apply.",
+    "posts": [
+      {
+        "category": "AI",
+        "date": "Apr 12, 2025",
+        "title": "Generative AI in content marketing 2025",
+        "excerpt": "An AI toolkit that lets small teams ship quality content consistently."
+      },
+      {
+        "category": "Voice",
+        "date": "Apr 8, 2025",
+        "title": "Voice search: optimising for Vietnamese brands",
+        "excerpt": "How to structure content to appear in voice-driven results."
+      },
+      {
+        "category": "ESG",
+        "date": "Apr 2, 2025",
+        "title": "Sustainable marketing is no longer optional",
+        "excerpt": "Gen Z consumers pick brands based on durable values."
+      },
+      {
+        "category": "Influencer",
+        "date": "Mar 27, 2025",
+        "title": "Micro-influencers: outsized ROI in 2025",
+        "excerpt": "Why 10 micro-influencers outperform a single mega-KOL on a mid-budget."
+      },
+      {
+        "category": "Content",
+        "date": "Mar 20, 2025",
+        "title": "Content strategy 2025: storytelling rises",
+        "excerpt": "A framework that puts brand narrative ahead of pure information."
+      },
+      {
+        "category": "Performance",
+        "date": "Mar 14, 2025",
+        "title": "Measuring brand lift in a cookieless era",
+        "excerpt": "New approaches to gauge brand impact as cookies fade."
+      }
+    ],
+    "comingSoon": "Full article coming soon."
+  },
+  "footer": {
+    "tagline": "Strategic clarity. Refined execution.",
+    "officesTitle": "Offices",
+    "offices": [
+      "Hanoi - Headquarters",
+      "Da Nang - Production",
+      "Tokyo - Japan desk"
+    ],
+    "linksTitle": "Links",
+    "links": [
+      {
+        "label": "Services",
+        "href": "/services"
+      },
+      {
+        "label": "Cases",
+        "href": "/cases"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "newsletterTitle": "Monthly insights",
+    "newsletterSub": "A short letter on brand, marketing and APAC markets.",
+    "newsletterPlaceholder": "your@email.com",
+    "newsletterCta": "Subscribe",
+    "rights": "© 2025 AME Marketing. All rights reserved.",
+    "tax": "Tax ID 0110699895",
+    "addressLabel": "Floor 2, Gemek 1 Tower, An Khanh, Hanoi"
+  }
+}

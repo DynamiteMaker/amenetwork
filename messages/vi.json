@@ -1,0 +1,537 @@
+{
+  "seo": {
+    "siteName": "AME Marketing",
+    "home": {
+      "title": "AME Marketing - Chiến lược rõ ràng. Triển khai tinh tế.",
+      "description": "Agency marketing chiến lược, kết nối thương hiệu Việt – Nhật. Branding, Digital, Performance, PR/IMC, sản xuất nội dung và mở rộng thị trường."
+    },
+    "services": {
+      "title": "Dịch vụ Marketing toàn diện | AME",
+      "description": "8 mảng dịch vụ: Branding, Digital, Performance, Social & Content, Web, Production, PR/IMC, Mở rộng thị trường."
+    },
+    "cases": {
+      "title": "Dự án tiêu biểu | AME Marketing",
+      "description": "Tuyển chọn case study của AME cùng các thương hiệu Việt – Nhật trong nhiều ngành hàng."
+    },
+    "about": {
+      "title": "Về AME Marketing | Chiến lược rõ ràng",
+      "description": "Câu chuyện, giá trị, đội ngũ và hai văn phòng Hà Nội – TP.HCM của AME Marketing."
+    },
+    "insights": {
+      "title": "Insights & Bài viết | AME Marketing",
+      "description": "Quan điểm, xu hướng và kinh nghiệm thực chiến từ đội ngũ AME."
+    },
+    "contact": {
+      "title": "Liên hệ AME Marketing",
+      "description": "Gửi brief, đặt lịch tư vấn miễn phí hoặc tìm văn phòng AME tại Hà Nội & TP.HCM."
+    },
+    "capability": {
+      "title": "Capability Statement | AME Marketing",
+      "description": "Giới thiệu năng lực, quy mô, năng lực dịch vụ và kinh nghiệm thị trường của AME."
+    },
+    "careers": {
+      "title": "Tuyển dụng | Gia nhập AME Marketing",
+      "description": "Cơ hội nghề nghiệp tại AME - môi trường marketing chiến lược, đa văn hoá Việt – Nhật."
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp | AME Marketing",
+      "description": "Giải đáp về quy trình, chi phí, cam kết và cách AME hợp tác cùng khách hàng."
+    },
+    "privacy": {
+      "title": "Chính sách bảo mật | AME Marketing",
+      "description": "Chính sách bảo mật và xử lý dữ liệu cá nhân của AME."
+    },
+    "terms": {
+      "title": "Điều khoản sử dụng | AME Marketing",
+      "description": "Điều khoản và điều kiện sử dụng website AME."
+    },
+    "offices": {
+      "title": "Hệ thống văn phòng | AME Marketing",
+      "description": "Trụ sở chính tại Hà Nội cùng các chi nhánh Đà Nẵng, TP. HCM và Tokyo của AME Marketing."
+    },
+    "serviceDetailSuffix": "Dịch vụ AME",
+    "caseDetailSuffix": "Case study AME"
+  },
+  "nav": {
+    "services": "Dịch vụ",
+    "cases": "Dự án",
+    "about": "Về chúng tôi",
+    "insights": "Insights",
+    "offices": "Văn phòng",
+    "contact": "Liên hệ",
+    "cta": "Trao đổi cùng AME"
+  },
+  "common": {
+    "startProject": "Tư vấn miễn phí",
+    "seeWork": "Xem dự án tiêu biểu",
+    "learnMore": "Tìm hiểu thêm",
+    "getInTouch": "Liên hệ ngay",
+    "readMore": "Đọc thêm",
+    "allCases": "Xem tất cả dự án",
+    "caseChallenge": "Thách thức",
+    "caseSolution": "Giải pháp",
+    "caseResults": "Kết quả",
+    "viewCaseStudy": "Xem case study"
+  },
+  "home": {
+    "eyebrow": "MARKETING CHIẾN LƯỢC",
+    "h1a": "Chiến lược rõ ràng.",
+    "h1b": "Triển khai",
+    "h1c": "tinh tế.",
+    "h1cAccent": "tinh tế.",
+    "lead": "AME Marketing đồng hành cùng doanh nghiệp Việt Nam và quốc tế xây dựng thương hiệu, sáng tạo nội dung và vận hành các chiến dịch hiệu quả - bền vững theo thời gian.",
+    "metaYears": "12 năm kinh nghiệm",
+    "metaProjects": "80+ dự án",
+    "metaMarkets": "4 thị trường APAC",
+    "trust": "Được tin chọn bởi",
+    "trustHeadline": "Hơn 200+ thương hiệu đã đồng hành cùng AME để",
+    "trustHeadlineAccent": "tăng trưởng bền vững.",
+    "servicesEyebrow": "DỊCH VỤ",
+    "servicesTitle": "Một đội ngũ - ba năng lực ",
+    "servicesTitleAccent": "cốt lõi.",
+    "services": [
+      {
+        "title": "Chiến lược thương hiệu",
+        "desc": "Định vị, kiến trúc thương hiệu và lộ trình tăng trưởng dựa trên dữ liệu thị trường."
+      },
+      {
+        "title": "Sáng tạo & Sản xuất",
+        "desc": "Bộ nhận diện, nội dung, hình ảnh và TVC - chỉn chu trong từng chi tiết."
+      },
+      {
+        "title": "Digital & Hiệu quả",
+        "desc": "Triển khai đa kênh, đo lường minh bạch và tối ưu liên tục theo mục tiêu kinh doanh."
+      }
+    ],
+    "seeAllServices": "Xem tất cả dịch vụ",
+    "featuredEyebrow": "DỰ ÁN TIÊU BIỂU",
+    "featuredTitle": "Định vị lại thương hiệu cho ",
+    "featuredTitleAccent": "KAISHI Travel",
+    "featuredDesc": "Chiến lược thương hiệu mới, hệ thống nhận diện và chiến dịch ra mắt giúp KAISHI tiếp cận thị trường Nhật và mở rộng tệp khách APAC.",
+    "featuredStats": [
+      {
+        "value": "+182%",
+        "label": "Lưu lượng tự nhiên"
+      },
+      {
+        "value": "3.4×",
+        "label": "Đặt chỗ trực tuyến"
+      },
+      {
+        "value": "28",
+        "label": "Thị trường tiếp cận"
+      }
+    ],
+    "featuredCta": "Xem case study",
+    "processEyebrow": "QUY TRÌNH",
+    "processTitle": "Bốn bước, một đường dài.",
+    "processSteps": [
+      {
+        "title": "Lắng nghe",
+        "desc": "Hiểu doanh nghiệp, mục tiêu và thị trường trước khi đề xuất."
+      },
+      {
+        "title": "Chiến lược",
+        "desc": "Định vị, thông điệp và lộ trình triển khai rõ ràng."
+      },
+      {
+        "title": "Sáng tạo",
+        "desc": "Nội dung và thiết kế phục vụ chiến lược, không trang trí."
+      },
+      {
+        "title": "Vận hành",
+        "desc": "Đo lường liên tục, tối ưu theo dữ liệu thật."
+      }
+    ],
+    "quote": "AME không chỉ là một agency - họ trở thành một phần trong đội ngũ của chúng tôi, kiên nhẫn và ",
+    "quoteAccent": "tinh tế",
+    "quoteAuthor": "Lê Hà",
+    "quoteRole": "Marketing Director, KAISHI Travel",
+    "ctaTitle": "Sẵn sàng bắt đầu một chương ",
+    "ctaTitleAccent": "mới?",
+    "ctaSub": "Hãy nói cho chúng tôi biết về thương hiệu và mục tiêu của bạn. Cuộc trò chuyện đầu tiên luôn miễn phí."
+  },
+  "services": {
+    "eyebrow": "DỊCH VỤ",
+    "title": "Giải pháp marketing ",
+    "titleAccent": "trọn gói.",
+    "sub": "Bốn năng lực phối hợp chặt chẽ - từ chiến lược tới triển khai - phục vụ doanh nghiệp ở mọi giai đoạn.",
+    "items": [
+      {
+        "title": "Tư vấn chiến lược",
+        "desc": "Phân tích thị trường, định vị thương hiệu và lộ trình phát triển dài hạn.",
+        "bullets": [
+          "Phân tích thị trường",
+          "Định vị thương hiệu",
+          "Lộ trình tăng trưởng"
+        ]
+      },
+      {
+        "title": "Digital Marketing",
+        "desc": "Triển khai đa kênh trên Facebook, Google, TikTok - đo lường, tối ưu liên tục.",
+        "bullets": [
+          "Performance Ads",
+          "SEO & Analytics",
+          "CRM & Automation"
+        ]
+      },
+      {
+        "title": "Content Marketing",
+        "desc": "Bài viết, hình ảnh, video và infographic chuẩn nội dung và chuẩn SEO.",
+        "bullets": [
+          "Content Strategy",
+          "Editorial & Social",
+          "Thiết kế thị giác"
+        ]
+      },
+      {
+        "title": "Media Production",
+        "desc": "Quay/chụp sản phẩm, TVC và animation chuyên nghiệp, nâng tầm hình ảnh thương hiệu.",
+        "bullets": [
+          "TVC & Phóng sự",
+          "Product Photography",
+          "Motion & Animation"
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "DỰ ÁN",
+    "title": "Câu chuyện của những thương hiệu ",
+    "titleAccent": "chúng tôi đồng hành.",
+    "sub": "Chọn theo lĩnh vực để xem chi tiết.",
+    "filters": [
+      {
+        "id": "all",
+        "label": "Tất cả"
+      },
+      {
+        "id": "branding",
+        "label": "Branding"
+      },
+      {
+        "id": "digital",
+        "label": "Digital"
+      },
+      {
+        "id": "growth",
+        "label": "Growth"
+      },
+      {
+        "id": "healthcare",
+        "label": "Healthcare"
+      },
+      {
+        "id": "apac",
+        "label": "APAC"
+      }
+    ],
+    "items": [
+      {
+        "title": "VinFast - Vì tương lai xanh",
+        "client": "VinFast",
+        "tag": "growth",
+        "metric": "20M",
+        "metricLabel": "lượt tiếp cận"
+      },
+      {
+        "title": "Ra mắt Smartweb Auto 5.0",
+        "client": "Bizfly VCCorp",
+        "tag": "growth",
+        "metric": "200",
+        "metricLabel": "khách dự sự kiện"
+      },
+      {
+        "title": "Viral TikTok cho CLB Bắn Súng",
+        "client": "CLB Bắn Súng thể thao",
+        "tag": "digital",
+        "metric": "5×",
+        "metricLabel": "doanh số"
+      },
+      {
+        "title": "Push sale FB Ads cho Sách Honya",
+        "client": "Sách Honya",
+        "tag": "digital",
+        "metric": "−50%",
+        "metricLabel": "chi phí ads"
+      },
+      {
+        "title": "Push sale FB Ads cho An Điền",
+        "client": "Công ty An Điền",
+        "tag": "digital",
+        "metric": "−50%",
+        "metricLabel": "chi phí ads"
+      },
+      {
+        "title": "Brand awareness cho Nha khoa SHINBI",
+        "client": "Nha khoa SHINBI",
+        "tag": "branding",
+        "metric": "OOH+TV",
+        "metricLabel": "đa kênh"
+      },
+      {
+        "title": "SEO US market cho KoolSoft",
+        "client": "KoolSoft",
+        "tag": "digital",
+        "metric": "7K",
+        "metricLabel": "traffic/ngày"
+      },
+      {
+        "title": "Hệ sinh thái Homegy Smarthome",
+        "client": "Homegy",
+        "tag": "branding",
+        "metric": "Multi",
+        "metricLabel": "kênh tích hợp"
+      },
+      {
+        "title": "Gọi vốn quốc tế cho Bệnh viện CSM",
+        "client": "Bệnh viện đa khoa CSM",
+        "tag": "healthcare",
+        "metric": "12",
+        "metricLabel": "hồ sơ pháp lý"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "VỀ AME",
+    "title": "Một đội ngũ tin vào ",
+    "titleAccent": "sự tinh tế.",
+    "story": [
+      "AME Marketing được thành lập tại Hà Nội với một niềm tin đơn giản: marketing tốt phải bắt đầu từ chiến lược rõ ràng, được triển khai bằng sự tinh tế và đo lường bằng kết quả thật.",
+      "Mười hai năm qua, chúng tôi đồng hành cùng các doanh nghiệp Việt Nam và Nhật Bản - từ startup tới tập đoàn - xây dựng thương hiệu bền vững và tăng trưởng có trách nhiệm."
+    ],
+    "valuesEyebrow": "GIÁ TRỊ",
+    "valuesTitle": "Bốn nguyên tắc dẫn đường.",
+    "values": [
+      {
+        "title": "Rõ ràng",
+        "desc": "Mọi chiến lược bắt đầu bằng câu hỏi đúng và một lý do thuyết phục."
+      },
+      {
+        "title": "Tinh tế",
+        "desc": "Chú ý từng chi tiết - vì chính chi tiết tạo nên sự khác biệt."
+      },
+      {
+        "title": "Đồng hành",
+        "desc": "Chúng tôi làm việc cùng khách hàng, không làm việc cho khách hàng."
+      },
+      {
+        "title": "Tăng trưởng",
+        "desc": "Hiệu quả không phải ngẫu nhiên - đó là kết quả của vận hành kỷ luật."
+      }
+    ],
+    "teamEyebrow": "ĐỘI NGŨ",
+    "teamTitle": "Những con người đứng sau AME.",
+    "team": [
+      {
+        "name": "Nguyễn An",
+        "role": "Founder & Chiến lược"
+      },
+      {
+        "name": "Trần Mai",
+        "role": "Creative Director"
+      },
+      {
+        "name": "Phạm Khôi",
+        "role": "Head of Performance"
+      },
+      {
+        "name": "Yamada Kenji",
+        "role": "Japan Market Lead"
+      }
+    ],
+    "officesEyebrow": "VĂN PHÒNG",
+    "officesTitle": "Hiện diện tại ba thành phố.",
+    "offices": [
+      {
+        "city": "Hà Nội",
+        "address": "Tầng 2, Tòa Gemek 1, An Khánh, Hoài Đức",
+        "meta": "Trụ sở chính"
+      },
+      {
+        "city": "Đà Nẵng",
+        "address": "Studio sản xuất & sáng tạo miền Trung",
+        "meta": "Production hub"
+      },
+      {
+        "city": "Tokyo",
+        "address": "Đại diện thị trường Nhật Bản & APAC",
+        "meta": "Japan desk"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "LIÊN HỆ",
+    "title": "Hãy bắt đầu cuộc trò chuyện ",
+    "titleAccent": "đầu tiên.",
+    "sub": "Để lại thông tin hoặc nhắn trực tiếp qua WhatsApp, chúng tôi sẽ phản hồi trong vòng 24h làm việc.",
+    "form": {
+      "name": "Họ và tên",
+      "email": "Email",
+      "company": "Công ty",
+      "type": "Loại dự án",
+      "typeOptions": [
+        "Chiến lược thương hiệu",
+        "Digital & Performance",
+        "Sáng tạo & Sản xuất",
+        "Khác"
+      ],
+      "message": "Mô tả ngắn về dự án",
+      "submit": "Gửi tin nhắn",
+      "via": "Hoặc liên hệ trực tiếp:",
+      "whatsapp": "Chat qua WhatsApp",
+      "mail": "Gửi email"
+    },
+    "info": {
+      "heading": "AME Marketing",
+      "tagline": "Strategic clarity. Refined execution.",
+      "businessTitle": "Thông tin doanh nghiệp",
+      "businessLines": [
+        "Công ty TNHH AME Marketing",
+        "MST: 0110699895"
+      ],
+      "directTitle": "Liên hệ trực tiếp",
+      "directLines": [
+        "amemartech@gmail.com",
+        "+84 941 076 762"
+      ],
+      "officeTitle": "Văn phòng",
+      "officeLines": [
+        "Tầng 2, Tòa Gemek 1",
+        "An Khánh, Hoài Đức, Hà Nội"
+      ]
+    },
+    "mapEyebrow": "BẢN ĐỒ",
+    "mapTitle": "Ghé thăm văn phòng AME",
+    "mapSub": "Trụ sở chính tại Tòa Gemek 1, An Khánh - chỉ 25 phút từ trung tâm Hà Nội.",
+    "mapCta": "Mở Google Maps"
+  },
+  "insights": {
+    "eyebrow": "INSIGHTS",
+    "title": "Tin tức & ",
+    "titleAccent": "góc nhìn.",
+    "sub": "Cập nhật xu hướng marketing, branding và case studies thực tiễn từ thị trường Việt Nam, Nhật Bản và APAC.",
+    "stats": [
+      {
+        "value": "50+",
+        "label": "Bài viết chuyên sâu"
+      },
+      {
+        "value": "100K+",
+        "label": "Lượt đọc mỗi tháng"
+      },
+      {
+        "value": "24/7",
+        "label": "Cập nhật liên tục"
+      }
+    ],
+    "featuredLabel": "BÀI VIẾT NỔI BẬT",
+    "featuredCategory": "Chiến lược",
+    "featuredDate": "15.04.2025",
+    "featuredTitle": "CRM & Marketing Automation: Vì sao 2025 là năm bứt phá",
+    "featuredExcerpt": "Khi chi phí quảng cáo tiếp tục tăng, các doanh nghiệp Việt buộc phải tối ưu vòng đời khách hàng. Phân tích cách CRM và automation đang thay đổi cuộc chơi.",
+    "featuredAuthor": "Nguyễn An - Founder, AME",
+    "trendsTitle": "Xu hướng marketing đang lên",
+    "trends": [
+      {
+        "title": "AI Marketing",
+        "desc": "Cá nhân hoá nội dung quy mô lớn nhờ generative AI.",
+        "growth": "+340%"
+      },
+      {
+        "title": "Voice Commerce",
+        "desc": "Tìm kiếm và đặt hàng qua giọng nói tăng mạnh tại APAC.",
+        "growth": "+128%"
+      },
+      {
+        "title": "Sustainable Brand",
+        "desc": "Người tiêu dùng trẻ ưu tiên thương hiệu bền vững.",
+        "growth": "+89%"
+      },
+      {
+        "title": "Micro-Influencer",
+        "desc": "ROI cao hơn KOL lớn nhờ niềm tin và mức độ gắn kết.",
+        "growth": "+215%"
+      }
+    ],
+    "trendCtaTitle": "Cần tư vấn cho thương hiệu của bạn?",
+    "trendCtaSub": "Đặt lịch 30 phút trao đổi miễn phí với chuyên gia AME.",
+    "trendCtaBtn": "Tư vấn miễn phí",
+    "postsTitle": "Bài viết mới nhất",
+    "postsSub": "Lựa chọn từ blog AME - đọc nhanh, áp dụng ngay.",
+    "posts": [
+      {
+        "category": "AI",
+        "date": "12.04.2025",
+        "title": "Generative AI trong content marketing 2025",
+        "excerpt": "Bộ công cụ AI giúp đội nhỏ sản xuất nội dung chất lượng đều đặn."
+      },
+      {
+        "category": "Voice",
+        "date": "08.04.2025",
+        "title": "Voice search: Bí quyết tối ưu cho thương hiệu Việt",
+        "excerpt": "Cách cấu trúc nội dung để xuất hiện trong kết quả tìm kiếm bằng giọng nói."
+      },
+      {
+        "category": "ESG",
+        "date": "02.04.2025",
+        "title": "Sustainable marketing - không còn là tuỳ chọn",
+        "excerpt": "Người tiêu dùng Gen Z lựa chọn thương hiệu dựa trên giá trị bền vững."
+      },
+      {
+        "category": "Influencer",
+        "date": "27.03.2025",
+        "title": "Micro-influencer: ROI vượt trội trong 2025",
+        "excerpt": "Vì sao 10 micro-influencer hiệu quả hơn 1 mega-influencer cho ngân sách trung bình."
+      },
+      {
+        "category": "Content",
+        "date": "20.03.2025",
+        "title": "Content strategy 2025: Storytelling lên ngôi",
+        "excerpt": "Khung làm nội dung tập trung vào câu chuyện thương hiệu, không chỉ thông tin."
+      },
+      {
+        "category": "Performance",
+        "date": "14.03.2025",
+        "title": "Đo lường brand lift trong kỷ nguyên cookieless",
+        "excerpt": "Phương pháp mới đo tác động thương hiệu khi cookie biến mất."
+      }
+    ],
+    "comingSoon": "Bài viết đầy đủ sẽ ra mắt sớm."
+  },
+  "footer": {
+    "tagline": "Chiến lược rõ ràng. Triển khai tinh tế.",
+    "officesTitle": "Văn phòng",
+    "offices": [
+      "Hà Nội - Trụ sở",
+      "Đà Nẵng - Production",
+      "Tokyo - Japan desk"
+    ],
+    "linksTitle": "Liên kết",
+    "links": [
+      {
+        "label": "Dịch vụ",
+        "href": "/services"
+      },
+      {
+        "label": "Dự án",
+        "href": "/cases"
+      },
+      {
+        "label": "Về chúng tôi",
+        "href": "/about"
+      },
+      {
+        "label": "Liên hệ",
+        "href": "/contact"
+      }
+    ],
+    "newsletterTitle": "Nhận insights hàng tháng",
+    "newsletterSub": "Một bản tin ngắn về thương hiệu, marketing và thị trường APAC.",
+    "newsletterPlaceholder": "your@email.com",
+    "newsletterCta": "Đăng ký",
+    "rights": "© 2025 AME Marketing. All rights reserved.",
+    "tax": "MST 0110699895",
+    "addressLabel": "Tầng 2, Tòa Gemek 1, An Khánh, Hà Nội"
+  }
+}

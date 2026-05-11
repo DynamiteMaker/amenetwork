@@ -1,0 +1,537 @@
+{
+  "seo": {
+    "siteName": "AME Marketing",
+    "home": {
+      "title": "AME Marketing - 清晰策略，精致执行。",
+      "description": "连接越南与日本品牌的策略营销机构。品牌、数字、效果、PR/IMC、内容制作与市场拓展。"
+    },
+    "services": {
+      "title": "全方位营销服务 | AME",
+      "description": "八大业务：品牌、数字、效果、社交内容、网站、制作、PR/IMC、市场拓展。"
+    },
+    "cases": {
+      "title": "代表项目 | AME Marketing",
+      "description": "AME 与越南、日本品牌在多个行业的精选案例。"
+    },
+    "about": {
+      "title": "关于 AME Marketing | 清晰策略",
+      "description": "AME 的故事、价值观、团队，以及河内与胡志明市两大办公室。"
+    },
+    "insights": {
+      "title": "洞察与文章 | AME Marketing",
+      "description": "AME 团队的观点、趋势与一线实战经验。"
+    },
+    "contact": {
+      "title": "联系 AME Marketing",
+      "description": "提交需求、预约免费咨询，或前往河内与胡志明市的办公室。"
+    },
+    "capability": {
+      "title": "能力说明 | AME Marketing",
+      "description": "AME 的能力、规模、服务深度与市场经验。"
+    },
+    "careers": {
+      "title": "招聘 | 加入 AME Marketing",
+      "description": "AME 提供越日跨文化的策略营销职业机会。"
+    },
+    "faq": {
+      "title": "常见问题 | AME Marketing",
+      "description": "AME 的合作流程、报价、承诺与协作方式。"
+    },
+    "privacy": {
+      "title": "隐私政策 | AME Marketing",
+      "description": "AME 个人数据的处理方式。"
+    },
+    "terms": {
+      "title": "使用条款 | AME Marketing",
+      "description": "AME 网站使用条款与条件。"
+    },
+    "offices": {
+      "title": "办公室一览 | AME Marketing",
+      "description": "AME Marketing 河内总部以及岘港、胡志明市、东京分支机构。"
+    },
+    "serviceDetailSuffix": "AME 服务",
+    "caseDetailSuffix": "AME 案例"
+  },
+  "nav": {
+    "services": "服务",
+    "cases": "案例",
+    "about": "关于我们",
+    "insights": "洞察",
+    "offices": "办公室",
+    "contact": "联系我们",
+    "cta": "聊一聊"
+  },
+  "common": {
+    "startProject": "免费咨询",
+    "seeWork": "查看作品",
+    "learnMore": "了解更多",
+    "getInTouch": "立即联系",
+    "readMore": "阅读更多",
+    "allCases": "查看全部案例",
+    "caseChallenge": "挑战",
+    "caseSolution": "解决方案",
+    "caseResults": "成果",
+    "viewCaseStudy": "查看案例研究"
+  },
+  "home": {
+    "eyebrow": "战略营销",
+    "h1a": "清晰的战略。",
+    "h1b": "精致的",
+    "h1c": "执行。",
+    "h1cAccent": "执行。",
+    "lead": "AME 营销与越南、日本及亚太地区的企业并肩同行,以稳健的策略、细腻的创意与可持续的运营,陪伴品牌穿越周期。",
+    "metaYears": "12 年实践",
+    "metaProjects": "80+ 项目交付",
+    "metaMarkets": "亚太 4 市场",
+    "trust": "值得信赖的合作伙伴",
+    "trustHeadline": "200+ 品牌选择 AME 携手",
+    "trustHeadlineAccent": "实现可持续增长。",
+    "servicesEyebrow": "服务",
+    "servicesTitle": "一个团队,三项",
+    "servicesTitleAccent": "核心能力。",
+    "services": [
+      {
+        "title": "品牌战略",
+        "desc": "基于市场洞察的定位、品牌体系与增长路线图。"
+      },
+      {
+        "title": "创意制作",
+        "desc": "VI、内容、视觉与 TVC - 注重每一个细节。"
+      },
+      {
+        "title": "数字与效果",
+        "desc": "多渠道执行、透明的衡量与持续优化。"
+      }
+    ],
+    "seeAllServices": "查看全部服务",
+    "featuredEyebrow": "精选案例",
+    "featuredTitle": "重新定位 ",
+    "featuredTitleAccent": "KAISHI Travel",
+    "featuredDesc": "全新的品牌战略、视觉系统与上市活动,帮助 KAISHI 进入日本市场并扩大亚太用户群。",
+    "featuredStats": [
+      {
+        "value": "+182%",
+        "label": "自然流量"
+      },
+      {
+        "value": "3.4×",
+        "label": "在线预订"
+      },
+      {
+        "value": "28",
+        "label": "覆盖市场"
+      }
+    ],
+    "featuredCta": "查看案例",
+    "processEyebrow": "我们的流程",
+    "processTitle": "四步,一段长路。",
+    "processSteps": [
+      {
+        "title": "倾听",
+        "desc": "在提案之前,先理解业务、目标与市场。"
+      },
+      {
+        "title": "战略",
+        "desc": "清晰的定位、信息与可衡量的路线图。"
+      },
+      {
+        "title": "创意",
+        "desc": "服务于战略的内容与设计,而非装饰。"
+      },
+      {
+        "title": "运营",
+        "desc": "基于真实数据的持续衡量与优化。"
+      }
+    ],
+    "quote": "AME 不只是一家代理公司 - 他们成为我们团队的一员,耐心而",
+    "quoteAccent": "细腻",
+    "quoteAuthor": "Le Ha",
+    "quoteRole": "市场总监, KAISHI Travel",
+    "ctaTitle": "准备好开启",
+    "ctaTitleAccent": "新篇章了吗?",
+    "ctaSub": "告诉我们关于品牌与目标的故事。第一次对话,永远免费。"
+  },
+  "services": {
+    "eyebrow": "服务",
+    "title": "端到端的营销,",
+    "titleAccent": "从容交付。",
+    "sub": "四项能力协同 - 从战略到执行 - 适用于不同阶段的企业。",
+    "items": [
+      {
+        "title": "战略咨询",
+        "desc": "市场分析、品牌定位与长期增长路线图。",
+        "bullets": [
+          "市场分析",
+          "品牌定位",
+          "增长路线"
+        ]
+      },
+      {
+        "title": "数字营销",
+        "desc": "Meta、Google、TikTok 多渠道执行,持续衡量与优化。",
+        "bullets": [
+          "效果广告",
+          "SEO 与分析",
+          "CRM 与自动化"
+        ]
+      },
+      {
+        "title": "内容营销",
+        "desc": "图文、视频与信息图 - 既符合战略,又契合 SEO。",
+        "bullets": [
+          "内容战略",
+          "编辑与社交",
+          "视觉设计"
+        ]
+      },
+      {
+        "title": "媒体制作",
+        "desc": "产品摄影、TVC 与动画 - 以工艺提升品牌形象。",
+        "bullets": [
+          "TVC 与纪录",
+          "产品摄影",
+          "动效与动画"
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "案例",
+    "title": "与我们同行的",
+    "titleAccent": "品牌故事。",
+    "sub": "按领域筛选了解更多。",
+    "filters": [
+      {
+        "id": "all",
+        "label": "全部"
+      },
+      {
+        "id": "branding",
+        "label": "品牌"
+      },
+      {
+        "id": "digital",
+        "label": "数字"
+      },
+      {
+        "id": "growth",
+        "label": "增长"
+      },
+      {
+        "id": "healthcare",
+        "label": "医疗"
+      },
+      {
+        "id": "apac",
+        "label": "亚太"
+      }
+    ],
+    "items": [
+      {
+        "title": "VinFast - 为了绿色未来",
+        "client": "VinFast",
+        "tag": "growth",
+        "metric": "20M",
+        "metricLabel": "触达"
+      },
+      {
+        "title": "Smartweb Auto 5.0 发布",
+        "client": "Bizfly VCCorp",
+        "tag": "growth",
+        "metric": "200",
+        "metricLabel": "活动嘉宾"
+      },
+      {
+        "title": "射击俱乐部 TikTok 病毒传播",
+        "client": "射击运动俱乐部",
+        "tag": "digital",
+        "metric": "5×",
+        "metricLabel": "销售"
+      },
+      {
+        "title": "Honya 图书 FB 广告",
+        "client": "Honya Books",
+        "tag": "digital",
+        "metric": "−50%",
+        "metricLabel": "广告成本"
+      },
+      {
+        "title": "An Dien FB 广告",
+        "client": "An Dien",
+        "tag": "digital",
+        "metric": "−50%",
+        "metricLabel": "广告成本"
+      },
+      {
+        "title": "SHINBI 牙科品牌认知",
+        "client": "SHINBI Dental",
+        "tag": "branding",
+        "metric": "OOH+TV",
+        "metricLabel": "多渠道"
+      },
+      {
+        "title": "KoolSoft 美国 SEO",
+        "client": "KoolSoft",
+        "tag": "digital",
+        "metric": "7K",
+        "metricLabel": "日流量"
+      },
+      {
+        "title": "Homegy 智能家居生态",
+        "client": "Homegy",
+        "tag": "branding",
+        "metric": "Multi",
+        "metricLabel": "整合渠道"
+      },
+      {
+        "title": "CSM 医院国际融资",
+        "client": "CSM 综合医院",
+        "tag": "healthcare",
+        "metric": "12",
+        "metricLabel": "法律文件"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "关于 AME",
+    "title": "一支信奉",
+    "titleAccent": "细腻的团队。",
+    "story": [
+      "AME 营销创立于河内,源于一个朴素的信念:好的营销始于清晰的战略,以工艺执行,以真实成果衡量。",
+      "十二年来,我们与越南与日本的企业 - 从初创到集团 - 共同打造可持续的品牌,实现负责任的增长。"
+    ],
+    "valuesEyebrow": "价值观",
+    "valuesTitle": "四项原则,指引前行。",
+    "values": [
+      {
+        "title": "清晰",
+        "desc": "每项战略都从正确的问题与有力的理由开始。"
+      },
+      {
+        "title": "工艺",
+        "desc": "差异藏在细节里 - 我们关注每一处细节。"
+      },
+      {
+        "title": "伙伴",
+        "desc": "我们与客户一起工作,而不只是为客户工作。"
+      },
+      {
+        "title": "增长",
+        "desc": "效果不是侥幸,而是有纪律的执行结果。"
+      }
+    ],
+    "teamEyebrow": "团队",
+    "teamTitle": "AME 背后的人。",
+    "team": [
+      {
+        "name": "Nguyen An",
+        "role": "创始人 / 战略"
+      },
+      {
+        "name": "Tran Mai",
+        "role": "创意总监"
+      },
+      {
+        "name": "Pham Khoi",
+        "role": "效果营销负责人"
+      },
+      {
+        "name": "山田 健司",
+        "role": "日本市场负责人"
+      }
+    ],
+    "officesEyebrow": "办公室",
+    "officesTitle": "三座城市的足迹。",
+    "offices": [
+      {
+        "city": "河内",
+        "address": "Gemek 1 大厦 2 层,An Khanh,Hoai Duc",
+        "meta": "总部"
+      },
+      {
+        "city": "岘港",
+        "address": "中部制作与创意工作室",
+        "meta": "制作中心"
+      },
+      {
+        "city": "东京",
+        "address": "日本与亚太市场代表处",
+        "meta": "Japan desk"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "联系",
+    "title": "从",
+    "titleAccent": "第一次对话开始。",
+    "sub": "留下需求,或通过 WhatsApp 直接联系我们,我们将在一个工作日内回复。",
+    "form": {
+      "name": "姓名",
+      "email": "邮箱",
+      "company": "公司",
+      "type": "项目类型",
+      "typeOptions": [
+        "品牌战略",
+        "数字与效果",
+        "创意与制作",
+        "其他"
+      ],
+      "message": "简要介绍项目",
+      "submit": "发送信息",
+      "via": "或直接联系我们:",
+      "whatsapp": "通过 WhatsApp 联系",
+      "mail": "发送邮件"
+    },
+    "info": {
+      "heading": "AME Marketing",
+      "tagline": "Strategic clarity. Refined execution.",
+      "businessTitle": "企业信息",
+      "businessLines": [
+        "AME Marketing Co., Ltd.",
+        "税号: 0110699895"
+      ],
+      "directTitle": "直接联系",
+      "directLines": [
+        "amemartech@gmail.com",
+        "+84 941 076 762"
+      ],
+      "officeTitle": "办公室",
+      "officeLines": [
+        "Gemek 1 大厦 2 层",
+        "An Khanh, Hoai Duc, 河内"
+      ]
+    },
+    "mapEyebrow": "地图",
+    "mapTitle": "欢迎到访 AME 办公室",
+    "mapSub": "总部位于 Gemek 1 大厦,An Khanh - 距河内市中心约 25 分钟。",
+    "mapCta": "在 Google 地图打开"
+  },
+  "insights": {
+    "eyebrow": "洞察",
+    "title": "资讯与 ",
+    "titleAccent": "观点。",
+    "sub": "汇集越南、日本及亚太地区的营销趋势、品牌研究与实战案例。",
+    "stats": [
+      {
+        "value": "50+",
+        "label": "深度文章"
+      },
+      {
+        "value": "100K+",
+        "label": "月阅读量"
+      },
+      {
+        "value": "24/7",
+        "label": "持续更新"
+      }
+    ],
+    "featuredLabel": "精选文章",
+    "featuredCategory": "战略",
+    "featuredDate": "2025.04.15",
+    "featuredTitle": "CRM 与营销自动化:为何 2025 是关键之年",
+    "featuredExcerpt": "媒体成本持续上升,品牌必须优化客户生命周期。本文解析 CRM 与自动化如何悄然改变格局。",
+    "featuredAuthor": "Nguyen An - Founder, AME",
+    "trendsTitle": "值得关注的营销趋势",
+    "trends": [
+      {
+        "title": "AI 营销",
+        "desc": "借助生成式 AI 实现大规模个性化。",
+        "growth": "+340%"
+      },
+      {
+        "title": "语音商务",
+        "desc": "亚太地区语音搜索与下单快速增长。",
+        "growth": "+128%"
+      },
+      {
+        "title": "可持续品牌",
+        "desc": "年轻消费者倾向有 ESG 价值的品牌。",
+        "growth": "+89%"
+      },
+      {
+        "title": "微影响者",
+        "desc": "信任与互动度让 ROI 超过大 KOL。",
+        "growth": "+215%"
+      }
+    ],
+    "trendCtaTitle": "需要为您的品牌量身定制策略?",
+    "trendCtaSub": "预约 AME 专家 30 分钟免费咨询。",
+    "trendCtaBtn": "免费咨询",
+    "postsTitle": "最新文章",
+    "postsSub": "精选自 AME 博客 - 简短易用。",
+    "posts": [
+      {
+        "category": "AI",
+        "date": "2025.04.12",
+        "title": "2025 年内容营销中的生成式 AI",
+        "excerpt": "助力小团队持续产出高质量内容的 AI 工具集。"
+      },
+      {
+        "category": "语音",
+        "date": "2025.04.08",
+        "title": "语音搜索:越南品牌的优化要点",
+        "excerpt": "如何构建内容,以出现在语音搜索结果中。"
+      },
+      {
+        "category": "ESG",
+        "date": "2025.04.02",
+        "title": "可持续营销不再是可选项",
+        "excerpt": "Z 世代以可持续价值挑选品牌。"
+      },
+      {
+        "category": "影响者",
+        "date": "2025.03.27",
+        "title": "2025 年微影响者的高 ROI",
+        "excerpt": "中等预算下 10 位微影响者胜过 1 位大 KOL 的原因。"
+      },
+      {
+        "category": "内容",
+        "date": "2025.03.20",
+        "title": "2025 内容战略:故事力崛起",
+        "excerpt": "以品牌叙事为核心,而非单纯信息的框架。"
+      },
+      {
+        "category": "效果",
+        "date": "2025.03.14",
+        "title": "无 Cookie 时代的品牌提升衡量",
+        "excerpt": "Cookie 消失后衡量品牌影响的新方法。"
+      }
+    ],
+    "comingSoon": "全文即将上线。"
+  },
+  "footer": {
+    "tagline": "清晰的战略。精致的执行。",
+    "officesTitle": "办公室",
+    "offices": [
+      "河内 - 总部",
+      "岘港 - 制作",
+      "东京 - Japan desk"
+    ],
+    "linksTitle": "链接",
+    "links": [
+      {
+        "label": "服务",
+        "href": "/services"
+      },
+      {
+        "label": "案例",
+        "href": "/cases"
+      },
+      {
+        "label": "关于我们",
+        "href": "/about"
+      },
+      {
+        "label": "联系",
+        "href": "/contact"
+      }
+    ],
+    "newsletterTitle": "每月洞察",
+    "newsletterSub": "一份关于品牌、营销与亚太市场的简短通讯。",
+    "newsletterPlaceholder": "your@email.com",
+    "newsletterCta": "订阅",
+    "rights": "© 2025 AME Marketing. 版权所有。",
+    "tax": "税号 0110699895",
+    "addressLabel": "Gemek 1 大厦 2 层, An Khanh, 河内"
+  }
+}

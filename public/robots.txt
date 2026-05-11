@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amenetwork.lovable.app/sitemap.xml

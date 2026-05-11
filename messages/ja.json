@@ -1,0 +1,537 @@
+{
+  "seo": {
+    "siteName": "AME Marketing",
+    "home": {
+      "title": "AME Marketing - 明確な戦略、洗練された実行。",
+      "description": "ベトナムと日本のブランドをつなぐ戦略マーケティングエージェンシー。ブランディング、デジタル、パフォーマンス、PR/IMC、制作、市場拡大。"
+    },
+    "services": {
+      "title": "総合マーケティングサービス | AME",
+      "description": "8つの専門領域：ブランディング、デジタル、パフォーマンス、ソーシャル＆コンテンツ、ウェブ、プロダクション、PR/IMC、市場拡大。"
+    },
+    "cases": {
+      "title": "主要プロジェクト | AME Marketing",
+      "description": "業界を横断するベトナム・日本ブランドとのAMEの実績。"
+    },
+    "about": {
+      "title": "AME Marketingについて | 明確な戦略",
+      "description": "AMEのストーリー、価値観、チーム、ハノイとホーチミンの2拠点。"
+    },
+    "insights": {
+      "title": "インサイト・記事 | AME Marketing",
+      "description": "AMEチームによる視点、トレンド、現場からの学び。"
+    },
+    "contact": {
+      "title": "AME Marketingへのお問い合わせ",
+      "description": "ブリーフ送付、無料相談のご予約、ハノイ・ホーチミン拠点のご案内。"
+    },
+    "capability": {
+      "title": "ケイパビリティ・ステートメント | AME Marketing",
+      "description": "AMEの能力、規模、サービス深度、市場経験のご紹介。"
+    },
+    "careers": {
+      "title": "採用情報 | AME Marketingに参加",
+      "description": "ベトナム・日本のクロスカルチャー戦略マーケティング環境でのキャリア機会。"
+    },
+    "faq": {
+      "title": "よくある質問 | AME Marketing",
+      "description": "AMEの進め方、価格、コミットメント、協業モデルについて。"
+    },
+    "privacy": {
+      "title": "プライバシーポリシー | AME Marketing",
+      "description": "AMEにおける個人情報の取り扱い。"
+    },
+    "terms": {
+      "title": "利用規約 | AME Marketing",
+      "description": "AMEウェブサイトの利用規約。"
+    },
+    "offices": {
+      "title": "拠点一覧 | AME Marketing",
+      "description": "AME Marketingの本社(ハノイ)とダナン、ホーチミン、東京の各拠点。"
+    },
+    "serviceDetailSuffix": "AME サービス",
+    "caseDetailSuffix": "AME ケーススタディ"
+  },
+  "nav": {
+    "services": "サービス",
+    "cases": "実績",
+    "about": "AMEについて",
+    "insights": "インサイト",
+    "offices": "拠点",
+    "contact": "お問い合わせ",
+    "cta": "ご相談する"
+  },
+  "common": {
+    "startProject": "無料相談",
+    "seeWork": "実績を見る",
+    "learnMore": "詳しく見る",
+    "getInTouch": "お問い合わせ",
+    "readMore": "続きを読む",
+    "allCases": "すべての実績を見る",
+    "caseChallenge": "課題",
+    "caseSolution": "ソリューション",
+    "caseResults": "成果",
+    "viewCaseStudy": "ケーススタディを見る"
+  },
+  "home": {
+    "eyebrow": "戦略的マーケティング",
+    "h1a": "戦略の明確さ。",
+    "h1b": "洗練された",
+    "h1c": "実行。",
+    "h1cAccent": "実行。",
+    "lead": "AMEマーケティングは、ベトナム・日本・APACの企業様と共に、ブランドを構築し、丁寧なクリエイティブと持続的な施策で成長を支援しています。",
+    "metaYears": "実績12年",
+    "metaProjects": "80件以上のプロジェクト",
+    "metaMarkets": "APAC 4市場",
+    "trust": "ご信頼いただいているブランド",
+    "trustHeadline": "200を超えるブランドがAMEと共に",
+    "trustHeadlineAccent": "持続的に成長しています。",
+    "servicesEyebrow": "サービス",
+    "servicesTitle": "ひとつのチーム、三つの",
+    "servicesTitleAccent": "中核機能。",
+    "services": [
+      {
+        "title": "ブランド戦略",
+        "desc": "市場データに基づくポジショニング、ブランド体系、成長ロードマップ。"
+      },
+      {
+        "title": "クリエイティブ制作",
+        "desc": "アイデンティティ、コンテンツ、ビジュアル、TVC - 細部まで丁寧に。"
+      },
+      {
+        "title": "デジタル & パフォーマンス",
+        "desc": "マルチチャネル運用、透明な計測、継続的な最適化。"
+      }
+    ],
+    "seeAllServices": "すべてのサービス",
+    "featuredEyebrow": "注目の実績",
+    "featuredTitle": "再ポジショニング:",
+    "featuredTitleAccent": "KAISHI Travel",
+    "featuredDesc": "新しいブランド戦略、アイデンティティ、ローンチキャンペーンにより、KAISHIは日本市場へ参入しAPACでの存在感を拡大しました。",
+    "featuredStats": [
+      {
+        "value": "+182%",
+        "label": "オーガニック流入"
+      },
+      {
+        "value": "3.4×",
+        "label": "オンライン予約"
+      },
+      {
+        "value": "28",
+        "label": "到達市場"
+      }
+    ],
+    "featuredCta": "ケースを読む",
+    "processEyebrow": "プロセス",
+    "processTitle": "四つのステップ、長い道のり。",
+    "processSteps": [
+      {
+        "title": "ヒアリング",
+        "desc": "提案の前に、事業・目的・市場を深く理解します。"
+      },
+      {
+        "title": "戦略",
+        "desc": "明確なポジショニング、メッセージ、計測可能な計画。"
+      },
+      {
+        "title": "クリエイティブ",
+        "desc": "戦略に資するコンテンツとデザイン。装飾ではありません。"
+      },
+      {
+        "title": "運用",
+        "desc": "実データに基づき、継続的に計測・最適化します。"
+      }
+    ],
+    "quote": "AMEは単なる代理店ではありません。私たちのチームの一員として、忍耐強く、",
+    "quoteAccent": "丁寧",
+    "quoteAuthor": "レ・ハー",
+    "quoteRole": "マーケティングディレクター, KAISHI Travel",
+    "ctaTitle": "新しい章を",
+    "ctaTitleAccent": "始めませんか?",
+    "ctaSub": "ブランドと目標についてお聞かせください。最初のご相談はいつでも無料です。"
+  },
+  "services": {
+    "eyebrow": "サービス",
+    "title": "エンドツーエンドの",
+    "titleAccent": "マーケティング。",
+    "sub": "戦略から実行まで、四つの機能が連携し、あらゆる段階の企業を支援します。",
+    "items": [
+      {
+        "title": "戦略コンサルティング",
+        "desc": "市場分析、ブランドポジショニング、長期成長ロードマップ。",
+        "bullets": [
+          "市場分析",
+          "ブランドポジショニング",
+          "成長ロードマップ"
+        ]
+      },
+      {
+        "title": "デジタルマーケティング",
+        "desc": "Meta、Google、TikTokでのマルチチャネル運用と継続的な最適化。",
+        "bullets": [
+          "パフォーマンス広告",
+          "SEOと分析",
+          "CRMと自動化"
+        ]
+      },
+      {
+        "title": "コンテンツマーケティング",
+        "desc": "編集、ビジュアル、動画、インフォグラフィック - 戦略とSEOに沿って。",
+        "bullets": [
+          "コンテンツ戦略",
+          "編集とSNS",
+          "ビジュアルデザイン"
+        ]
+      },
+      {
+        "title": "メディア制作",
+        "desc": "商品撮影、TVC、アニメーション - 丁寧な制作でブランドを高めます。",
+        "bullets": [
+          "TVCとルポルタージュ",
+          "商品撮影",
+          "モーション・アニメーション"
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "実績",
+    "title": "私たちが伴走する",
+    "titleAccent": "ブランドの物語。",
+    "sub": "領域で絞り込んでご覧ください。",
+    "filters": [
+      {
+        "id": "all",
+        "label": "すべて"
+      },
+      {
+        "id": "branding",
+        "label": "ブランディング"
+      },
+      {
+        "id": "digital",
+        "label": "デジタル"
+      },
+      {
+        "id": "growth",
+        "label": "グロース"
+      },
+      {
+        "id": "healthcare",
+        "label": "ヘルスケア"
+      },
+      {
+        "id": "apac",
+        "label": "APAC"
+      }
+    ],
+    "items": [
+      {
+        "title": "VinFast - 緑の未来のために",
+        "client": "VinFast",
+        "tag": "growth",
+        "metric": "20M",
+        "metricLabel": "リーチ"
+      },
+      {
+        "title": "Smartweb Auto 5.0 ローンチ",
+        "client": "Bizfly VCCorp",
+        "tag": "growth",
+        "metric": "200",
+        "metricLabel": "イベント来場"
+      },
+      {
+        "title": "射撃クラブ TikTokバイラル",
+        "client": "射撃スポーツクラブ",
+        "tag": "digital",
+        "metric": "5×",
+        "metricLabel": "売上"
+      },
+      {
+        "title": "Honya書籍 FB広告",
+        "client": "Honya Books",
+        "tag": "digital",
+        "metric": "−50%",
+        "metricLabel": "広告費"
+      },
+      {
+        "title": "An Dien FB広告",
+        "client": "An Dien",
+        "tag": "digital",
+        "metric": "−50%",
+        "metricLabel": "広告費"
+      },
+      {
+        "title": "SHINBI歯科 ブランド認知",
+        "client": "SHINBI Dental",
+        "tag": "branding",
+        "metric": "OOH+TV",
+        "metricLabel": "マルチチャネル"
+      },
+      {
+        "title": "KoolSoft 米国SEO",
+        "client": "KoolSoft",
+        "tag": "digital",
+        "metric": "7K",
+        "metricLabel": "日次流入"
+      },
+      {
+        "title": "Homegy スマートホーム基盤",
+        "client": "Homegy",
+        "tag": "branding",
+        "metric": "Multi",
+        "metricLabel": "統合チャネル"
+      },
+      {
+        "title": "CSM病院 国際資金調達",
+        "client": "CSM総合病院",
+        "tag": "healthcare",
+        "metric": "12",
+        "metricLabel": "法的書類"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "AMEについて",
+    "title": "丁寧さを信じる",
+    "titleAccent": "チーム。",
+    "story": [
+      "AMEマーケティングはハノイで設立されました。良いマーケティングは、明確な戦略から始まり、丁寧に実行され、実際の成果で測られるという信念に基づいています。",
+      "12年間にわたり、ベトナムと日本のスタートアップから大企業まで、持続可能なブランドの構築と健全な成長を支援してきました。"
+    ],
+    "valuesEyebrow": "価値観",
+    "valuesTitle": "四つの指針。",
+    "values": [
+      {
+        "title": "明確さ",
+        "desc": "正しい問いと説得力のある理由から始めます。"
+      },
+      {
+        "title": "丁寧さ",
+        "desc": "細部に違いが宿ると考えています。"
+      },
+      {
+        "title": "伴走",
+        "desc": "クライアントのために、ではなく、共に取り組みます。"
+      },
+      {
+        "title": "成長",
+        "desc": "成果は偶然ではなく、規律ある実行の結果です。"
+      }
+    ],
+    "teamEyebrow": "チーム",
+    "teamTitle": "AMEを支えるメンバー。",
+    "team": [
+      {
+        "name": "Nguyen An",
+        "role": "ファウンダー / 戦略"
+      },
+      {
+        "name": "Tran Mai",
+        "role": "クリエイティブディレクター"
+      },
+      {
+        "name": "Pham Khoi",
+        "role": "パフォーマンス責任者"
+      },
+      {
+        "name": "山田 健司",
+        "role": "日本市場リード"
+      }
+    ],
+    "officesEyebrow": "拠点",
+    "officesTitle": "三つの都市に拠点。",
+    "offices": [
+      {
+        "city": "ハノイ",
+        "address": "Gemek 1タワー2階, アンカイン, ホアイドゥック",
+        "meta": "本社"
+      },
+      {
+        "city": "ダナン",
+        "address": "中部地域の制作・クリエイティブスタジオ",
+        "meta": "制作拠点"
+      },
+      {
+        "city": "東京",
+        "address": "日本・APAC市場の代表窓口",
+        "meta": "Japan desk"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "お問い合わせ",
+    "title": "まずは",
+    "titleAccent": "ご相談から。",
+    "sub": "概要をお送りいただくか、WhatsAppで直接ご連絡ください。1営業日以内にご返信いたします。",
+    "form": {
+      "name": "お名前",
+      "email": "メールアドレス",
+      "company": "会社名",
+      "type": "プロジェクトの種類",
+      "typeOptions": [
+        "ブランド戦略",
+        "デジタル & パフォーマンス",
+        "クリエイティブ & 制作",
+        "その他"
+      ],
+      "message": "プロジェクトの概要",
+      "submit": "送信する",
+      "via": "直接連絡もできます:",
+      "whatsapp": "WhatsAppで連絡",
+      "mail": "メールを送る"
+    },
+    "info": {
+      "heading": "AME Marketing",
+      "tagline": "Strategic clarity. Refined execution.",
+      "businessTitle": "会社情報",
+      "businessLines": [
+        "AME Marketing Co., Ltd.",
+        "税番号: 0110699895"
+      ],
+      "directTitle": "直接連絡",
+      "directLines": [
+        "amemartech@gmail.com",
+        "+84 941 076 762"
+      ],
+      "officeTitle": "オフィス",
+      "officeLines": [
+        "Gemek 1タワー2階",
+        "アンカイン, ホアイドゥック, ハノイ"
+      ]
+    },
+    "mapEyebrow": "アクセス",
+    "mapTitle": "AMEオフィスへ",
+    "mapSub": "本社はGemek 1タワー(アンカイン)内。ハノイ中心部から25分です。",
+    "mapCta": "Google マップで開く"
+  },
+  "insights": {
+    "eyebrow": "インサイト",
+    "title": "ニュース & ",
+    "titleAccent": "視点。",
+    "sub": "ベトナム・日本・APACのマーケティング、ブランディング、最新トレンドをお届けします。",
+    "stats": [
+      {
+        "value": "50+",
+        "label": "専門記事"
+      },
+      {
+        "value": "100K+",
+        "label": "月間PV"
+      },
+      {
+        "value": "24/7",
+        "label": "継続更新"
+      }
+    ],
+    "featuredLabel": "注目記事",
+    "featuredCategory": "戦略",
+    "featuredDate": "2025.04.15",
+    "featuredTitle": "CRM & マーケティングオートメーション:2025年が転換点",
+    "featuredExcerpt": "メディアコストが上昇するなか、企業は顧客ライフサイクルの最適化を迫られています。CRMと自動化がもたらす変化を解説します。",
+    "featuredAuthor": "Nguyen An - Founder, AME",
+    "trendsTitle": "注目すべきトレンド",
+    "trends": [
+      {
+        "title": "AIマーケティング",
+        "desc": "生成AIによる大規模パーソナライゼーション。",
+        "growth": "+340%"
+      },
+      {
+        "title": "ボイスコマース",
+        "desc": "音声検索・購入がAPACで急拡大。",
+        "growth": "+128%"
+      },
+      {
+        "title": "サステナブル",
+        "desc": "若年層が価値観で企業を選ぶ時代。",
+        "growth": "+89%"
+      },
+      {
+        "title": "マイクロインフルエンサー",
+        "desc": "信頼と関与で大手KOLを超えるROI。",
+        "growth": "+215%"
+      }
+    ],
+    "trendCtaTitle": "戦略のご相談はこちら",
+    "trendCtaSub": "AMEの専門家との30分間の無料相談を予約。",
+    "trendCtaBtn": "無料相談",
+    "postsTitle": "最新の記事",
+    "postsSub": "AMEブログより厳選 - 短く、すぐに使える。",
+    "posts": [
+      {
+        "category": "AI",
+        "date": "2025.04.12",
+        "title": "2025年、コンテンツマーケティングと生成AI",
+        "excerpt": "小さなチームが質を保ちながら継続的に発信するためのAIツールキット。"
+      },
+      {
+        "category": "音声",
+        "date": "2025.04.08",
+        "title": "音声検索:ベトナムブランドの最適化",
+        "excerpt": "音声検索結果に表示されるコンテンツ構造の作り方。"
+      },
+      {
+        "category": "ESG",
+        "date": "2025.04.02",
+        "title": "サステナブルマーケティングは必須に",
+        "excerpt": "Z世代は持続可能な価値観で企業を選びます。"
+      },
+      {
+        "category": "インフルエンサー",
+        "date": "2025.03.27",
+        "title": "マイクロインフルエンサーの圧倒的ROI",
+        "excerpt": "中規模予算では10人のマイクロが1人のメガを上回る理由。"
+      },
+      {
+        "category": "コンテンツ",
+        "date": "2025.03.20",
+        "title": "2025年のコンテンツ戦略はストーリー中心",
+        "excerpt": "情報よりブランドナラティブを軸にしたフレームワーク。"
+      },
+      {
+        "category": "パフォーマンス",
+        "date": "2025.03.14",
+        "title": "クッキーレス時代のブランドリフト計測",
+        "excerpt": "クッキーが消える中でブランド影響を測る新しいアプローチ。"
+      }
+    ],
+    "comingSoon": "全文公開は近日中に。"
+  },
+  "footer": {
+    "tagline": "戦略の明確さ。洗練された実行。",
+    "officesTitle": "拠点",
+    "offices": [
+      "ハノイ - 本社",
+      "ダナン - 制作",
+      "東京 - Japan desk"
+    ],
+    "linksTitle": "リンク",
+    "links": [
+      {
+        "label": "サービス",
+        "href": "/services"
+      },
+      {
+        "label": "実績",
+        "href": "/cases"
+      },
+      {
+        "label": "AMEについて",
+        "href": "/about"
+      },
+      {
+        "label": "お問い合わせ",
+        "href": "/contact"
+      }
+    ],
+    "newsletterTitle": "月刊インサイト",
+    "newsletterSub": "ブランド・マーケティング・APAC市場に関する短いニュースレター。",
+    "newsletterPlaceholder": "your@email.com",
+    "newsletterCta": "登録する",
+    "rights": "© 2025 AME Marketing. All rights reserved.",
+    "tax": "税番号 0110699895",
+    "addressLabel": "Gemek 1タワー2階, アンカイン, ハノイ"
+  }
+}
