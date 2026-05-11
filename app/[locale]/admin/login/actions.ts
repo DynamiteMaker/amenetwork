@@ -9,7 +9,7 @@ export async function login(formData: FormData): Promise<void> {
     email: formData.get("email") as string,
     password: formData.get("password") as string,
   });
-  if (error) throw new Error(error.message);
+  if (error) throw new Error("Invalid email or password");
   redirect("/admin");
 }
 

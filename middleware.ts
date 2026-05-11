@@ -5,11 +5,14 @@ import { routing } from "./i18n/routing";
 
 const intlMiddleware = createIntlMiddleware(routing);
 
+const ADMIN_PATTERN = /\/(en|vi|ja|zh)?\/?admin(\/|$)/;
+const ADMIN_LOGIN_PATTERN = /\/admin\/login(\/|$|\?)/;
+
 export async function middleware(request: NextRequest) {
   // 1. Handle i18n
   const response = intlMiddleware(request);
 
-  // 2. Refresh Supabase session on every request
+  // 2. Refresh Supabase session and check auth
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -29,19 +32,16 @@ export async function middleware(request: NextRequest) {
       },
     }
   );
-  await supabase.auth.getUser();
-
-  // 3. Protect admin routes
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  // 3. Protect admin routes (any authenticated user blocked without admin/editor role)
   const pathname = request.nextUrl.pathname;
-  if (
-    pathname.includes("/admin") &&
-    !pathname.includes("/admin/login") &&
-    !user
-  ) {
-    return NextResponse.redirect(new URL("/admin/login", request.url));
+  if (ADMIN_PATTERN.test(pathname) && !ADMIN_LOGIN_PATTERN.test(pathname)) {
+    if (!user) {
+      return NextResponse.redirect(new URL("/admin/login", request.url));
+    }
   }
 
   return response;
