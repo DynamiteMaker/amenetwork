@@ -290,7 +290,268 @@
         "metric": "12",
         "metricLabel": "hồ sơ pháp lý"
       }
-    ]
+    ],
+    "vinfast": {
+      "slug": "vinfast",
+      "client": "VinFast",
+      "tag": "growth",
+      "title": "VinFast - Vì tương lai xanh",
+      "metric": "20M",
+      "metricLabel": "lượt tiếp cận",
+      "context": "Chiến dịch truyền thông tích hợp cho VinFast giai đoạn 06/2023 - 09/2023, đẩy mạnh nhận biết dòng xe điện và thúc đẩy đăng ký lái thử.",
+      "challenge": "Truyền tải thông điệp 'Vì tương lai xanh' tới đại chúng, biến nhận thức thành hành động đăng ký lái thử trong thời gian ngắn.",
+      "solution": [
+        "IMC plan đa kênh: PR, social, KOL, performance",
+        "Sản xuất bộ visual và video với cảm hứng âm nhạc thiên nhiên",
+        "Hệ thống landing page và form đăng ký lái thử tối ưu chuyển đổi"
+      ],
+      "results": [
+        {
+          "value": "20M",
+          "label": "Lượt tiếp cận"
+        },
+        {
+          "value": "5K+",
+          "label": "Đăng ký lái thử"
+        },
+        {
+          "value": "4",
+          "label": "Tháng triển khai"
+        }
+      ]
+    },
+    "bizfly": {
+      "slug": "bizfly",
+      "client": "Bizfly VCCorp",
+      "tag": "growth",
+      "title": "Ra mắt Smartweb Auto 5.0",
+      "metric": "200",
+      "metricLabel": "khách dự sự kiện",
+      "context": "Đồng hành cùng Bizfly VCCorp từ 07/2022 đến 07/2024 trong việc ra mắt sản phẩm Smartweb Auto 5.0 và push sale B2B.",
+      "challenge": "Thuyết phục doanh nghiệp đầu tư vào nền tảng web tự động hóa, tạo pipeline đơn hàng giá trị cao.",
+      "solution": [
+        "Lên kế hoạch IMC ra mắt sản phẩm: invite, content, PR",
+        "Tổ chức sự kiện ra mắt với 200 khách doanh nghiệp",
+        "Nuôi dưỡng pipeline qua email automation và remarketing"
+      ],
+      "results": [
+        {
+          "value": "200",
+          "label": "Khách dự sự kiện"
+        },
+        {
+          "value": "3",
+          "label": "Đơn hàng 150tr"
+        },
+        {
+          "value": "24",
+          "label": "Tháng đồng hành"
+        }
+      ]
+    },
+    "clb-ban-sung": {
+      "slug": "clb-ban-sung",
+      "client": "CLB Bắn Súng thể thao",
+      "tag": "digital",
+      "title": "Viral TikTok cho CLB Bắn Súng",
+      "metric": "5×",
+      "metricLabel": "doanh số",
+      "context": "Chiến dịch viral TikTok 01/2025 - 03/2025 cho một CLB bắn súng thể thao, mục tiêu kéo lượng khách đăng ký trải nghiệm.",
+      "challenge": "Một thể loại nội dung ngách, cần nhanh chóng tạo dấu ấn trên TikTok và chuyển hóa thành doanh số.",
+      "solution": [
+        "Xây dựng kênh viral với format video ngắn theo trend",
+        "Sản xuất 20 video trong 12 tuần với góc nhìn lifestyle",
+        "Phối hợp KOC trải nghiệm và CTA đặt lịch nhanh"
+      ],
+      "results": [
+        {
+          "value": "20",
+          "label": "Video sản xuất"
+        },
+        {
+          "value": "500K+",
+          "label": "View / video"
+        },
+        {
+          "value": "5×",
+          "label": "Tăng trưởng doanh số"
+        }
+      ]
+    },
+    "honya": {
+      "slug": "honya",
+      "client": "Sách Honya",
+      "tag": "digital",
+      "title": "Push sale FB Ads cho Sách Honya",
+      "metric": "−50%",
+      "metricLabel": "chi phí ads",
+      "context": "Tăng tốc bán hàng cho thương hiệu sách Honya trong giai đoạn 05/2025 - 06/2025 thông qua Facebook Ads.",
+      "challenge": "Chi phí quảng cáo tăng cao, ROAS giảm. Cần làm mới creative liên tục và tối ưu cấu trúc tài khoản.",
+      "solution": [
+        "Sản xuất 100 video ads/tuần theo framework testing",
+        "Cấu trúc lại tài khoản theo audience - creative",
+        "Tối ưu landing page theo từng cụm sản phẩm"
+      ],
+      "results": [
+        {
+          "value": "100",
+          "label": "Video ads/tuần"
+        },
+        {
+          "value": "−50%",
+          "label": "CPA quảng cáo"
+        },
+        {
+          "value": "8",
+          "label": "Tuần triển khai"
+        }
+      ]
+    },
+    "an-dien": {
+      "slug": "an-dien",
+      "client": "Công ty An Điền",
+      "tag": "digital",
+      "title": "Push sale FB Ads cho An Điền",
+      "metric": "−50%",
+      "metricLabel": "chi phí ads",
+      "context": "Đồng hành cùng Công ty An Điền 05/2025 - 06/2025 đẩy mạnh doanh số qua Facebook Ads với mô hình creative testing tốc độ cao.",
+      "challenge": "Cần một hệ thống creative đủ lớn để liên tục test và tránh ad fatigue trong thị trường cạnh tranh.",
+      "solution": [
+        "Hệ thống sản xuất 100 video ads/tuần theo content pillar",
+        "Phân tách campaign theo phễu (TOFU/MOFU/BOFU)",
+        "Tối ưu CPA theo cohort khách hàng"
+      ],
+      "results": [
+        {
+          "value": "100",
+          "label": "Video ads/tuần"
+        },
+        {
+          "value": "−50%",
+          "label": "CPA quảng cáo"
+        },
+        {
+          "value": "8",
+          "label": "Tuần triển khai"
+        }
+      ]
+    },
+    "shinbi": {
+      "slug": "shinbi",
+      "client": "Nha khoa SHINBI",
+      "tag": "branding",
+      "title": "Brand awareness cho Nha khoa SHINBI",
+      "metric": "OOH+TV",
+      "metricLabel": "đa kênh",
+      "context": "Chiến dịch brand awareness toàn diện cho hệ thống Nha khoa SHINBI từ 03/2023 đến 12/2023, hướng tới định vị premium tại thị trường Hà Nội.",
+      "challenge": "Cạnh tranh trong ngành nha khoa rất gay gắt. Cần xây dựng hình ảnh đáng tin cậy và phủ sóng mạnh ở các điểm chạm offline lẫn online.",
+      "solution": [
+        "Triển khai OOH ở vị trí chiến lược nội đô Hà Nội",
+        "TVC phát sóng trên VTV2 trong các khung giờ vàng",
+        "Booking báo chí và nội dung PR liên tục"
+      ],
+      "results": [
+        {
+          "value": "OOH",
+          "label": "Đa điểm Hà Nội"
+        },
+        {
+          "value": "VTV2",
+          "label": "TVC phát sóng"
+        },
+        {
+          "value": "10",
+          "label": "Tháng triển khai"
+        }
+      ]
+    },
+    "koolsoft": {
+      "slug": "koolsoft",
+      "client": "KoolSoft",
+      "tag": "digital",
+      "title": "SEO US market cho KoolSoft (cdl-prep.com)",
+      "metric": "7K",
+      "metricLabel": "traffic/ngày",
+      "context": "Đồng hành cùng KoolSoft từ 04/2024 đến nay trong việc xây dựng hệ thống SEO cho cdl-prep.com - sản phẩm luyện thi CDL tại thị trường Mỹ.",
+      "challenge": "Thị trường Mỹ có cạnh tranh cao về search, cần xây dựng hệ thống nội dung chuyên sâu, tối ưu kỹ thuật và backlink chất lượng.",
+      "solution": [
+        "Keyword research và content silo cho thị trường US",
+        "Tối ưu technical SEO và Core Web Vitals",
+        "Xây dựng hệ thống bài viết theo cụm chủ đề và link building tự nhiên"
+      ],
+      "results": [
+        {
+          "value": "7K",
+          "label": "Traffic/ngày"
+        },
+        {
+          "value": "US",
+          "label": "Thị trường mục tiêu"
+        },
+        {
+          "value": "20+",
+          "label": "Tháng đồng hành"
+        }
+      ]
+    },
+    "homegy": {
+      "slug": "homegy",
+      "client": "Homegy",
+      "tag": "branding",
+      "title": "Hệ sinh thái Homegy Smarthome",
+      "metric": "Multi",
+      "metricLabel": "kênh tích hợp",
+      "context": "Xây dựng hệ sinh thái truyền thông và sale đa kênh cho thương hiệu nhà thông minh Homegy từ 05/2023 đến 01/2024.",
+      "challenge": "Cần xây dựng nền tảng vận hành tích hợp giữa branding, content, performance và bán hàng cho một sản phẩm công nghệ tiêu dùng mới.",
+      "solution": [
+        "Thiết lập hệ thống truyền thông đa kênh: web, social, performance",
+        "Xây dựng quy trình content và sale enablement",
+        "Tích hợp CRM và automation cho hành trình khách hàng"
+      ],
+      "results": [
+        {
+          "value": "Multi",
+          "label": "Kênh tích hợp"
+        },
+        {
+          "value": "9",
+          "label": "Tháng triển khai"
+        },
+        {
+          "value": "1",
+          "label": "Hệ sinh thái thống nhất"
+        }
+      ]
+    },
+    "csm-hospital": {
+      "slug": "csm-hospital",
+      "client": "Bệnh viện đa khoa CSM",
+      "tag": "healthcare",
+      "title": "Gọi vốn quốc tế cho Bệnh viện đa khoa CSM",
+      "metric": "12",
+      "metricLabel": "hồ sơ pháp lý",
+      "context": "Đồng hành cùng Bệnh viện đa khoa CSM từ 02/2022 đến 05/2024 trong hành trình kêu gọi vốn từ nhà đầu tư nước ngoài.",
+      "challenge": "Cần chuẩn bị bộ hồ sơ pháp lý và truyền thông đầy đủ, đáp ứng yêu cầu khắt khe của nhà đầu tư quốc tế trong lĩnh vực y tế.",
+      "solution": [
+        "Tư vấn lộ trình kêu gọi vốn và kết nối nhà đầu tư",
+        "Hoàn thiện 12 đầu mục hồ sơ pháp lý theo chuẩn quốc tế",
+        "Xây dựng pitch deck và investor communication"
+      ],
+      "results": [
+        {
+          "value": "12",
+          "label": "Hồ sơ pháp lý hoàn tất"
+        },
+        {
+          "value": "27",
+          "label": "Tháng đồng hành"
+        },
+        {
+          "value": "Quốc tế",
+          "label": "Nhà đầu tư mục tiêu"
+        }
+      ]
+    }
   },
   "about": {
     "eyebrow": "VỀ AME",
@@ -792,6 +1053,388 @@
           "body": "Mọi thắc mắc xin gửi tới amemartech@gmail.com."
         }
       ]
+    }
+  },
+  "servicesDetail": {
+    "branding": {
+      "slug": "branding",
+      "eyebrow": "DỊCH VỤ - BRANDING",
+      "title": "Xây nền tảng thương hiệu ",
+      "titleAccent": "vững và khác biệt.",
+      "sub": "Định vị, kiến trúc, thông điệp và bộ nhận diện - nền tảng để mọi hoạt động marketing có một giọng nói chung.",
+      "why": {
+        "heading": "Vì sao branding quan trọng?",
+        "body": "Một thương hiệu mạnh không bắt đầu từ logo, mà từ chiến lược định vị rõ ràng. Khi nền tảng thương hiệu chắc, mọi chiến dịch về sau đều tiết kiệm chi phí và hiệu quả hơn - vì bạn không còn phải giải thích mình là ai mỗi lần xuất hiện."
+      },
+      "scope": {
+        "heading": "Phạm vi triển khai",
+        "bullets": [
+          "Nghiên cứu thị trường, khách hàng và đối thủ",
+          "Định vị thương hiệu và chân dung khách hàng",
+          "Kiến trúc thương hiệu và hệ thống thông điệp",
+          "Logo, hệ thống nhận diện và brand guideline",
+          "Ứng dụng thương hiệu cho touchpoint chính"
+        ]
+      },
+      "process": {
+        "heading": "Quy trình",
+        "steps": [
+          {
+            "title": "Discovery",
+            "desc": "Phỏng vấn lãnh đạo, khảo sát khách hàng, phân tích thị trường."
+          },
+          {
+            "title": "Strategy",
+            "desc": "Định vị, brand promise, tone of voice và kiến trúc."
+          },
+          {
+            "title": "Identity",
+            "desc": "Logo, hệ thống màu, typography và visual language."
+          },
+          {
+            "title": "Rollout",
+            "desc": "Ứng dụng thương hiệu, guideline và đào tạo nội bộ."
+          }
+        ]
+      },
+      "caseHighlight": {
+        "label": "Case study",
+        "title": "Brand awareness Nha khoa SHINBI",
+        "metric": "OOH + VTV2 đa kênh",
+        "href": "/cases/shinbi"
+      },
+      "cta": {
+        "title": "Cần đánh giá lại nền tảng thương hiệu?",
+        "sub": "Đặt lịch buổi audit miễn phí 45 phút với đội ngũ chiến lược của AME."
+      }
+    },
+    "digital-marketing": {
+      "slug": "digital-marketing",
+      "eyebrow": "DỊCH VỤ - DIGITAL MARKETING",
+      "title": "Hiện diện số ",
+      "titleAccent": "có chiến lược.",
+      "sub": "Vận hành đa kênh - Facebook, Google, TikTok, email, SEO - bám sát mục tiêu kinh doanh và đo lường minh bạch.",
+      "why": {
+        "heading": "Vì sao cần digital marketing bài bản?",
+        "body": "Khi chi phí truyền thông tăng và hành vi khách hàng phân mảnh, doanh nghiệp cần một hệ thống digital phối hợp - không phải các chiến dịch rời rạc. AME giúp bạn xây dựng kiến trúc kênh, dữ liệu và đo lường để mọi chi tiêu đều có lý do."
+      },
+      "scope": {
+        "heading": "Phạm vi triển khai",
+        "bullets": [
+          "Chiến lược kênh và kế hoạch nội dung số",
+          "SEO, content marketing và tối ưu chuyển đổi",
+          "Email marketing và automation cơ bản",
+          "Phân tích dữ liệu, dashboard và báo cáo định kỳ",
+          "Tối ưu trải nghiệm số trên website và landing"
+        ]
+      },
+      "process": {
+        "heading": "Quy trình",
+        "steps": [
+          {
+            "title": "Audit",
+            "desc": "Đánh giá hệ thống digital hiện tại, đo benchmark."
+          },
+          {
+            "title": "Plan",
+            "desc": "Lộ trình kênh, ngân sách, KPI và nội dung."
+          },
+          {
+            "title": "Execute",
+            "desc": "Triển khai đa kênh có lịch trình rõ ràng."
+          },
+          {
+            "title": "Optimize",
+            "desc": "Đo lường hàng tuần, điều chỉnh theo dữ liệu thật."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Hệ thống digital của bạn cần một trục dẫn?",
+        "sub": "AME giúp bạn dựng lại bản đồ kênh và quy trình vận hành phù hợp với quy mô."
+      }
+    },
+    "performance": {
+      "slug": "performance",
+      "eyebrow": "DỊCH VỤ - PERFORMANCE",
+      "title": "Tăng trưởng đo lường được, ",
+      "titleAccent": "tối ưu liên tục.",
+      "sub": "Quảng cáo Meta, Google, TikTok với tracking chuẩn xác và mô hình tối ưu theo CPA, ROAS, lifetime value.",
+      "why": {
+        "heading": "Vì sao performance là trọng tâm?",
+        "body": "Trong ngắn hạn, performance là kênh bạn có thể bật mở và thấy kết quả nhanh nhất. Nhưng để bền vững, performance phải gắn với dữ liệu khách hàng, brand và sản phẩm - không chỉ nhắm vào click rẻ nhất."
+      },
+      "scope": {
+        "heading": "Phạm vi triển khai",
+        "bullets": [
+          "Meta Ads, Google Ads, TikTok Ads, LinkedIn",
+          "Conversion tracking, GA4, server-side tracking",
+          "Lead gen, e-commerce và app campaigns",
+          "Creative testing theo framework có cấu trúc",
+          "Báo cáo theo CPA, ROAS, payback period"
+        ]
+      },
+      "process": {
+        "heading": "Quy trình",
+        "steps": [
+          {
+            "title": "Setup",
+            "desc": "Cài tracking, audit pixel, dựng cấu trúc tài khoản."
+          },
+          {
+            "title": "Launch",
+            "desc": "Khởi chạy với benchmark rõ và kế hoạch test."
+          },
+          {
+            "title": "Iterate",
+            "desc": "Vòng lặp creative - audience - bid hàng tuần."
+          },
+          {
+            "title": "Scale",
+            "desc": "Mở rộng ngân sách khi unit economics ổn định."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Quảng cáo đang tốn nhiều mà khó đo?",
+        "sub": "Để AME audit miễn phí cấu trúc tài khoản và tracking của bạn."
+      }
+    },
+    "social-content": {
+      "slug": "social-content",
+      "eyebrow": "DỊCH VỤ - SOCIAL & CONTENT",
+      "title": "Nội dung mạng xã hội ",
+      "titleAccent": "có bản sắc.",
+      "sub": "Chiến lược content pillar, lịch nội dung, sáng tạo bài đăng và quản trị cộng đồng cho thương hiệu nghiêm túc với hình ảnh.",
+      "why": {
+        "heading": "Vì sao cần social có chiến lược?",
+        "body": "Social không chỉ là nơi đăng bài. Đó là nơi thương hiệu được nhìn thấy hàng ngày. Khi nội dung không có chủ đích, mỗi bài đăng là một cơ hội bị lãng phí và một lần thương hiệu bị làm mờ đi."
+      },
+      "scope": {
+        "heading": "Phạm vi triển khai",
+        "bullets": [
+          "Content pillar, tone of voice và visual direction",
+          "Lịch nội dung tháng, kịch bản và copywriting",
+          "Sáng tạo bài đăng - tĩnh, video ngắn, carousel",
+          "Quản trị fanpage, phản hồi cộng đồng",
+          "Báo cáo hiệu suất hàng tháng"
+        ]
+      },
+      "process": {
+        "heading": "Quy trình",
+        "steps": [
+          {
+            "title": "Strategy",
+            "desc": "Pillar, audience persona, mục tiêu nội dung."
+          },
+          {
+            "title": "Plan",
+            "desc": "Lịch nội dung, kịch bản và visual direction."
+          },
+          {
+            "title": "Produce",
+            "desc": "Sản xuất nội dung theo brand guideline."
+          },
+          {
+            "title": "Engage",
+            "desc": "Đăng tải, phản hồi cộng đồng, tối ưu liên tục."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Fanpage đang đi không có hướng?",
+        "sub": "AME đồng hành xây hệ thống nội dung dài hạn cho thương hiệu của bạn."
+      }
+    },
+    "web": {
+      "slug": "web",
+      "eyebrow": "DỊCH VỤ - WEBSITE",
+      "title": "Website & Landing Page ",
+      "titleAccent": "chuẩn corporate.",
+      "sub": "Corporate profile và landing tối ưu chuyển đổi - UX rõ, content sâu, hiệu năng cao và sẵn sàng đa ngôn ngữ.",
+      "why": {
+        "heading": "Vì sao website quyết định niềm tin?",
+        "body": "Khách hàng B2B luôn ghé website trước khi liên hệ. Một website chỉn chu, đúng tông và đủ thông tin có thể bán hàng giúp bạn 24/7 - hoặc khiến bạn mất khách trong vài giây nếu chưa đủ chuyên nghiệp."
+      },
+      "scope": {
+        "heading": "Phạm vi triển khai",
+        "bullets": [
+          "Sitemap, wireframe và UX content",
+          "UI direction theo phong cách thương hiệu",
+          "Phát triển website corporate hoặc landing",
+          "Tối ưu hiệu năng, SEO kỹ thuật và đa ngôn ngữ",
+          "Tích hợp form, tracking và CRM"
+        ]
+      },
+      "process": {
+        "heading": "Quy trình",
+        "steps": [
+          {
+            "title": "Discover",
+            "desc": "Phỏng vấn, mục tiêu kinh doanh và đối tượng."
+          },
+          {
+            "title": "Design",
+            "desc": "Wireframe → UI → prototype có thể click."
+          },
+          {
+            "title": "Build",
+            "desc": "Phát triển, kiểm thử trên đa thiết bị."
+          },
+          {
+            "title": "Launch",
+            "desc": "Go-live, đào tạo quản trị và đo lường."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Website hiện tại không còn phản ánh thương hiệu?",
+        "sub": "AME có thể audit miễn phí và đề xuất hướng nâng cấp phù hợp."
+      }
+    },
+    "production": {
+      "slug": "production",
+      "eyebrow": "DỊCH VỤ - PRODUCTION",
+      "title": "Sản xuất hình ảnh ",
+      "titleAccent": "đúng tông thương hiệu.",
+      "sub": "TVC, photo, motion graphic và visual asset cho website, social và campaign - chỉn chu trong từng khung hình.",
+      "why": {
+        "heading": "Vì sao production cần đi cùng chiến lược?",
+        "body": "Một bộ ảnh đẹp nhưng lệch tông sẽ khiến thương hiệu trở nên rời rạc. AME tiếp cận production từ góc nhìn brand: mọi visual được sản xuất đều phải kể tiếp câu chuyện chiến lược, không phải minh họa rời."
+      },
+      "scope": {
+        "heading": "Phạm vi triển khai",
+        "bullets": [
+          "Concept và art direction",
+          "Photography - sản phẩm, lifestyle, corporate",
+          "TVC, video phóng sự và short-form",
+          "Motion graphic và animation",
+          "Visual asset cho social, web và campaign"
+        ]
+      },
+      "process": {
+        "heading": "Quy trình",
+        "steps": [
+          {
+            "title": "Concept",
+            "desc": "Brief - moodboard - kịch bản."
+          },
+          {
+            "title": "Pre-production",
+            "desc": "Casting, location, lịch quay/chụp."
+          },
+          {
+            "title": "Production",
+            "desc": "Quay/chụp với ekip chuyên nghiệp."
+          },
+          {
+            "title": "Post",
+            "desc": "Edit, color, sound và xuất file đa định dạng."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Cần một ekip hiểu thương hiệu trước khi cầm máy?",
+        "sub": "AME có production hub tại Đà Nẵng và Hà Nội."
+      }
+    },
+    "pr-imc": {
+      "slug": "pr-imc",
+      "eyebrow": "DỊCH VỤ - PR / IMC",
+      "title": "Chiến dịch tích hợp ",
+      "titleAccent": "đa kênh.",
+      "sub": "IMC plan, launch campaign, brand activation và PR phối hợp - kết nối thương hiệu, KOL, social và quảng cáo trong một hệ thống.",
+      "why": {
+        "heading": "Vì sao cần IMC chứ không chỉ chạy quảng cáo?",
+        "body": "Một chiến dịch đơn lẻ có thể tạo tiếng vang ngắn hạn. Nhưng để chuyển hóa thành tăng trưởng bền vững, các kênh cần phối hợp với một thông điệp chung và một timeline thống nhất."
+      },
+      "scope": {
+        "heading": "Phạm vi triển khai",
+        "bullets": [
+          "IMC plan và big idea",
+          "Launch campaign cho sản phẩm/thương hiệu mới",
+          "Seasonal campaign và brand activation",
+          "PR, KOL, influencer phối hợp",
+          "Đo lường brand lift và performance song song"
+        ]
+      },
+      "process": {
+        "heading": "Quy trình",
+        "steps": [
+          {
+            "title": "Insight",
+            "desc": "Phân tích thị trường và behaviour."
+          },
+          {
+            "title": "Big idea",
+            "desc": "Concept và thông điệp xuyên suốt."
+          },
+          {
+            "title": "Orchestrate",
+            "desc": "Kế hoạch kênh, KOL, PR, ads."
+          },
+          {
+            "title": "Measure",
+            "desc": "Brand lift + performance metrics."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Chuẩn bị ra mắt một sản phẩm mới?",
+        "sub": "AME đồng hành lên IMC plan từ insight tới launch."
+      }
+    },
+    "market-expansion": {
+      "slug": "market-expansion",
+      "eyebrow": "DỊCH VỤ - MARKET EXPANSION",
+      "title": "Marketing cho thương hiệu ",
+      "titleAccent": "vươn ra quốc tế.",
+      "sub": "Bản địa hóa thông điệp, website đa ngôn ngữ và truyền thông cho khách hàng tại Nhật, Hàn, Đông Nam Á và xa hơn.",
+      "why": {
+        "heading": "Vì sao expansion cần đội ngũ am hiểu địa phương?",
+        "body": "Mỗi thị trường có ngôn ngữ thương hiệu riêng. Dịch nguyên văn website tiếng Việt sang tiếng Nhật là chưa đủ - bạn cần một đội ngũ hiểu insight, văn hóa và hành vi mua hàng tại thị trường đó."
+      },
+      "scope": {
+        "heading": "Phạm vi triển khai",
+        "bullets": [
+          "Tư vấn thị trường mới - Nhật, Hàn, SEA",
+          "Bản địa hóa thông điệp, không chỉ dịch",
+          "Website và landing đa ngôn ngữ",
+          "Truyền thông cho khách hàng quốc tế",
+          "Phối hợp với đối tác địa phương"
+        ]
+      },
+      "process": {
+        "heading": "Quy trình",
+        "steps": [
+          {
+            "title": "Assess",
+            "desc": "Đánh giá thị trường, đối thủ, khoảng trống."
+          },
+          {
+            "title": "Localize",
+            "desc": "Bản địa hóa thương hiệu và nội dung."
+          },
+          {
+            "title": "Launch",
+            "desc": "Khởi chạy với kênh và đối tác địa phương."
+          },
+          {
+            "title": "Grow",
+            "desc": "Đo lường, học hỏi và mở rộng."
+          }
+        ]
+      },
+      "caseHighlight": {
+        "label": "Case study",
+        "title": "KoolSoft - SEO thị trường Mỹ",
+        "metric": "7K traffic/ngày",
+        "href": "/cases/koolsoft"
+      },
+      "cta": {
+        "title": "Cần đưa thương hiệu sang Nhật hoặc APAC?",
+        "sub": "AME có Japan desk và mạng lưới đối tác khu vực."
+      }
     }
   }
 }

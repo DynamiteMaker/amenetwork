@@ -290,7 +290,268 @@
         "metric": "12",
         "metricLabel": "法律文件"
       }
-    ]
+    ],
+    "vinfast": {
+      "slug": "vinfast",
+      "client": "VinFast",
+      "tag": "growth",
+      "title": "VinFast - 为了绿色未来",
+      "metric": "20M",
+      "metricLabel": "触达",
+      "context": "为 VinFast 在 2023 年 6 月至 9 月开展的整合营销战役,旨在提升电动车产品线的认知度并推动试驾登记。",
+      "challenge": "在短时间内将「为了绿色未来」的信息传达给大众,并将认知转化为试驾登记。",
+      "solution": [
+        "PR、社交、KOL、效果联动的 IMC 计划",
+        "以自然与音乐为灵感的视觉与视频制作",
+        "高转化登记流程与落地页"
+      ],
+      "results": [
+        {
+          "value": "20M",
+          "label": "触达"
+        },
+        {
+          "value": "5K+",
+          "label": "试驾登记"
+        },
+        {
+          "value": "4",
+          "label": "执行月数"
+        }
+      ]
+    },
+    "bizfly": {
+      "slug": "bizfly",
+      "client": "Bizfly VCCorp",
+      "tag": "growth",
+      "title": "Smartweb Auto 5.0 发布",
+      "metric": "200",
+      "metricLabel": "活动嘉宾",
+      "context": "2022 年 7 月至 2024 年 7 月与 Bizfly VCCorp 长期合作,负责 Smartweb Auto 5.0 的发布与 B2B 销售推动。",
+      "challenge": "说服企业投资网页自动化平台,并构建高价值销售管道。",
+      "solution": [
+        "产品发布 IMC 计划:邀约、内容、PR",
+        "举办 200 位企业嘉宾的发布活动",
+        "通过邮件自动化与再营销培育管道"
+      ],
+      "results": [
+        {
+          "value": "200",
+          "label": "活动嘉宾"
+        },
+        {
+          "value": "3",
+          "label": "1.5 亿 VND 成单"
+        },
+        {
+          "value": "24",
+          "label": "合作月数"
+        }
+      ]
+    },
+    "clb-ban-sung": {
+      "slug": "clb-ban-sung",
+      "client": "射击运动俱乐部",
+      "tag": "digital",
+      "title": "射击俱乐部 TikTok 病毒传播",
+      "metric": "5×",
+      "metricLabel": "销售",
+      "context": "2025 年 1 月至 3 月为一家射击运动俱乐部开展的 TikTok 病毒传播战役,目标是带动体验预约。",
+      "challenge": "在小众品类中快速形成 TikTok 影响力,并转化为销售增长。",
+      "solution": [
+        "以趋势型短视频构建病毒频道",
+        "12 周内以生活方式视角制作 20 条视频",
+        "KOC 体验与快速预约 CTA 联动"
+      ],
+      "results": [
+        {
+          "value": "20",
+          "label": "视频数量"
+        },
+        {
+          "value": "500K+",
+          "label": "单条播放"
+        },
+        {
+          "value": "5×",
+          "label": "销售增长"
+        }
+      ]
+    },
+    "honya": {
+      "slug": "honya",
+      "client": "Honya Books",
+      "tag": "digital",
+      "title": "Honya 图书 FB 广告",
+      "metric": "−50%",
+      "metricLabel": "广告成本",
+      "context": "2025 年 5 至 6 月,通过 Facebook 广告加速 Honya 图书的销售。",
+      "challenge": "广告成本上升、ROAS 下降,需要持续刷新创意与重构账户。",
+      "solution": [
+        "以结构化测试框架每周生产 100 条视频广告",
+        "按受众与创意维度重构广告账户",
+        "针对各产品集群优化落地页"
+      ],
+      "results": [
+        {
+          "value": "100",
+          "label": "视频广告/周"
+        },
+        {
+          "value": "−50%",
+          "label": "广告 CPA"
+        },
+        {
+          "value": "8",
+          "label": "执行周数"
+        }
+      ]
+    },
+    "an-dien": {
+      "slug": "an-dien",
+      "client": "An Dien",
+      "tag": "digital",
+      "title": "An Dien FB 广告",
+      "metric": "−50%",
+      "metricLabel": "广告成本",
+      "context": "2025 年 5 至 6 月与 An Dien 合作,通过高速创意测试模型在 Facebook 广告上扩大销售。",
+      "challenge": "需要足够大的创意体系以持续测试,避免在竞争市场中出现广告疲劳。",
+      "solution": [
+        "围绕内容支柱建立每周 100 条视频广告制作系统",
+        "按漏斗划分活动 (TOFU/MOFU/BOFU)",
+        "按客户群优化 CPA"
+      ],
+      "results": [
+        {
+          "value": "100",
+          "label": "视频广告/周"
+        },
+        {
+          "value": "−50%",
+          "label": "广告 CPA"
+        },
+        {
+          "value": "8",
+          "label": "执行周数"
+        }
+      ]
+    },
+    "shinbi": {
+      "slug": "shinbi",
+      "client": "SHINBI Dental",
+      "tag": "branding",
+      "title": "SHINBI 牙科品牌认知",
+      "metric": "OOH+TV",
+      "metricLabel": "多渠道",
+      "context": "2023 年 3 月至 12 月为 SHINBI 牙科网络开展的全方位品牌认知战役,目标在河内市场实现高端定位。",
+      "challenge": "牙科行业竞争激烈,需要建立可信形象并在线下与线上多触点广泛覆盖。",
+      "solution": [
+        "在河内核心地段战略性投放 OOH",
+        "在 VTV2 黄金时段播放 TVC",
+        "持续的媒体投放与 PR 内容"
+      ],
+      "results": [
+        {
+          "value": "OOH",
+          "label": "河内多点"
+        },
+        {
+          "value": "VTV2",
+          "label": "TVC 播出"
+        },
+        {
+          "value": "10",
+          "label": "执行月数"
+        }
+      ]
+    },
+    "koolsoft": {
+      "slug": "koolsoft",
+      "client": "KoolSoft",
+      "tag": "digital",
+      "title": "KoolSoft 美国 SEO (cdl-prep.com)",
+      "metric": "7K",
+      "metricLabel": "日流量",
+      "context": "2024 年 4 月至今,与 KoolSoft 合作搭建 cdl-prep.com 的 SEO 体系 - 一款面向美国市场的 CDL 备考产品。",
+      "challenge": "美国搜索市场竞争激烈,需要深度内容体系、技术优化与高质量外链。",
+      "solution": [
+        "针对美国市场的关键词研究与内容矩阵",
+        "技术 SEO 与 Core Web Vitals 优化",
+        "主题集群内容与自然外链建设"
+      ],
+      "results": [
+        {
+          "value": "7K",
+          "label": "日流量"
+        },
+        {
+          "value": "US",
+          "label": "目标市场"
+        },
+        {
+          "value": "20+",
+          "label": "合作月数"
+        }
+      ]
+    },
+    "homegy": {
+      "slug": "homegy",
+      "client": "Homegy",
+      "tag": "branding",
+      "title": "Homegy 智能家居生态",
+      "metric": "Multi",
+      "metricLabel": "整合渠道",
+      "context": "2023 年 5 月至 2024 年 1 月为智能家居品牌 Homegy 搭建多渠道传播与销售生态。",
+      "challenge": "为新型消费科技产品打造整合品牌、内容、效果与销售的运营平台。",
+      "solution": [
+        "搭建多渠道体系:网站、社交、效果",
+        "建立内容与销售赋能流程",
+        "整合 CRM 与客户旅程自动化"
+      ],
+      "results": [
+        {
+          "value": "Multi",
+          "label": "整合渠道"
+        },
+        {
+          "value": "9",
+          "label": "执行月数"
+        },
+        {
+          "value": "1",
+          "label": "统一生态"
+        }
+      ]
+    },
+    "csm-hospital": {
+      "slug": "csm-hospital",
+      "client": "CSM 综合医院",
+      "tag": "healthcare",
+      "title": "CSM 医院国际融资",
+      "metric": "12",
+      "metricLabel": "法律文件",
+      "context": "2022 年 2 月至 2024 年 5 月,陪伴 CSM 综合医院走过国际投资人融资之路。",
+      "challenge": "为医疗领域的国际投资人准备符合严格要求的法律与传播完整资料包。",
+      "solution": [
+        "融资路径咨询与投资人对接",
+        "按国际标准完成 12 项法律文件",
+        "搭建 Pitch Deck 与投资人沟通材料"
+      ],
+      "results": [
+        {
+          "value": "12",
+          "label": "完成法律文件"
+        },
+        {
+          "value": "27",
+          "label": "合作月数"
+        },
+        {
+          "value": "Global",
+          "label": "目标投资人"
+        }
+      ]
+    }
   },
   "about": {
     "eyebrow": "关于 AME",
@@ -792,6 +1053,388 @@
           "body": "如有任何问题,请发送至 amemartech@gmail.com。"
         }
       ]
+    }
+  },
+  "servicesDetail": {
+    "branding": {
+      "slug": "branding",
+      "eyebrow": "服务 - 品牌打造",
+      "title": "搭建一个 ",
+      "titleAccent": "稳固而独特的品牌基础。",
+      "sub": "定位、架构、信息体系与识别系统 - 让所有营销活动拥有同一种声音的基础。",
+      "why": {
+        "heading": "为什么品牌很重要?",
+        "body": "强大的品牌不是从 logo 开始,而是从清晰的定位开始。基础牢固后,后续每一次活动都更省成本、更有效 - 因为你不必每次都解释自己是谁。"
+      },
+      "scope": {
+        "heading": "服务范围",
+        "bullets": [
+          "市场、客户与竞品研究",
+          "品牌定位与客户画像",
+          "品牌架构与信息体系",
+          "Logo、视觉识别与品牌指南",
+          "品牌在主要触点的应用"
+        ]
+      },
+      "process": {
+        "heading": "工作流程",
+        "steps": [
+          {
+            "title": "Discovery",
+            "desc": "高层访谈、客户研究、市场分析。"
+          },
+          {
+            "title": "Strategy",
+            "desc": "定位、品牌承诺、语调与架构。"
+          },
+          {
+            "title": "Identity",
+            "desc": "Logo、色彩系统、字体与视觉语言。"
+          },
+          {
+            "title": "Rollout",
+            "desc": "品牌应用、指南与内部培训。"
+          }
+        ]
+      },
+      "caseHighlight": {
+        "label": "案例",
+        "title": "SHINBI 牙科品牌认知",
+        "metric": "OOH + VTV2 多渠道",
+        "href": "/cases/shinbi"
+      },
+      "cta": {
+        "title": "需要重新审视品牌基础?",
+        "sub": "预约 AME 战略团队 45 分钟免费品牌审计。"
+      }
+    },
+    "digital-marketing": {
+      "slug": "digital-marketing",
+      "eyebrow": "服务 - 数字营销",
+      "title": "有策略的 ",
+      "titleAccent": "数字化呈现。",
+      "sub": "多渠道运营 - Facebook、Google、TikTok、邮件、SEO - 与业务目标对齐,数据透明。",
+      "why": {
+        "heading": "为什么数字营销需要结构",
+        "body": "媒体成本上升、客户行为分散,企业需要的是协同的数字体系,而不是零散的活动。AME 帮你建立渠道架构、数据与度量,让每一笔投放都有理由。"
+      },
+      "scope": {
+        "heading": "服务范围",
+        "bullets": [
+          "渠道策略与数字内容计划",
+          "SEO、内容营销与转化优化",
+          "邮件营销与基础自动化",
+          "分析、看板与定期报告",
+          "官网与落地页的数字体验优化"
+        ]
+      },
+      "process": {
+        "heading": "工作流程",
+        "steps": [
+          {
+            "title": "Audit",
+            "desc": "评估现有数字体系并设定基准。"
+          },
+          {
+            "title": "Plan",
+            "desc": "渠道路线图、预算、KPI 与内容。"
+          },
+          {
+            "title": "Execute",
+            "desc": "按节奏推进多渠道执行。"
+          },
+          {
+            "title": "Optimize",
+            "desc": "每周量化、基于真实数据调整。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "数字体系缺一根主轴?",
+        "sub": "AME 帮你重新绘制与规模匹配的渠道地图与运营模型。"
+      }
+    },
+    "performance": {
+      "slug": "performance",
+      "eyebrow": "服务 - 效果营销",
+      "title": "可量化的增长, ",
+      "titleAccent": "持续优化。",
+      "sub": "Meta、Google、TikTok 广告,精确追踪并基于 CPA、ROAS、LTV 优化。",
+      "why": {
+        "heading": "为什么效果营销是核心",
+        "body": "短期内,效果营销是最快看到结果的渠道。但要做得长久,必须与客户数据、品牌与产品挂钩,而不是只追最便宜的点击。"
+      },
+      "scope": {
+        "heading": "服务范围",
+        "bullets": [
+          "Meta Ads、Google Ads、TikTok Ads、LinkedIn",
+          "转化追踪、GA4、服务端追踪",
+          "潜客、电商与 App 投放",
+          "结构化创意测试框架",
+          "围绕 CPA、ROAS 与回收周期的报告"
+        ]
+      },
+      "process": {
+        "heading": "工作流程",
+        "steps": [
+          {
+            "title": "Setup",
+            "desc": "部署追踪、审计像素、搭建账户结构。"
+          },
+          {
+            "title": "Launch",
+            "desc": "以明确基准与测试计划上线。"
+          },
+          {
+            "title": "Iterate",
+            "desc": "每周创意 - 受众 - 出价循环。"
+          },
+          {
+            "title": "Scale",
+            "desc": "单元经济稳健后扩大预算。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "广告越花越难量化?",
+        "sub": "AME 免费审计你的账户结构与追踪。"
+      }
+    },
+    "social-content": {
+      "slug": "social-content",
+      "eyebrow": "服务 - 社交与内容",
+      "title": "有个性的 ",
+      "titleAccent": "社交内容。",
+      "sub": "内容支柱、内容日历、贴文制作与社群运营 - 为认真对待呈现的品牌量身打造。",
+      "why": {
+        "heading": "为什么社交需要策略",
+        "body": "社交不是一个发帖的地方,而是品牌每天被看到的地方。没有意图,每一次发布都是被浪费的机会,品牌也会被一点点磨淡。"
+      },
+      "scope": {
+        "heading": "服务范围",
+        "bullets": [
+          "内容支柱、语调与视觉方向",
+          "月度内容日历、脚本与文案",
+          "贴文制作 - 静态、短视频、Carousel",
+          "Fanpage 运营与社群响应",
+          "月度效果报告"
+        ]
+      },
+      "process": {
+        "heading": "工作流程",
+        "steps": [
+          {
+            "title": "Strategy",
+            "desc": "支柱、人群、内容目标。"
+          },
+          {
+            "title": "Plan",
+            "desc": "内容日历、脚本与视觉方向。"
+          },
+          {
+            "title": "Produce",
+            "desc": "依品牌指南制作内容。"
+          },
+          {
+            "title": "Engage",
+            "desc": "发布、社群响应、持续优化。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Fanpage 没有方向?",
+        "sub": "AME 与你共同搭建长期内容体系。"
+      }
+    },
+    "web": {
+      "slug": "web",
+      "eyebrow": "服务 - 官网",
+      "title": "企业级的 ",
+      "titleAccent": "官网与落地页。",
+      "sub": "企业官网与面向转化的落地页 - UX 清晰、内容深入、性能优秀,且支持多语言。",
+      "why": {
+        "heading": "为什么官网决定信任",
+        "body": "B2B 客户在联系前一定会先看官网。一个考究、调性正确、信息充足的官网能为你 24 小时销售 - 否则会在几秒内失去潜在客户。"
+      },
+      "scope": {
+        "heading": "服务范围",
+        "bullets": [
+          "站点结构、线框图与 UX 内容",
+          "符合品牌的 UI 方向",
+          "企业官网或落地页开发",
+          "性能优化、技术 SEO 与多语言",
+          "表单、追踪与 CRM 集成"
+        ]
+      },
+      "process": {
+        "heading": "工作流程",
+        "steps": [
+          {
+            "title": "Discover",
+            "desc": "访谈、业务目标与受众。"
+          },
+          {
+            "title": "Design",
+            "desc": "线框 → UI → 可点击原型。"
+          },
+          {
+            "title": "Build",
+            "desc": "开发与多设备测试。"
+          },
+          {
+            "title": "Launch",
+            "desc": "上线、后台培训与度量。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "现有官网无法体现品牌?",
+        "sub": "AME 可免费审计并提供升级方向。"
+      }
+    },
+    "production": {
+      "slug": "production",
+      "eyebrow": "服务 - 制作",
+      "title": "符合品牌调性的 ",
+      "titleAccent": "视觉制作。",
+      "sub": "TVC、摄影、动态图形与官网、社交、活动所需的视觉素材 - 在每一帧上都保持讲究。",
+      "why": {
+        "heading": "为什么制作要紧贴战略",
+        "body": "好看但调性不对的素材会让品牌变得散乱。AME 以品牌视角进行制作:每一个视觉都必须延续战略叙事,而不仅仅是插图。"
+      },
+      "scope": {
+        "heading": "服务范围",
+        "bullets": [
+          "概念与艺术指导",
+          "摄影 - 产品、生活方式、企业",
+          "TVC、纪录片视频与短视频",
+          "动态图形与动画",
+          "社交、官网与活动用视觉素材"
+        ]
+      },
+      "process": {
+        "heading": "工作流程",
+        "steps": [
+          {
+            "title": "Concept",
+            "desc": "Brief - Moodboard - 脚本。"
+          },
+          {
+            "title": "Pre-production",
+            "desc": "选角、场地、拍摄排程。"
+          },
+          {
+            "title": "Production",
+            "desc": "由专业团队拍摄。"
+          },
+          {
+            "title": "Post",
+            "desc": "剪辑、调色、声音与多格式输出。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "需要先理解品牌再举起相机的团队?",
+        "sub": "AME 在岘港与河内设有制作中心。"
+      }
+    },
+    "pr-imc": {
+      "slug": "pr-imc",
+      "eyebrow": "服务 - PR / IMC",
+      "title": "整合多渠道 ",
+      "titleAccent": "战役。",
+      "sub": "IMC 计划、上市战役、品牌活化与公关协同 - 在一个体系内连接品牌、KOL、社交与广告。",
+      "why": {
+        "heading": "为什么需要 IMC,而不只是投放",
+        "body": "单一战役能制造短期声量。要转化为持续增长,各渠道必须围绕共同信息与统一时间线协同。"
+      },
+      "scope": {
+        "heading": "服务范围",
+        "bullets": [
+          "IMC 计划与 Big Idea",
+          "新产品/新品牌的上市战役",
+          "季节性战役与品牌活化",
+          "公关、KOL、影响者协同",
+          "品牌提升与效果指标并行度量"
+        ]
+      },
+      "process": {
+        "heading": "工作流程",
+        "steps": [
+          {
+            "title": "Insight",
+            "desc": "市场与行为分析。"
+          },
+          {
+            "title": "Big idea",
+            "desc": "贯穿所有渠道的概念与信息。"
+          },
+          {
+            "title": "Orchestrate",
+            "desc": "KOL、公关、广告的渠道计划。"
+          },
+          {
+            "title": "Measure",
+            "desc": "品牌提升加效果指标。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "正在筹备新产品上市?",
+        "sub": "AME 与你从洞察到上市共建 IMC 计划。"
+      }
+    },
+    "market-expansion": {
+      "slug": "market-expansion",
+      "eyebrow": "服务 - 市场拓展",
+      "title": "面向国际化的 ",
+      "titleAccent": "品牌营销。",
+      "sub": "本地化信息、多语言官网与面向日本、韩国、东南亚及更远市场客户的传播。",
+      "why": {
+        "heading": "为什么拓展需要懂当地的团队",
+        "body": "每个市场都有自己的品牌语言。把越南语官网逐字翻译成日语远远不够 - 你需要一个理解当地洞察、文化与购买行为的团队。"
+      },
+      "scope": {
+        "heading": "服务范围",
+        "bullets": [
+          "新市场咨询 - 日本、韩国、东南亚",
+          "超越翻译的本地化",
+          "多语言官网与落地页",
+          "面向国际客户的传播",
+          "与本地合作伙伴协作"
+        ]
+      },
+      "process": {
+        "heading": "工作流程",
+        "steps": [
+          {
+            "title": "Assess",
+            "desc": "评估市场、竞品与机会缺口。"
+          },
+          {
+            "title": "Localize",
+            "desc": "对品牌与内容进行本地化。"
+          },
+          {
+            "title": "Launch",
+            "desc": "结合本地渠道与伙伴落地。"
+          },
+          {
+            "title": "Grow",
+            "desc": "度量、学习并扩大。"
+          }
+        ]
+      },
+      "caseHighlight": {
+        "label": "案例",
+        "title": "KoolSoft 美国 SEO",
+        "metric": "日流量 7K",
+        "href": "/cases/koolsoft"
+      },
+      "cta": {
+        "title": "需要把品牌带到日本或 APAC?",
+        "sub": "AME 拥有日本团队与区域伙伴网络。"
+      }
     }
   }
 }

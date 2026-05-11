@@ -290,7 +290,268 @@
         "metric": "12",
         "metricLabel": "legal filings"
       }
-    ]
+    ],
+    "vinfast": {
+      "slug": "vinfast",
+      "client": "VinFast",
+      "tag": "growth",
+      "title": "VinFast - For a Green Future",
+      "metric": "20M",
+      "metricLabel": "reach",
+      "context": "Integrated campaign for VinFast from 06/2023 to 09/2023, driving awareness for the EV line and converting interest into test-drive registrations.",
+      "challenge": "Bring the 'For a Green Future' message to a mass audience and turn awareness into action within a short window.",
+      "solution": [
+        "Multi-channel IMC: PR, social, KOL, performance",
+        "Visual and video production inspired by music in nature",
+        "Conversion-optimised landing pages and registration flows"
+      ],
+      "results": [
+        {
+          "value": "20M",
+          "label": "Reach"
+        },
+        {
+          "value": "5K+",
+          "label": "Test-drive sign-ups"
+        },
+        {
+          "value": "4",
+          "label": "Months running"
+        }
+      ]
+    },
+    "bizfly": {
+      "slug": "bizfly",
+      "client": "Bizfly VCCorp",
+      "tag": "growth",
+      "title": "Smartweb Auto 5.0 launch",
+      "metric": "200",
+      "metricLabel": "event guests",
+      "context": "Long-term partnership with Bizfly VCCorp from 07/2022 to 07/2024 to launch Smartweb Auto 5.0 and drive B2B sales.",
+      "challenge": "Convince enterprises to invest in a web automation platform and build a high-value pipeline.",
+      "solution": [
+        "Product launch IMC plan: invitations, content, PR",
+        "Launch event hosting 200 enterprise guests",
+        "Pipeline nurturing via email automation and remarketing"
+      ],
+      "results": [
+        {
+          "value": "200",
+          "label": "Event guests"
+        },
+        {
+          "value": "3",
+          "label": "Deals at 150M VND"
+        },
+        {
+          "value": "24",
+          "label": "Months partnered"
+        }
+      ]
+    },
+    "clb-ban-sung": {
+      "slug": "clb-ban-sung",
+      "client": "Shooting Sports Club",
+      "tag": "digital",
+      "title": "TikTok virality for Shooting Sports Club",
+      "metric": "5×",
+      "metricLabel": "revenue",
+      "context": "TikTok virality campaign 01/2025 - 03/2025 for a sports shooting club, aiming to drive trial bookings.",
+      "challenge": "A niche category with the need to break through fast on TikTok and convert into measurable revenue.",
+      "solution": [
+        "Built a viral channel using trend-driven short-form video",
+        "Produced 20 videos in 12 weeks with a lifestyle lens",
+        "Coordinated KOC experiences with quick-book CTA"
+      ],
+      "results": [
+        {
+          "value": "20",
+          "label": "Videos produced"
+        },
+        {
+          "value": "500K+",
+          "label": "Views / video"
+        },
+        {
+          "value": "5×",
+          "label": "Revenue growth"
+        }
+      ]
+    },
+    "honya": {
+      "slug": "honya",
+      "client": "Honya Books",
+      "tag": "digital",
+      "title": "FB Ads push sale for Honya Books",
+      "metric": "−50%",
+      "metricLabel": "ads cost",
+      "context": "Sales acceleration for Honya Books from 05/2025 to 06/2025 via Facebook Ads.",
+      "challenge": "Rising ad cost and falling ROAS - needed continuous creative refresh and account restructure.",
+      "solution": [
+        "100 video ads per week using a structured testing framework",
+        "Account restructure by audience and creative",
+        "Landing page optimisation per product cluster"
+      ],
+      "results": [
+        {
+          "value": "100",
+          "label": "Video ads/week"
+        },
+        {
+          "value": "−50%",
+          "label": "Ads CPA"
+        },
+        {
+          "value": "8",
+          "label": "Weeks running"
+        }
+      ]
+    },
+    "an-dien": {
+      "slug": "an-dien",
+      "client": "An Dien Co.",
+      "tag": "digital",
+      "title": "FB Ads push sale for An Dien",
+      "metric": "−50%",
+      "metricLabel": "ads cost",
+      "context": "Worked with An Dien from 05/2025 to 06/2025 to scale sales through Facebook Ads with a high-velocity creative testing model.",
+      "challenge": "Need a creative system big enough to test continuously and avoid ad fatigue in a competitive market.",
+      "solution": [
+        "100 video ads/week production system aligned with content pillars",
+        "Funnel-based campaign split (TOFU/MOFU/BOFU)",
+        "CPA optimisation by customer cohort"
+      ],
+      "results": [
+        {
+          "value": "100",
+          "label": "Video ads/week"
+        },
+        {
+          "value": "−50%",
+          "label": "Ads CPA"
+        },
+        {
+          "value": "8",
+          "label": "Weeks running"
+        }
+      ]
+    },
+    "shinbi": {
+      "slug": "shinbi",
+      "client": "SHINBI Dental",
+      "tag": "branding",
+      "title": "Brand awareness for SHINBI Dental",
+      "metric": "OOH+TV",
+      "metricLabel": "multi-channel",
+      "context": "End-to-end brand awareness campaign for the SHINBI Dental network from 03/2023 to 12/2023, positioning them as a premium choice in Hanoi.",
+      "challenge": "A highly competitive dental sector requiring a credible image and broad coverage across offline and online touchpoints.",
+      "solution": [
+        "Strategic OOH placements across central Hanoi",
+        "TVC running on VTV2 in prime-time slots",
+        "Continuous PR placement and editorial content"
+      ],
+      "results": [
+        {
+          "value": "OOH",
+          "label": "Across Hanoi"
+        },
+        {
+          "value": "VTV2",
+          "label": "TVC on air"
+        },
+        {
+          "value": "10",
+          "label": "Months running"
+        }
+      ]
+    },
+    "koolsoft": {
+      "slug": "koolsoft",
+      "client": "KoolSoft",
+      "tag": "digital",
+      "title": "US SEO for KoolSoft (cdl-prep.com)",
+      "metric": "7K",
+      "metricLabel": "traffic/day",
+      "context": "Working with KoolSoft from 04/2024 to date, building the SEO engine for cdl-prep.com - a CDL test-prep product targeting the US market.",
+      "challenge": "The US search market is highly competitive - needed deep content systems, technical optimisation and quality backlinks.",
+      "solution": [
+        "Keyword research and content silos for the US market",
+        "Technical SEO and Core Web Vitals optimisation",
+        "Topic-cluster content with natural link building"
+      ],
+      "results": [
+        {
+          "value": "7K",
+          "label": "Traffic/day"
+        },
+        {
+          "value": "US",
+          "label": "Target market"
+        },
+        {
+          "value": "20+",
+          "label": "Months partnered"
+        }
+      ]
+    },
+    "homegy": {
+      "slug": "homegy",
+      "client": "Homegy",
+      "tag": "branding",
+      "title": "Homegy Smarthome ecosystem",
+      "metric": "Multi",
+      "metricLabel": "integrated channels",
+      "context": "Built an integrated communications and sales ecosystem for the Homegy smart home brand from 05/2023 to 01/2024.",
+      "challenge": "Build an operating platform connecting branding, content, performance and sales for a new consumer technology product.",
+      "solution": [
+        "Multi-channel system: web, social, performance",
+        "Content and sales enablement workflow",
+        "CRM and automation across the customer journey"
+      ],
+      "results": [
+        {
+          "value": "Multi",
+          "label": "Integrated channels"
+        },
+        {
+          "value": "9",
+          "label": "Months running"
+        },
+        {
+          "value": "1",
+          "label": "Unified ecosystem"
+        }
+      ]
+    },
+    "csm-hospital": {
+      "slug": "csm-hospital",
+      "client": "CSM General Hospital",
+      "tag": "healthcare",
+      "title": "International fundraising for CSM Hospital",
+      "metric": "12",
+      "metricLabel": "legal filings",
+      "context": "Partnered with CSM General Hospital from 02/2022 to 05/2024 in a journey to raise international investment.",
+      "challenge": "Prepare a complete legal and communications package meeting the strict requirements of international healthcare investors.",
+      "solution": [
+        "Fundraising roadmap advisory and investor outreach",
+        "12 legal filings completed to international standard",
+        "Pitch deck and investor communications"
+      ],
+      "results": [
+        {
+          "value": "12",
+          "label": "Legal filings completed"
+        },
+        {
+          "value": "27",
+          "label": "Months partnered"
+        },
+        {
+          "value": "Global",
+          "label": "Target investors"
+        }
+      ]
+    }
   },
   "about": {
     "eyebrow": "ABOUT",
@@ -792,6 +1053,388 @@
           "body": "Please send any enquiries to amemartech@gmail.com."
         }
       ]
+    }
+  },
+  "servicesDetail": {
+    "branding": {
+      "slug": "branding",
+      "eyebrow": "SERVICE - BRANDING",
+      "title": "Build a brand foundation that is ",
+      "titleAccent": "solid and distinct.",
+      "sub": "Positioning, architecture, messaging and identity - the foundation that gives every marketing activity a single voice.",
+      "why": {
+        "heading": "Why does branding matter?",
+        "body": "A strong brand does not start with a logo, but with clear positioning. When the foundation is solid, every campaign that follows costs less and performs better - because you no longer have to explain who you are each time you show up."
+      },
+      "scope": {
+        "heading": "Scope of work",
+        "bullets": [
+          "Market, customer and competitor research",
+          "Brand positioning and customer personas",
+          "Brand architecture and messaging system",
+          "Logo, identity system and brand guidelines",
+          "Brand application across key touchpoints"
+        ]
+      },
+      "process": {
+        "heading": "Process",
+        "steps": [
+          {
+            "title": "Discovery",
+            "desc": "Leadership interviews, customer research, market analysis."
+          },
+          {
+            "title": "Strategy",
+            "desc": "Positioning, brand promise, tone of voice and architecture."
+          },
+          {
+            "title": "Identity",
+            "desc": "Logo, colour system, typography and visual language."
+          },
+          {
+            "title": "Rollout",
+            "desc": "Brand application, guidelines and internal training."
+          }
+        ]
+      },
+      "caseHighlight": {
+        "label": "Case study",
+        "title": "SHINBI Dental brand awareness",
+        "metric": "OOH + VTV2 multi-channel",
+        "href": "/cases/shinbi"
+      },
+      "cta": {
+        "title": "Need to reassess your brand foundation?",
+        "sub": "Book a free 45-minute audit with AME's strategy team."
+      }
+    },
+    "digital-marketing": {
+      "slug": "digital-marketing",
+      "eyebrow": "SERVICE - DIGITAL MARKETING",
+      "title": "A digital presence ",
+      "titleAccent": "with a clear strategy.",
+      "sub": "Multi-channel operations - Facebook, Google, TikTok, email, SEO - aligned with business goals and measured transparently.",
+      "why": {
+        "heading": "Why digital needs structure",
+        "body": "As media costs rise and customer behaviour fragments, businesses need a coordinated digital system - not a series of disconnected campaigns. AME helps you build the channel architecture, data and measurement so every spend has a reason."
+      },
+      "scope": {
+        "heading": "Scope of work",
+        "bullets": [
+          "Channel strategy and digital content plan",
+          "SEO, content marketing and conversion optimisation",
+          "Email marketing and basic automation",
+          "Analytics, dashboards and recurring reporting",
+          "Digital UX optimisation on website and landing pages"
+        ]
+      },
+      "process": {
+        "heading": "Process",
+        "steps": [
+          {
+            "title": "Audit",
+            "desc": "Assess the current digital stack and benchmark performance."
+          },
+          {
+            "title": "Plan",
+            "desc": "Channel roadmap, budget, KPIs and content."
+          },
+          {
+            "title": "Execute",
+            "desc": "Run multi-channel programmes on a clear schedule."
+          },
+          {
+            "title": "Optimize",
+            "desc": "Measure weekly and adjust based on real data."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Does your digital system need a backbone?",
+        "sub": "AME helps you redraw the channel map and operating model that fits your scale."
+      }
+    },
+    "performance": {
+      "slug": "performance",
+      "eyebrow": "SERVICE - PERFORMANCE",
+      "title": "Measurable growth, ",
+      "titleAccent": "optimised continuously.",
+      "sub": "Meta, Google and TikTok ads with accurate tracking and optimisation models built around CPA, ROAS and lifetime value.",
+      "why": {
+        "heading": "Why performance is the focal point",
+        "body": "In the short term, performance is the channel where you can switch on and see results fastest. But to make it sustainable, performance has to be tied to customer data, brand and product - not just chasing the cheapest click."
+      },
+      "scope": {
+        "heading": "Scope of work",
+        "bullets": [
+          "Meta Ads, Google Ads, TikTok Ads, LinkedIn",
+          "Conversion tracking, GA4, server-side tracking",
+          "Lead gen, e-commerce and app campaigns",
+          "Creative testing within a structured framework",
+          "Reporting on CPA, ROAS and payback period"
+        ]
+      },
+      "process": {
+        "heading": "Process",
+        "steps": [
+          {
+            "title": "Setup",
+            "desc": "Install tracking, audit pixels, build account structure."
+          },
+          {
+            "title": "Launch",
+            "desc": "Go live with clear benchmarks and a test plan."
+          },
+          {
+            "title": "Iterate",
+            "desc": "Weekly creative - audience - bid loops."
+          },
+          {
+            "title": "Scale",
+            "desc": "Increase budget once unit economics hold."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Spending more on ads but harder to measure?",
+        "sub": "Let AME audit your account structure and tracking for free."
+      }
+    },
+    "social-content": {
+      "slug": "social-content",
+      "eyebrow": "SERVICE - SOCIAL & CONTENT",
+      "title": "Social content ",
+      "titleAccent": "with a real identity.",
+      "sub": "Content pillars, editorial calendar, post creation and community management for brands serious about how they show up.",
+      "why": {
+        "heading": "Why social needs strategy",
+        "body": "Social is not just a place to post. It is where your brand is seen every day. Without intent, every post is a wasted opportunity and a moment where the brand becomes a little less distinct."
+      },
+      "scope": {
+        "heading": "Scope of work",
+        "bullets": [
+          "Content pillars, tone of voice and visual direction",
+          "Monthly content calendar, scripts and copywriting",
+          "Post creation - static, short video, carousel",
+          "Fanpage management and community response",
+          "Monthly performance reporting"
+        ]
+      },
+      "process": {
+        "heading": "Process",
+        "steps": [
+          {
+            "title": "Strategy",
+            "desc": "Pillars, audience persona, content goals."
+          },
+          {
+            "title": "Plan",
+            "desc": "Editorial calendar, scripts and visual direction."
+          },
+          {
+            "title": "Produce",
+            "desc": "Create content within brand guidelines."
+          },
+          {
+            "title": "Engage",
+            "desc": "Publish, respond to community, optimise continuously."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Is your fanpage drifting without direction?",
+        "sub": "AME partners with you to build a long-term content system for your brand."
+      }
+    },
+    "web": {
+      "slug": "web",
+      "eyebrow": "SERVICE - WEBSITE",
+      "title": "Websites & landing pages ",
+      "titleAccent": "to corporate standard.",
+      "sub": "Corporate profile sites and conversion-focused landing pages - clear UX, deep content, strong performance and ready for multiple languages.",
+      "why": {
+        "heading": "Why your website decides trust",
+        "body": "B2B customers always check your website before reaching out. A polished site with the right tone and enough information sells for you 24/7 - or loses the prospect within seconds if it falls short."
+      },
+      "scope": {
+        "heading": "Scope of work",
+        "bullets": [
+          "Sitemap, wireframes and UX content",
+          "UI direction in your brand style",
+          "Corporate website or landing page development",
+          "Performance optimisation, technical SEO and multi-language",
+          "Form, tracking and CRM integration"
+        ]
+      },
+      "process": {
+        "heading": "Process",
+        "steps": [
+          {
+            "title": "Discover",
+            "desc": "Interviews, business goals and audience."
+          },
+          {
+            "title": "Design",
+            "desc": "Wireframe → UI → clickable prototype."
+          },
+          {
+            "title": "Build",
+            "desc": "Develop and test across devices."
+          },
+          {
+            "title": "Launch",
+            "desc": "Go-live, admin training and measurement."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Does your current website still reflect your brand?",
+        "sub": "AME can audit it for free and propose a path forward."
+      }
+    },
+    "production": {
+      "slug": "production",
+      "eyebrow": "SERVICE - PRODUCTION",
+      "title": "Visual production ",
+      "titleAccent": "true to your brand.",
+      "sub": "TVC, photography, motion graphics and visual assets for website, social and campaigns - crafted frame by frame.",
+      "why": {
+        "heading": "Why production must follow strategy",
+        "body": "Beautiful but off-tone visuals make a brand feel disjointed. AME approaches production from a brand perspective: every visual we create must continue the strategic story, not just illustrate it."
+      },
+      "scope": {
+        "heading": "Scope of work",
+        "bullets": [
+          "Concept and art direction",
+          "Photography - product, lifestyle, corporate",
+          "TVC, documentary video and short-form",
+          "Motion graphics and animation",
+          "Visual assets for social, web and campaigns"
+        ]
+      },
+      "process": {
+        "heading": "Process",
+        "steps": [
+          {
+            "title": "Concept",
+            "desc": "Brief - moodboard - script."
+          },
+          {
+            "title": "Pre-production",
+            "desc": "Casting, location, shoot schedule."
+          },
+          {
+            "title": "Production",
+            "desc": "Shoot with a professional crew."
+          },
+          {
+            "title": "Post",
+            "desc": "Edit, colour, sound and multi-format export."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Need a crew that understands the brand before they hold the camera?",
+        "sub": "AME has production hubs in Da Nang and Hanoi."
+      }
+    },
+    "pr-imc": {
+      "slug": "pr-imc",
+      "eyebrow": "SERVICE - PR / IMC",
+      "title": "Integrated multi-channel ",
+      "titleAccent": "campaigns.",
+      "sub": "IMC plans, launch campaigns, brand activation and coordinated PR - connecting brand, KOLs, social and ads in one system.",
+      "why": {
+        "heading": "Why IMC matters more than just running ads",
+        "body": "A standalone campaign can create short-term buzz. To turn that into sustainable growth, channels must work together with a shared message and a single timeline."
+      },
+      "scope": {
+        "heading": "Scope of work",
+        "bullets": [
+          "IMC plan and big idea",
+          "Launch campaigns for new products or brands",
+          "Seasonal campaigns and brand activation",
+          "Coordinated PR, KOL and influencer work",
+          "Brand lift and performance measured side by side"
+        ]
+      },
+      "process": {
+        "heading": "Process",
+        "steps": [
+          {
+            "title": "Insight",
+            "desc": "Market and behaviour analysis."
+          },
+          {
+            "title": "Big idea",
+            "desc": "Concept and message that runs across channels."
+          },
+          {
+            "title": "Orchestrate",
+            "desc": "Channel plan across KOL, PR and ads."
+          },
+          {
+            "title": "Measure",
+            "desc": "Brand lift plus performance metrics."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Preparing to launch a new product?",
+        "sub": "AME partners with you on the IMC plan from insight to launch."
+      }
+    },
+    "market-expansion": {
+      "slug": "market-expansion",
+      "eyebrow": "SERVICE - MARKET EXPANSION",
+      "title": "Marketing for brands ",
+      "titleAccent": "going international.",
+      "sub": "Localised messaging, multi-language websites and communications for customers in Japan, Korea, Southeast Asia and beyond.",
+      "why": {
+        "heading": "Why expansion needs people who know the local market",
+        "body": "Every market has its own brand language. A literal translation of your Vietnamese website into Japanese is not enough - you need a team that understands the insights, culture and buying behaviour of that market."
+      },
+      "scope": {
+        "heading": "Scope of work",
+        "bullets": [
+          "New-market advisory - Japan, Korea, SEA",
+          "Localisation that goes beyond translation",
+          "Multi-language websites and landing pages",
+          "Communications for international customers",
+          "Coordination with local partners"
+        ]
+      },
+      "process": {
+        "heading": "Process",
+        "steps": [
+          {
+            "title": "Assess",
+            "desc": "Evaluate the market, competitors and gaps."
+          },
+          {
+            "title": "Localize",
+            "desc": "Localise the brand and content."
+          },
+          {
+            "title": "Launch",
+            "desc": "Go live with local channels and partners."
+          },
+          {
+            "title": "Grow",
+            "desc": "Measure, learn and scale."
+          }
+        ]
+      },
+      "caseHighlight": {
+        "label": "Case study",
+        "title": "KoolSoft - US SEO",
+        "metric": "7K traffic/day",
+        "href": "/cases/koolsoft"
+      },
+      "cta": {
+        "title": "Need to take your brand to Japan or APAC?",
+        "sub": "AME has a Japan desk and a regional partner network."
+      }
     }
   }
 }
