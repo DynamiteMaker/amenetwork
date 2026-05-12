@@ -50,6 +50,8 @@ export function FeaturedCaseSection({ data }: { data: FeaturedCaseData | null })
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="rounded-2xl shadow-xl object-cover"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             </div>
