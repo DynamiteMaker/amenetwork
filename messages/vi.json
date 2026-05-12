@@ -800,6 +800,10 @@
     "overviewDesc": "Xem toàn bộ 8 mảng dịch vụ."
   },
   "servicesOverview": {
+    "eyebrow": "DỊCH VỤ",
+    "title": "Giải pháp marketing ",
+    "titleAccent": "toàn diện",
+    "sub": "Tám lĩnh vực tích hợp — từ chiến lược thương hiệu đến mở rộng thị trường — được thiết kế để tăng trưởng bền vững.",
     "cards": [
       {
         "slug": "branding",

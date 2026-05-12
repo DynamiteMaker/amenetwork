@@ -800,6 +800,10 @@
     "overviewDesc": "See all eight service areas."
   },
   "servicesOverview": {
+    "eyebrow": "SERVICES",
+    "title": "Full-spectrum marketing ",
+    "titleAccent": "under one roof",
+    "sub": "Eight integrated practices — from brand strategy to market expansion — designed to compound over time.",
     "cards": [
       {
         "slug": "branding",

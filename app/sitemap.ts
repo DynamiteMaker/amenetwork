@@ -75,24 +75,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
-  const { data: posts } = await supabase
-    .from("posts")
-    .select("slug, updated_at")
-    .eq("status", "published");
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  for (const locale of locales) {
-    const prefix = locale === "en" ? "" : `/${locale}`;
-    for (const post of posts ?? []) {
-      entries.push({
-        url: `${BASE_URL}${prefix}/blog/${post.slug}`,
-        lastModified: new Date(post.updated_at),
-        changeFrequency: "monthly",
-        priority: 0.6,
-      });
+  if (supabaseUrl && supabaseKey) {
+    const supabase = createClient(supabaseUrl, supabaseKey);
+    const { data: posts } = await supabase
+      .from("posts")
+      .select("slug, updated_at")
+      .eq("status", "published");
+
+    for (const locale of locales) {
+      const prefix = locale === "en" ? "" : `/${locale}`;
+      for (const post of posts ?? []) {
+        entries.push({
+          url: `${BASE_URL}${prefix}/blog/${post.slug}`,
+          lastModified: new Date(post.updated_at),
+          changeFrequency: "monthly",
+          priority: 0.6,
+        });
+      }
     }
   }
 

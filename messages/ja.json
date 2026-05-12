@@ -800,6 +800,10 @@
     "overviewDesc": "8つのサービス領域すべてを見る。"
   },
   "servicesOverview": {
+    "eyebrow": "サービス",
+    "title": "統合マーケティング",
+    "titleAccent": "ソリューション",
+    "sub": "ブランド戦略から市場展開まで、8つの実践分野を統合 — 長期的な成長を実現。",
     "cards": [
       {
         "slug": "branding",
