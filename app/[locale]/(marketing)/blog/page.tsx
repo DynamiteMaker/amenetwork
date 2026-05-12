@@ -26,15 +26,17 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
 
-  const supabase = await createClient();
-  const { data: posts } = await supabase
-    .from("posts")
-    .select("id,title,slug,excerpt,featured_image,category,published_at,is_featured")
-    .eq("status", "published")
-    .order("published_at", { ascending: false })
-    .limit(50);
-
-  const allPosts = posts ?? [];
+  let allPosts: any[] = [];
+  try {
+    const supabase = await createClient();
+    const { data: posts } = await supabase
+      .from("posts")
+      .select("id,title,slug,excerpt,featured_image,category,published_at,is_featured")
+      .eq("status", "published")
+      .order("published_at", { ascending: false })
+      .limit(50);
+    allPosts = posts ?? [];
+  } catch {}
   const featured = allPosts.find((p) => p.is_featured) ?? allPosts[0];
   const rest = allPosts.filter((p) => p.id !== featured?.id);
 

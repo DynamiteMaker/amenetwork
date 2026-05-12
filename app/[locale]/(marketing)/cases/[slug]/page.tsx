@@ -24,6 +24,7 @@ interface CaseRow {
 }
 
 async function getCase(slug: string, locale: string) {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return null;
   const supabase = await createClient();
   const { data } = await supabase
     .from("cases")

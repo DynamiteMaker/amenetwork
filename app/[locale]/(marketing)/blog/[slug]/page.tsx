@@ -12,6 +12,7 @@ export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return {};
   const supabase = await createClient();
   const { data: post } = await supabase
     .from("posts")
@@ -36,6 +37,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) notFound();
   const supabase = await createClient();
   const { data: post } = await supabase
     .from("posts")

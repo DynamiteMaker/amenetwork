@@ -12,6 +12,9 @@ import { CTABand } from "@/components/cta-band";
 export const revalidate = 3600;
 
 async function getFeaturedCase(locale: string) {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    return null;
+  }
   const supabase = await createClient();
   const { data } = await supabase
     .from("cases")

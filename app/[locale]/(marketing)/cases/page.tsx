@@ -18,28 +18,31 @@ export default async function CasesPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "cases" });
 
-  const supabase = await createClient();
-  const { data: rows } = await supabase
-    .from("cases")
-    .select(`id,slug,tag,thumbnail,metric_value,metric_label,
-      translations:case_translations!left(client,title,locale)`)
-    .eq("status", "published")
-    .order("sort_order");
+  let cases: any[] = [];
+  try {
+    const supabase = await createClient();
+    const { data: rows } = await supabase
+      .from("cases")
+      .select(`id,slug,tag,thumbnail,metric_value,metric_label,
+        translations:case_translations!left(client,title,locale)`)
+      .eq("status", "published")
+      .order("sort_order");
 
-  const cases = (rows ?? []).map((c: any) => {
-    const tr = (c.translations as any[])?.find((t: any) => t.locale === locale)
-      ?? (c.translations as any[])?.find((t: any) => t.locale === "en");
-    return {
-      id: c.id,
-      slug: c.slug,
-      tag: c.tag,
-      thumbnail: c.thumbnail,
-      metricValue: c.metric_value,
-      metricLabel: c.metric_label,
-      client: tr?.client ?? "",
-      title: tr?.title ?? "",
-    };
-  });
+    cases = (rows ?? []).map((c: any) => {
+      const tr = (c.translations as any[])?.find((t: any) => t.locale === locale)
+        ?? (c.translations as any[])?.find((t: any) => t.locale === "en");
+      return {
+        id: c.id,
+        slug: c.slug,
+        tag: c.tag,
+        thumbnail: c.thumbnail,
+        metricValue: c.metric_value,
+        metricLabel: c.metric_label,
+        client: tr?.client ?? "",
+        title: tr?.title ?? "",
+      };
+    });
+  } catch {}
 
   return (
     <>
