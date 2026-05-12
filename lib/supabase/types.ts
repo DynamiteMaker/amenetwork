@@ -9,6 +9,101 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      cases: {
+        Row: {
+          created_at: string
+          hero_image: string | null
+          id: string
+          is_featured: boolean
+          metric_label: string | null
+          metric_value: string | null
+          published_at: string | null
+          results: Json[]
+          slug: string
+          solution: string[]
+          sort_order: number
+          status: string
+          tag: string
+          testimonial: { quote: string; author: string; role: string } | null
+          thumbnail: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          hero_image?: string | null
+          id?: string
+          is_featured?: boolean
+          metric_label?: string | null
+          metric_value?: string | null
+          published_at?: string | null
+          results?: Json[]
+          slug: string
+          solution?: string[]
+          sort_order?: number
+          status?: string
+          tag?: string
+          testimonial?: { quote: string; author: string; role: string } | null
+          thumbnail?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          hero_image?: string | null
+          id?: string
+          is_featured?: boolean
+          metric_label?: string | null
+          metric_value?: string | null
+          published_at?: string | null
+          results?: Json[]
+          slug?: string
+          solution?: string[]
+          sort_order?: number
+          status?: string
+          tag?: string
+          testimonial?: { quote: string; author: string; role: string } | null
+          thumbnail?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      case_translations: {
+        Row: {
+          case_id: string
+          challenge: string
+          client: string
+          context: string
+          id: string
+          locale: string
+          title: string
+        }
+        Insert: {
+          case_id: string
+          challenge?: string
+          client: string
+          context?: string
+          id?: string
+          locale: string
+          title: string
+        }
+        Update: {
+          case_id?: string
+          challenge?: string
+          client?: string
+          context?: string
+          id?: string
+          locale?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "case_translations_case_id_fkey"
+            columns: ["case_id"]
+            isOneToOne: false
+            referencedRelation: "cases"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       contact_submissions: {
         Row: {
           company: string | null

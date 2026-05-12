@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 import { Menu, X, Globe, ChevronDown, Check } from "lucide-react";
 import { CONTACT } from "@/data/offices";
@@ -22,8 +22,7 @@ const LOCALE_LIST = [
 ];
 
 function LangSwitcher({ compact = false }: { compact?: boolean }) {
-  const locale = usePathname().split("/")[1] || "en";
-  const currentLocale = ["vi", "ja", "zh"].includes(locale) ? locale : "en";
+  const currentLocale = useLocale();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 

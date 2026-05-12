@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { CTABand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
+import { FAQJsonLd } from "@/components/structured-data";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -19,6 +20,7 @@ export default async function FaqPage({ params }: { params: Promise<{ locale: st
 
   return (
     <>
+      <FAQJsonLd faqs={items.map((it) => ({ question: it.q, answer: it.a }))} />
       <PageHero
         eyebrow={t("eyebrow")}
         title={

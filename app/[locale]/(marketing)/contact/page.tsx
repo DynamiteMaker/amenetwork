@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
+import { buildMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/page-hero";
 import { MapEmbed } from "@/components/map-embed";
 import { WhatsappIcon } from "@/components/social-icons";
@@ -11,7 +12,12 @@ import { CONTACT } from "@/data/offices";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "seo.contact" });
-  return { title: t("title"), description: t("description") };
+  return buildMetadata({
+    title: t("title"),
+    description: t("description"),
+    path: "contact",
+    locale,
+  });
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -174,6 +174,7 @@
     letter-spacing: -0.022em;
     color: hsl(var(--ink));
     font-variation-settings: "opsz" 64, "SOFT" 0;
+    text-wrap: balance;
   }
   h3, h4 {
     font-variation-settings: "opsz" 32, "SOFT" 0;
@@ -246,7 +247,10 @@
     color: hsl(var(--ink-2));
   }
 
-  .btn-base {
+  .btn-base,
+  .btn-primary-soft,
+  .btn-peach,
+  .btn-ghost-soft {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -255,7 +259,9 @@
     border-radius: 999px;
     font-weight: 600;
     font-size: 15px;
-    transition: all 0.25s var(--ame-ease);
+    transition: background 0.25s var(--ame-ease), transform 0.25s var(--ame-ease), box-shadow 0.25s var(--ame-ease), border-color 0.25s var(--ame-ease), color 0.25s var(--ame-ease);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
     white-space: nowrap;
   }
   .btn-primary-soft {
@@ -275,6 +281,32 @@
     border: 1px solid hsl(var(--line-2));
   }
   .btn-ghost-soft:hover { background: hsl(var(--bg-2)); transform: translateY(-1px); }
+
+  .btn-base:focus-visible,
+  .btn-primary-soft:focus-visible,
+  .btn-peach:focus-visible,
+  .btn-ghost-soft:focus-visible,
+  .link-arrow:focus-visible,
+  .card-soft:focus-visible {
+    outline: 2px solid hsl(var(--brand));
+    outline-offset: 2px;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.5rem 1rem;
+    background: hsl(var(--brand));
+    color: hsl(var(--surface));
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
 
   .soft-blob {
     position: absolute;
@@ -375,15 +407,36 @@
     position: absolute;
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: clamp(180px, 28vw, 320px);
-    line-height: 0.8;
-    color: hsl(var(--peach) / 0.16);
+    font-size: clamp(120px, 18vw, 200px);
+    line-height: 1;
+    color: hsl(var(--peach) / 0.10);
     user-select: none;
     pointer-events: none;
-    top: -0.1em;
+    z-index: 0;
+    top: -0.3em;
     left: 50%;
     transform: translateX(-50%);
     font-variation-settings: "opsz" 144, "SOFT" 0;
+  }
+
+  .admin-input {
+    width: 100%;
+    background: hsl(var(--surface));
+    border: 1px solid hsl(var(--line));
+    border-radius: 0.75rem;
+    padding: 0.55rem 0.85rem;
+    font-size: 14px;
+    color: hsl(var(--ink));
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .admin-input:focus {
+    outline: none;
+    border-color: hsl(var(--brand));
+    box-shadow: 0 0 0 3px hsl(var(--brand) / 0.12);
+  }
+  .admin-input:focus-visible {
+    outline: 2px solid hsl(var(--brand));
+    outline-offset: 2px;
   }
 }
 

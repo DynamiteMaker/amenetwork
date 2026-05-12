@@ -68,6 +68,9 @@ export function ContactForm() {
     }
     setSuccess(true);
     setData({ name: "", email: "", company: "", type: typeOptions[0], message: "" });
+    if (typeof window !== "undefined" && (window as any).plausible) {
+      (window as any).plausible("contact_form_submit");
+    }
   };
 
   if (success) {

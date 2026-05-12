@@ -1,27 +1,35 @@
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
+import DOMPurify from "isomorphic-dompurify";
 import { Link } from "@/i18n/routing";
 import { createClient } from "@/lib/supabase/server";
+import { buildMetadata } from "@/lib/seo";
 import { CTABand } from "@/components/cta-band";
+import { ArticleJsonLd } from "@/components/structured-data";
 
 export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const supabase = await createClient();
   const { data: post } = await supabase
     .from("posts")
-    .select("title, meta_title, meta_description, excerpt")
+    .select("title, meta_title, meta_description, excerpt, featured_image, published_at")
     .eq("slug", slug)
     .eq("status", "published")
     .maybeSingle();
 
   if (!post) return {};
-  return {
+  return buildMetadata({
     title: post.meta_title ?? post.title,
-    description: post.meta_description ?? post.excerpt,
-  };
+    description: post.meta_description ?? post.excerpt ?? "",
+    path: `blog/${slug}`,
+    locale,
+    image: post.featured_image ?? undefined,
+    type: "article",
+    publishedTime: post.published_at ?? undefined,
+  });
 }
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
@@ -38,20 +46,15 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
 
   if (!post) notFound();
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt ?? post.meta_description ?? undefined,
-    image: post.featured_image ?? undefined,
-    datePublished: post.published_at ?? undefined,
-    author: { "@type": "Organization", name: "AME Marketing" },
-    publisher: { "@type": "Organization", name: "AME Marketing" },
-  };
-
   return (
     <>
-      <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      <ArticleJsonLd
+        title={post.title}
+        slug={post.slug}
+        publishedAt={post.published_at ?? ""}
+        excerpt={post.excerpt ?? undefined}
+        image={post.featured_image ?? undefined}
+      />
 
       <article className="pt-12 md:pt-20 pb-20">
         <div className="container-page max-w-3xl">
@@ -79,7 +82,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
 
           <div
             className="prose prose-lg max-w-none mt-8 prose-headings:font-display prose-headings:uppercase prose-a:text-brand"
-            dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
           />
 
           {post.tags && post.tags.length > 0 && (
@@ -95,11 +98,4 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
       <CTABand />
     </>
   );
-}
-
-function sanitizeHtml(html: string): string {
-  return html
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
-    .replace(/\s*on\w+\s*=\s*"[^"]*"/gi, "")
-    .replace(/\s*on\w+\s*=\s*'[^']*'/gi, "");
 }

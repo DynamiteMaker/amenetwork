@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { ArrowRight, Tag } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { createClient } from "@/lib/supabase/server";
+import { buildMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/page-hero";
 import { CTABand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
@@ -12,7 +13,12 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "seo.insights" });
-  return { title: t("title"), description: t("description") };
+  return buildMetadata({
+    title: t("title"),
+    description: t("description"),
+    path: "blog",
+    locale,
+  });
 }
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {

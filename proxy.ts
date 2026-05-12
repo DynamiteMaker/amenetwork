@@ -8,7 +8,7 @@ const intlMiddleware = createIntlMiddleware(routing);
 const ADMIN_PATTERN = /\/(en|vi|ja|zh)?\/?admin(\/|$)/;
 const ADMIN_LOGIN_PATTERN = /\/admin\/login(\/|$|\?)/;
 
-export async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   // 1. Handle i18n
   const response = intlMiddleware(request);
 
@@ -36,11 +36,12 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // 3. Protect admin routes (any authenticated user blocked without admin/editor role)
+  // 3. Protect admin routes (redirect unauthenticated users)
   const pathname = request.nextUrl.pathname;
   if (ADMIN_PATTERN.test(pathname) && !ADMIN_LOGIN_PATTERN.test(pathname)) {
     if (!user) {
-      return NextResponse.redirect(new URL("/admin/login", request.url));
+      const locale = pathname.split("/")[1]?.match(/^(vi|en|ja|zh)$/) ? pathname.split("/")[1] : "en";
+      return NextResponse.redirect(new URL(`/${locale}/admin/login`, request.url));
     }
   }
 
@@ -48,5 +49,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/(vi|en|ja|zh)/:path*"],
+  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };

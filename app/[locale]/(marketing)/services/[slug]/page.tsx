@@ -91,7 +91,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <span className="eyebrow">{detail.process.heading}</span>
             <div className="mt-8 space-y-6">
               {detail.process.steps.map((s, i) => (
-                <Reveal key={s.label} delay={i * 80} className="flex gap-6 items-start">
+                <Reveal key={i} delay={i * 80} className="flex gap-6 items-start">
                   <div className="w-10 h-10 rounded-full bg-brand-soft text-brand flex items-center justify-center font-display shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </div>
