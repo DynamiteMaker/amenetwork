@@ -585,20 +585,34 @@
     "teamTitle": "AME 背后的人。",
     "team": [
       {
-        "name": "Nguyen An",
-        "role": "创始人 / 战略"
+        "name": "Ha Van Tuan",
+        "role": "CEO & Founder",
+        "bio": "11年越南与日本的传播与营销经验。负责AME Marketing Vietnam的战略方向、组织建设与重点项目监督。"
       },
       {
-        "name": "Tran Mai",
-        "role": "创意总监"
+        "name": "Nguyen Thi Nga",
+        "role": "Co-Founder – Product Marketing",
+        "bio": "13年经验。专精客户研究、信息构建以及为每个品牌量身打造的内容策略。"
       },
       {
-        "name": "Pham Khoi",
-        "role": "效果营销负责人"
+        "name": "Nguyen Dinh Trung",
+        "role": "Co-Founder – Digital Marketing",
+        "bio": "14年经验。构建并优化数字营销活动，将品牌策略与转化和增长紧密衔接。"
       },
       {
-        "name": "山田 健司",
-        "role": "日本市场负责人"
+        "name": "Tran Vy",
+        "role": "Co-Founder – Media Branding",
+        "bio": "10年经验。通过图片、视频与视觉风格的制作，借助媒体传递品牌故事。"
+      },
+      {
+        "name": "Mai Toan",
+        "role": "Co-Founder – Technology & Systems",
+        "bio": "7年经验。开发网站、移动应用、管理系统以及支撑营销与运营的自动化工具。"
+      },
+      {
+        "name": "Trieu Ngoc Tam",
+        "role": "Co-Founder – Artificial Intelligence",
+        "bio": "4年经验。将AI应用于内容创作、数据分析与流程自动化，助力营销团队提速提质。"
       }
     ],
     "officesEyebrow": "办公室",

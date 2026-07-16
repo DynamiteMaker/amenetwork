@@ -17,10 +17,12 @@ const toneStyles: Record<string, string> = {
 };
 
 const teamPortraits = [
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80&auto=format&fit=crop",
+  "/team/tuan.jpg",
+  "/team/nga.jpg",
+  "/team/trung.jpg",
+  "/team/vy.jpg",
+  "/team/toan.jpg",
+  "/team/tam.jpg",
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -35,7 +37,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations({ locale, namespace: "about" });
   const story: string[] = t.raw("story") as never;
   const values: { title: string; desc: string }[] = t.raw("values") as never;
-  const team: { name: string; role: string }[] = t.raw("team") as never;
+  const team: { name: string; role: string; bio: string }[] = t.raw("team") as never;
   const offices: { city: string; address: string; meta: string }[] = t.raw("offices") as never;
 
   return (
@@ -95,9 +97,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <span className="eyebrow">{t("teamEyebrow")}</span>
             <h2 className="display-lg mt-5">{t("teamTitle")}</h2>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((m, i) => (
-              <Reveal key={m.name} delay={i * 80}>
+              <Reveal key={m.name} delay={i * 80} className="flex flex-col">
                 <div className="aspect-square rounded-2xl overflow-hidden bg-bg-2 border border-line">
                   <img
                     src={teamPortraits[i % teamPortraits.length]}
@@ -108,6 +110,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 </div>
                 <h4 className="font-display text-xl mt-4">{m.name}</h4>
                 <p className="text-sm text-ink-3 mt-1">{m.role}</p>
+                {m.bio && <p className="mt-3 text-[15px] text-ink-2 leading-relaxed">{m.bio}</p>}
               </Reveal>
             ))}
           </div>

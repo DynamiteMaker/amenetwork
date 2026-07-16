@@ -585,20 +585,34 @@
     "teamTitle": "Những con người đứng sau AME.",
     "team": [
       {
-        "name": "Nguyễn An",
-        "role": "Founder & Chiến lược"
+        "name": "Hà Văn Tuấn",
+        "role": "CEO & Founder",
+        "bio": "11 năm kinh nghiệm truyền thông và marketing tại Việt Nam – Nhật Bản. Chịu trách nhiệm định hướng chiến lược, tổ chức bộ máy và giám sát các dự án trọng điểm của AME Marketing Vietnam."
       },
       {
-        "name": "Trần Mai",
-        "role": "Creative Director"
+        "name": "Nguyễn Thị Nga",
+        "role": "Co-Founder – Product Marketing",
+        "bio": "13 năm kinh nghiệm. Chuyên gia nghiên cứu khách hàng, xây dựng thông điệp và phát triển các tuyến nội dung phù hợp với từng thương hiệu."
       },
       {
-        "name": "Phạm Khôi",
-        "role": "Head of Performance"
+        "name": "Nguyễn Đình Trung",
+        "role": "Co-Founder – Digital Marketing",
+        "bio": "14 năm kinh nghiệm. Xây dựng và tối ưu chiến dịch marketing trên nền tảng số, kết nối chiến lược thương hiệu với hiệu quả chuyển đổi và tăng trưởng."
       },
       {
-        "name": "Yamada Kenji",
-        "role": "Japan Market Lead"
+        "name": "Trần Vỹ",
+        "role": "Co-Founder – Media Branding",
+        "bio": "10 năm kinh nghiệm. Sản xuất hình ảnh, video và xây dựng phong cách thị giác, truyền tải câu chuyện thương hiệu qua các sản phẩm truyền thông."
+      },
+      {
+        "name": "Mai Toản",
+        "role": "Co-Founder – Công nghệ & Hệ thống",
+        "bio": "7 năm kinh nghiệm. Phát triển website, app mobile, hệ thống quản trị và các công cụ tự động hóa hỗ trợ hoạt động marketing và vận hành."
+      },
+      {
+        "name": "Triệu Ngọc Tâm",
+        "role": "Co-Founder – Trí tuệ nhân tạo",
+        "bio": "4 năm kinh nghiệm. Nghiên cứu và ứng dụng AI vào sáng tạo nội dung, phân tích dữ liệu và tự động hóa quy trình, giúp đội ngũ marketing nâng cao tốc độ và chất lượng."
       }
     ],
     "officesEyebrow": "VĂN PHÒNG",
