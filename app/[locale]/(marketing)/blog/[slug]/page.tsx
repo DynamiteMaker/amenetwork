@@ -10,26 +10,61 @@ import { ArticleJsonLd } from "@/components/structured-data";
 
 export const revalidate = 3600;
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
-  const { locale, slug } = await params;
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return {};
+interface PostDetailRow {
+  id: string;
+  slug: string;
+  featured_image: string | null;
+  category: string | null;
+  tags: string[] | null;
+  published_at: string | null;
+  translations: {
+    title: string;
+    excerpt: string;
+    content: string;
+    meta_title: string | null;
+    meta_description: string | null;
+  }[];
+}
+
+async function getPost(slug: string, locale: string) {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return null;
   const supabase = await createClient();
-  const { data: post } = await supabase
+  const { data } = await supabase
     .from("posts")
-    .select("title, meta_title, meta_description, excerpt, featured_image, published_at")
+    .select(`id,slug,featured_image,category,tags,published_at,
+      translations:post_translations!inner(title,excerpt,content,meta_title,meta_description)`)
     .eq("slug", slug)
     .eq("status", "published")
+    .eq("translations.locale", locale)
     .maybeSingle();
+  if (!data) return null;
+  const row = data as unknown as PostDetailRow;
+  const tr = row.translations[0];
+  if (!tr) return null;
 
+  // Only advertise hreflang for locales this post is actually translated into.
+  const { data: localeRows } = await supabase
+    .from("post_translations")
+    .select("locale")
+    .eq("post_id", row.id);
+  const availableLocales = (localeRows ?? []).map((r) => r.locale);
+
+  return { ...row, tr, availableLocales };
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const post = await getPost(slug, locale);
   if (!post) return {};
   return buildMetadata({
-    title: post.meta_title ?? post.title,
-    description: post.meta_description ?? post.excerpt ?? "",
+    title: post.tr.meta_title ?? post.tr.title,
+    description: post.tr.meta_description ?? post.tr.excerpt ?? "",
     path: `blog/${slug}`,
     locale,
     image: post.featured_image ?? undefined,
     type: "article",
     publishedTime: post.published_at ?? undefined,
+    availableLocales: post.availableLocales,
   });
 }
 
@@ -37,24 +72,16 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) notFound();
-  const supabase = await createClient();
-  const { data: post } = await supabase
-    .from("posts")
-    .select("id,title,slug,excerpt,content,featured_image,category,tags,meta_title,meta_description,published_at")
-    .eq("slug", slug)
-    .eq("status", "published")
-    .maybeSingle();
-
+  const post = await getPost(slug, locale);
   if (!post) notFound();
 
   return (
     <>
       <ArticleJsonLd
-        title={post.title}
+        title={post.tr.title}
         slug={post.slug}
         publishedAt={post.published_at ?? ""}
-        excerpt={post.excerpt ?? undefined}
+        excerpt={post.tr.excerpt || undefined}
         image={post.featured_image ?? undefined}
       />
 
@@ -75,8 +102,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
             )}
           </div>
 
-          <h1 className="font-display text-3xl md:text-5xl leading-tight uppercase">{post.title}</h1>
-          {post.excerpt && <p className="mt-4 text-lg text-ink-2">{post.excerpt}</p>}
+          <h1 className="font-display text-3xl md:text-5xl leading-tight uppercase">{post.tr.title}</h1>
+          {post.tr.excerpt && <p className="mt-4 text-lg text-ink-2">{post.tr.excerpt}</p>}
 
           {post.featured_image && (
             <img src={post.featured_image} alt="" className="mt-8 rounded-2xl border border-line w-full" />
@@ -84,7 +111,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
 
           <div
             className="prose prose-lg max-w-none mt-8 prose-headings:font-display prose-headings:uppercase prose-a:text-brand"
-            dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.tr.content) }}
           />
 
           {post.tags && post.tags.length > 0 && (

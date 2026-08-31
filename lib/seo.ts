@@ -10,21 +10,24 @@ export function buildMetadata(opts: {
   image?: string;
   type?: "website" | "article";
   publishedTime?: string;
+  /** Locales this URL actually exists in; defaults to every locale. */
+  availableLocales?: string[];
 }): Metadata {
   const url = `${BASE_URL}/${opts.locale === "en" ? "" : opts.locale + "/"}${opts.path}`.replace(/\/+/g, "/");
+  const available = opts.availableLocales ?? ["en", "vi", "ja", "zh"];
+  const localeUrl = (locale: string) =>
+    `${BASE_URL}/${locale === "en" ? "" : locale + "/"}${opts.path}`.replace(/\/+/g, "/");
+
+  const languages: Record<string, string> = {};
+  for (const locale of available) languages[locale] = localeUrl(locale);
+  if (available.includes("en")) languages["x-default"] = localeUrl("en");
 
   return {
     title: opts.title,
     description: opts.description,
     alternates: {
       canonical: url,
-      languages: {
-        en: `${BASE_URL}/${opts.path}`.replace(/\/+/g, "/"),
-        vi: `${BASE_URL}/vi/${opts.path}`.replace(/\/+/g, "/"),
-        ja: `${BASE_URL}/ja/${opts.path}`.replace(/\/+/g, "/"),
-        zh: `${BASE_URL}/zh/${opts.path}`.replace(/\/+/g, "/"),
-        "x-default": `${BASE_URL}/${opts.path}`.replace(/\/+/g, "/"),
-      },
+      languages,
     },
     openGraph: {
       title: opts.title,

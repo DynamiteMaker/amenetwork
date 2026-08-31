@@ -7,14 +7,24 @@ import { useFeedback, FeedbackMessage } from "@/components/admin/feedback-messag
 import { useSupabaseBrowser } from "@/hooks/use-supabase-browser";
 import { deletePost } from "@/app/[locale]/admin/(dashboard)/actions";
 
+const LOCALE_ORDER = ["vi", "en", "ja", "zh"] as const;
+
 interface PostRow {
   id: string;
-  title: string;
   slug: string;
   status: string;
   is_featured: boolean;
   published_at: string | null;
   updated_at: string;
+  translations: { locale: string; title: string }[];
+}
+
+function displayTitle(row: PostRow): string {
+  for (const locale of LOCALE_ORDER) {
+    const tr = row.translations.find((t) => t.locale === locale);
+    if (tr?.title) return tr.title;
+  }
+  return row.translations[0]?.title ?? "(untitled)";
 }
 
 export function PostsList({ type }: { type: "post" | "news" }) {
@@ -28,7 +38,7 @@ export function PostsList({ type }: { type: "post" | "news" }) {
     setLoading(true);
     const { data, error } = await supabase
       .from("posts")
-      .select("id,title,slug,status,is_featured,published_at,updated_at")
+      .select("id,slug,status,is_featured,published_at,updated_at,translations:post_translations!left(locale,title)")
       .eq("type", type)
       .order("updated_at", { ascending: false });
     setLoading(false);
@@ -47,8 +57,8 @@ export function PostsList({ type }: { type: "post" | "news" }) {
       await deletePost(id, type);
       show("success", "Deleted");
       load();
-    } catch (e: any) {
-      show("error", e.message);
+    } catch (e: unknown) {
+      show("error", e instanceof Error ? e.message : "Delete failed");
     }
   };
 
@@ -60,7 +70,7 @@ export function PostsList({ type }: { type: "post" | "news" }) {
       <FeedbackMessage feedback={feedback} />
       <header className="flex items-center justify-between gap-3">
         <h1 className="font-display text-3xl uppercase">{type === "news" ? "NEWS" : "POSTS"}</h1>
-        <Link href={newPath as any} className="btn-peach">
+        <Link href={newPath} className="btn-peach">
           <Plus size={16} /> NEW
         </Link>
       </header>
@@ -75,6 +85,7 @@ export function PostsList({ type }: { type: "post" | "news" }) {
             <thead className="bg-bg-2 text-xs font-semibold uppercase tracking-wider text-ink-3">
               <tr>
                 <th className="text-left px-5 py-3">Title</th>
+                <th className="text-left px-5 py-3">Languages</th>
                 <th className="text-left px-5 py-3">Status</th>
                 <th className="text-left px-5 py-3">Updated</th>
                 <th className="text-right px-5 py-3">Actions</th>
@@ -85,12 +96,26 @@ export function PostsList({ type }: { type: "post" | "news" }) {
                 <tr key={p.id}>
                   <td className="px-5 py-3">
                     <div className="font-medium">
-                      {p.title}
+                      {displayTitle(p)}
                       {p.is_featured && (
                         <span className="ml-2 text-xs text-peach font-semibold">★ FEATURED</span>
                       )}
                     </div>
                     <div className="text-xs text-ink-3 mt-0.5">/{p.slug}</div>
+                  </td>
+                  <td className="px-5 py-3">
+                    <div className="flex gap-1">
+                      {LOCALE_ORDER.filter((locale) =>
+                        p.translations.some((t) => t.locale === locale && t.title),
+                      ).map((locale) => (
+                        <span
+                          key={locale}
+                          className="px-1.5 py-0.5 rounded bg-brand-soft text-brand text-[11px] font-semibold uppercase"
+                        >
+                          {locale}
+                        </span>
+                      ))}
+                    </div>
                   </td>
                   <td className="px-5 py-3">
                     <span
@@ -116,7 +141,7 @@ export function PostsList({ type }: { type: "post" | "news" }) {
                         </a>
                       )}
                       <Link
-                        href={`${editBase}/${p.id}/edit` as any}
+                        href={`${editBase}/${p.id}/edit`}
                         className="p-1.5 rounded hover:bg-bg-2 text-ink-2"
                         title="Edit"
                       >

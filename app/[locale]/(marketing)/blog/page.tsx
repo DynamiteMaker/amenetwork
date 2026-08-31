@@ -10,6 +10,27 @@ import { Reveal } from "@/components/reveal";
 
 export const revalidate = 3600;
 
+interface PostRow {
+  id: string;
+  slug: string;
+  featured_image: string | null;
+  category: string | null;
+  published_at: string | null;
+  is_featured: boolean;
+  translations: { title: string; excerpt: string }[];
+}
+
+interface PostCard {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  featured_image: string | null;
+  category: string | null;
+  published_at: string | null;
+  is_featured: boolean;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "seo.insights" });
@@ -26,16 +47,28 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
 
-  let allPosts: any[] = [];
+  let allPosts: PostCard[] = [];
   try {
     const supabase = await createClient();
-    const { data: posts } = await supabase
+    const { data: rows } = await supabase
       .from("posts")
-      .select("id,title,slug,excerpt,featured_image,category,published_at,is_featured")
+      .select(`id,slug,featured_image,category,published_at,is_featured,
+        translations:post_translations!inner(title,excerpt)`)
       .eq("status", "published")
+      .eq("translations.locale", locale)
       .order("published_at", { ascending: false })
       .limit(50);
-    allPosts = posts ?? [];
+
+    allPosts = ((rows ?? []) as unknown as PostRow[]).map((p) => ({
+      id: p.id,
+      slug: p.slug,
+      title: p.translations[0]?.title ?? "",
+      excerpt: p.translations[0]?.excerpt ?? "",
+      featured_image: p.featured_image,
+      category: p.category,
+      published_at: p.published_at,
+      is_featured: p.is_featured,
+    }));
   } catch {}
   const featured = allPosts.find((p) => p.is_featured) ?? allPosts[0];
   const rest = allPosts.filter((p) => p.id !== featured?.id);
@@ -57,7 +90,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
         <div className="container-page">
           {allPosts.length === 0 ? (
             <div className="card-soft p-10 text-center hover:translate-y-0">
-              <p className="text-ink-2">No posts published yet. Check back soon.</p>
+              <p className="text-ink-2">{t("insights.empty")}</p>
             </div>
           ) : (
             <>

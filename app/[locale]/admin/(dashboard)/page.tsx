@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/routing";
-import { FileText, Newspaper, Inbox, ShieldAlert } from "lucide-react";
+import { FileText, Newspaper, Inbox, ShieldAlert, type LucideIcon } from "lucide-react";
 import { useSupabaseBrowser } from "@/hooks/use-supabase-browser";
 
 interface Stats {
@@ -13,12 +13,30 @@ interface Stats {
   submissions: number;
 }
 
+const LOCALE_ORDER = ["vi", "en", "ja", "zh"] as const;
+
 interface RecentItem {
   id: string;
   title: string;
   type: string;
   status: string;
   updated_at: string;
+}
+
+interface RecentRow {
+  id: string;
+  type: string;
+  status: string;
+  updated_at: string;
+  translations: { locale: string; title: string }[];
+}
+
+function displayTitle(translations: { locale: string; title: string }[]): string {
+  for (const locale of LOCALE_ORDER) {
+    const tr = translations.find((t) => t.locale === locale);
+    if (tr?.title) return tr.title;
+  }
+  return translations[0]?.title ?? "(untitled)";
 }
 
 export default function AdminDashboard() {
@@ -34,7 +52,11 @@ export default function AdminDashboard() {
         supabase.from("posts").select("*", { count: "exact", head: true }).eq("type", "news"),
         supabase.from("posts").select("*", { count: "exact", head: true }).eq("status", "draft"),
         supabase.from("posts").select("*", { count: "exact", head: true }).eq("status", "published"),
-        supabase.from("posts").select("id,title,type,status,updated_at").order("updated_at", { ascending: false }).limit(8),
+        supabase
+          .from("posts")
+          .select("id,type,status,updated_at,translations:post_translations!left(locale,title)")
+          .order("updated_at", { ascending: false })
+          .limit(8),
       ]);
       const { count: subCount } = await supabase
         .from("contact_submissions")
@@ -47,7 +69,15 @@ export default function AdminDashboard() {
         published: published.count ?? 0,
         submissions: subCount ?? 0,
       });
-      setRecent(recentRows.data ?? []);
+      setRecent(
+        ((recentRows.data ?? []) as RecentRow[]).map((row) => ({
+          id: row.id,
+          type: row.type,
+          status: row.status,
+          updated_at: row.updated_at,
+          title: displayTitle(row.translations ?? []),
+        })),
+      );
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -83,7 +113,7 @@ export default function AdminDashboard() {
               <li key={p.id} className="py-3 flex items-center justify-between gap-3">
                 <div className="min-w-0">
                   <Link
-                    href={`/admin/${p.type === "news" ? "news" : "posts"}/${p.id}/edit` as any}
+                    href={`/admin/${p.type === "news" ? "news" : "posts"}/${p.id}/edit`}
                     className="text-sm font-medium hover:text-brand truncate block"
                   >
                     {p.title}
@@ -101,7 +131,7 @@ export default function AdminDashboard() {
   );
 }
 
-function StatCard({ label, value, icon: Icon }: { label: string; value: number; icon?: any }) {
+function StatCard({ label, value, icon: Icon }: { label: string; value: number; icon?: LucideIcon }) {
   return (
     <div className="card-soft p-5 hover:translate-y-0">
       <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] text-ink-3">

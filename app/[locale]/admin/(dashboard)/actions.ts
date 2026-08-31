@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 
 const ALLOWED_TYPES = ["post", "news"] as const;
 const ALLOWED_STATUSES = ["draft", "published"] as const;
+const POST_LOCALES = ["en", "vi", "ja", "zh"] as const;
 
 async function requireAdminRole() {
   const supabase = await createClient();
@@ -32,11 +33,9 @@ export async function savePost(formData: FormData) {
   const id = formData.get("id") as string | null;
   const type = ALLOWED_TYPES.find((t) => t === formData.get("type")) ?? "post";
   const status = ALLOWED_STATUSES.find((s) => s === formData.get("status")) ?? "draft";
-  const title = formData.get("title") as string;
-  const slug = formData.get("slug") as string;
+  const slug = (formData.get("slug") as string)?.trim();
 
-  if (!title?.trim()) throw new Error("Title is required");
-  if (!slug?.trim()) throw new Error("Slug is required");
+  if (!slug) throw new Error("Slug is required");
 
   let tags: string[] = [];
   try {
@@ -46,25 +45,42 @@ export async function savePost(formData: FormData) {
     /* keep empty array */
   }
 
+  // A post is only published in a locale that has a translation, so a locale
+  // without a title is skipped entirely.
+  const translations: {
+    locale: string;
+    title: string;
+    excerpt: string;
+    content: string;
+    meta_title: string | null;
+    meta_description: string | null;
+  }[] = [];
+  for (const loc of POST_LOCALES) {
+    const prefix = `tr_${loc}_`;
+    const title = (formData.get(`${prefix}title`) as string)?.trim();
+    if (!title) continue;
+    translations.push({
+      locale: loc,
+      title,
+      excerpt: (formData.get(`${prefix}excerpt`) as string)?.trim() || "",
+      content: (formData.get(`${prefix}content`) as string) || "",
+      meta_title: (formData.get(`${prefix}meta_title`) as string)?.trim() || null,
+      meta_description: (formData.get(`${prefix}meta_description`) as string)?.trim() || null,
+    });
+  }
+
+  if (translations.length === 0) throw new Error("At least one translation is required");
+
   const payload: Record<string, unknown> = {
-    title: title.trim(),
-    slug: slug.trim(),
-    excerpt: (formData.get("excerpt") as string)?.trim() || null,
-    content: (formData.get("content") as string) || "",
+    slug,
     featured_image: (formData.get("featured_image") as string) || null,
     status,
     type,
     is_featured: formData.get("is_featured") === "on",
-    meta_title: (formData.get("meta_title") as string)?.trim() || null,
-    meta_description: (formData.get("meta_description") as string)?.trim() || null,
     category: (formData.get("category") as string)?.trim() || null,
     tags,
     author_id: user.id,
   };
-
-  if (!id && status === "published") {
-    payload.published_at = new Date().toISOString();
-  }
 
   const admin = createAdminClient();
   let result;
@@ -76,12 +92,20 @@ export async function savePost(formData: FormData) {
   }
 
   if (result.error) throw new Error(result.error.message);
+  const postId = result.data.id;
+
+  if (id) await admin.from("post_translations").delete().eq("post_id", postId);
+
+  const { error: trErr } = await admin
+    .from("post_translations")
+    .insert(translations.map((t) => ({ ...t, post_id: postId })));
+  if (trErr) throw new Error(trErr.message);
 
   revalidatePath("/blog");
   if (result.data?.slug) revalidatePath(`/blog/${result.data.slug}`);
 
   const basePath = type === "news" ? "/admin/news" : "/admin/posts";
-  redirect(`${basePath}/${result.data.id}/edit`);
+  redirect(`${basePath}/${postId}/edit`);
 }
 
 export async function deletePost(id: string, type: "post" | "news") {

@@ -80,21 +80,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   if (supabaseUrl && supabaseKey) {
     const supabase = createClient(supabaseUrl, supabaseKey);
-    const { data: posts } = await supabase
-      .from("posts")
-      .select("slug, updated_at")
-      .eq("status", "published");
+    const { data: rows } = await supabase
+      .from("post_translations")
+      .select("locale, posts!inner(slug, updated_at, status)")
+      .eq("posts.status", "published");
 
-    for (const locale of locales) {
-      const prefix = locale === "en" ? "" : `/${locale}`;
-      for (const post of posts ?? []) {
-        entries.push({
-          url: `${BASE_URL}${prefix}/blog/${post.slug}`,
-          lastModified: new Date(post.updated_at),
-          changeFrequency: "monthly",
-          priority: 0.6,
-        });
-      }
+    const translations = (rows ?? []) as unknown as {
+      locale: string;
+      posts: { slug: string; updated_at: string };
+    }[];
+
+    for (const tr of translations) {
+      const prefix = tr.locale === "en" ? "" : `/${tr.locale}`;
+      entries.push({
+        url: `${BASE_URL}${prefix}/blog/${tr.posts.slug}`,
+        lastModified: new Date(tr.posts.updated_at),
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
     }
   }
 
