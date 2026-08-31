@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import { sanitizeHtml } from "@/lib/sanitize";
 import { Link } from "@/i18n/routing";
@@ -52,6 +52,26 @@ async function getPost(slug: string, locale: string) {
   return { ...row, tr, availableLocales };
 }
 
+/**
+ * Locale order used when an article is requested in a locale it has no
+ * translation for: the URL redirects to the first locale that has one, so
+ * links that were already published keep working instead of 404ing.
+ */
+const LOCALE_FALLBACK_ORDER = ["vi", "en", "ja", "zh"] as const;
+
+async function findTranslatedLocale(slug: string) {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return null;
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("posts")
+    .select("translations:post_translations!inner(locale)")
+    .eq("slug", slug)
+    .eq("status", "published")
+    .maybeSingle();
+  const locales = (data?.translations ?? []).map((t) => t.locale);
+  return LOCALE_FALLBACK_ORDER.find((locale) => locales.includes(locale)) ?? null;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   const post = await getPost(slug, locale);
@@ -73,7 +93,11 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
   setRequestLocale(locale);
 
   const post = await getPost(slug, locale);
-  if (!post) notFound();
+  if (!post) {
+    const translated = await findTranslatedLocale(slug);
+    if (!translated) notFound();
+    permanentRedirect(translated === "en" ? `/blog/${slug}` : `/${translated}/blog/${slug}`);
+  }
 
   return (
     <>
