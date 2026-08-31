@@ -18,8 +18,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   const t = await getTranslations({ locale, namespace: "servicesDetail" });
-  const detail = t.raw(slug) as Record<string, unknown> | undefined;
-  if (!detail) return {};
+  if (!t.has(slug as never)) return {};
+  const detail = t.raw(slug) as Record<string, unknown>;
   return {
     title: `${detail.title} | AME Services`,
     description: detail.sub as string,
@@ -31,6 +31,10 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "servicesDetail" });
+  // `t.raw` throws on a missing key, so an unknown slug must be rejected first
+  // (otherwise /services/<bad-slug> returns 500 instead of 404).
+  if (!t.has(slug as never)) notFound();
+
   const detail = t.raw(slug) as {
     eyebrow?: string;
     title?: string;
@@ -40,9 +44,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     scope?: { heading: string; bullets: string[] };
     process?: { heading: string; steps: { label: string; desc: string }[] };
     cta?: { heading: string; body: string };
-  } | null;
-
-  if (!detail) notFound();
+  };
 
   return (
     <>
