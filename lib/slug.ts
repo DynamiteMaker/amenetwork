@@ -1,7 +1,9 @@
+const MAX_LENGTH = 80;
+
 export function slugify(input: string): string {
-  return input
+  const slug = input
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/đ/g, "d")
     .replace(/Đ/g, "d")
     .toLowerCase()
@@ -9,6 +11,13 @@ export function slugify(input: string): string {
     .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 80);
+    .replace(/^-|-$/g, "");
+
+  if (slug.length <= MAX_LENGTH) return slug;
+
+  // Cut on a word boundary so long titles never end mid-word
+  // (e.g. "...da-thay-doi-ra" instead of "...da-thay-doi").
+  const cut = slug.slice(0, MAX_LENGTH + 1);
+  const boundary = cut.lastIndexOf("-");
+  return (boundary > 0 ? cut.slice(0, boundary) : cut.slice(0, MAX_LENGTH)).replace(/-$/, "");
 }
