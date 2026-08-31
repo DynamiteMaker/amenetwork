@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
-import DOMPurify from "isomorphic-dompurify";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { Link } from "@/i18n/routing";
 import { createClient } from "@/lib/supabase/server";
 import { buildMetadata } from "@/lib/seo";
@@ -84,7 +84,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
 
           <div
             className="prose prose-lg max-w-none mt-8 prose-headings:font-display prose-headings:uppercase prose-a:text-brand"
-            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }}
           />
 
           {post.tags && post.tags.length > 0 && (
