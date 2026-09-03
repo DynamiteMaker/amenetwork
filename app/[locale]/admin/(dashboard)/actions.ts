@@ -3,6 +3,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getUserRole } from "@/lib/auth";
+import { extensionForContentType, parseRemoteImageUrl } from "@/lib/upload-media";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -255,3 +256,39 @@ export async function deleteCase(id: string) {
   revalidatePath("/cases");
   return { success: true };
 }
+
+// --- Media ---
+
+/**
+ * Copies an image that was pasted from another site (Google Docs, Word, a web
+ * page) into our own `media` bucket and returns the public URL. Pasting keeps
+ * a foreign URL that CORS blocks the browser from reading and that rots as
+ * soon as the source deletes it, so the copy has to happen server-side.
+ */
+export async function rehostImage(url: string): Promise<string> {
+  await requireAdminRole();
+
+  const source = parseRemoteImageUrl(url);
+  const ownHost = new URL(process.env.NEXT_PUBLIC_SUPABASE_URL!).hostname;
+  if (source.hostname === ownHost) return url;
+
+  const res = await fetch(source, { redirect: "follow" });
+  if (!res.ok) throw new Error(`Could not fetch image (${res.status})`);
+
+  const contentType = (res.headers.get("content-type") ?? "").split(";")[0].trim();
+  if (!contentType.startsWith("image/")) throw new Error("That URL is not an image");
+
+  const bytes = new Uint8Array(await res.arrayBuffer());
+  if (bytes.byteLength > MAX_MEDIA_BYTES) throw new Error("Image too large (max 5MB)");
+
+  const ext = extensionForContentType(contentType);
+  const path = `posts/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+
+  const admin = createAdminClient();
+  const { error } = await admin.storage.from("media").upload(path, bytes, { contentType });
+  if (error) throw new Error(error.message);
+
+  return admin.storage.from("media").getPublicUrl(path).data.publicUrl;
+}
+
+const MAX_MEDIA_BYTES = 5 * 1024 * 1024;

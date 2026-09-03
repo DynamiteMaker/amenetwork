@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* AME Marketing — Soft Modern Design System (Tailwind v4)
    All colors HSL. Tokens drive every component.

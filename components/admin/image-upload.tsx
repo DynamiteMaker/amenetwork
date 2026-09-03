@@ -2,33 +2,24 @@
 
 import { useState } from "react";
 import { Upload, X } from "lucide-react";
-import { createBrowserClient } from "@supabase/ssr";
+import { useSupabaseBrowser } from "@/hooks/use-supabase-browser";
+import { uploadMedia } from "@/lib/upload-media";
 
 export function ImageUpload({ value, onChange }: { value: string | null; onChange: (url: string | null) => void }) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const supabase = useSupabaseBrowser();
 
   const onFile = async (file: File) => {
-    if (file.size > 5 * 1024 * 1024) {
-      setError("File too large (max 5MB)");
-      return;
-    }
     setUploading(true);
     setError(null);
-    const supabase = createBrowserClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
-    const ext = file.name.split(".").pop() ?? "jpg";
-    const path = `posts/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
-    const { error: uploadError } = await supabase.storage.from("media").upload(path, file, { contentType: file.type });
-    setUploading(false);
-    if (uploadError) {
-      setError(uploadError.message);
-      return;
+    try {
+      onChange(await uploadMedia(supabase, file));
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Upload failed");
+    } finally {
+      setUploading(false);
     }
-    const { data } = supabase.storage.from("media").getPublicUrl(path);
-    onChange(data.publicUrl);
   };
 
   return (

@@ -134,7 +134,10 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ loc
           )}
 
           <div
-            className="prose prose-lg max-w-none mt-8 prose-headings:font-display prose-headings:uppercase prose-a:text-brand"
+            className="prose prose-lg max-w-none mt-8 prose-headings:font-display prose-headings:uppercase
+              prose-headings:text-ink prose-p:text-ink-2 prose-li:text-ink-2 prose-strong:text-ink
+              prose-a:text-brand prose-img:rounded-2xl prose-img:border prose-img:border-line
+              prose-img:mx-auto"
             dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.tr.content) }}
           />
 

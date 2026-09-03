@@ -42,10 +42,11 @@ describe("Database types", () => {
   });
 });
 
-describe("Middleware", () => {
-  it("combines i18n + auth in middleware.ts", async () => {
-    const mwPath = path.resolve(__dirname, "../middleware.ts");
-    const content = fs.readFileSync(mwPath, "utf-8");
+describe("Proxy", () => {
+  // This Next version renamed middleware.ts to proxy.ts.
+  it("combines i18n + auth in proxy.ts", async () => {
+    const proxyPath = path.resolve(__dirname, "../proxy.ts");
+    const content = fs.readFileSync(proxyPath, "utf-8");
     expect(content).toContain("next-intl/middleware");
     expect(content).toContain("@supabase/ssr");
     expect(content).toContain("/admin");
