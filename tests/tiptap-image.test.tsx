@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { fireEvent } from "@testing-library/dom";
+import { setTimeout as sleep } from "node:timers/promises";
 import { TipTapEditor } from "@/components/admin/tiptap-editor";
 
 const upload = vi.fn(async (): Promise<{ error: { message: string } | null }> => ({ error: null }));
@@ -66,9 +67,8 @@ describe("TipTapEditor image upload", () => {
     const pdf = new File([new Uint8Array(4)], "brief.pdf", { type: "application/pdf" });
     fireEvent.change(fileInputOf(container), { target: { files: [pdf] } });
 
-    const settled = Promise.withResolvers<void>();
-    setTimeout(settled.resolve, 20);
-    await settled.promise;
+    // `setTimeout` from node:timers/promises, not Promise.withResolvers: CI runs Node 20.
+    await sleep(20);
     expect(upload).not.toHaveBeenCalled();
   });
 
