@@ -7,6 +7,15 @@ import { Send, Clock } from "lucide-react";
 import { WhatsappIcon } from "@/components/social-icons";
 import { CONTACT } from "@/data/offices";
 import { useTranslations } from "next-intl";
+import type { Database } from "@/lib/supabase/types";
+
+declare global {
+  interface Window {
+    plausible?: (eventName: string) => void;
+  }
+}
+
+type ContactSubmissionInsert = Database["public"]["Tables"]["contact_submissions"]["Insert"];
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Required").max(100),
@@ -55,12 +64,13 @@ export function ContactForm() {
     const v = result.data;
     setSubmitting(true);
     const supabase = createClient();
-    const { error } = await supabase.from("contact_submissions").insert({
+    const payload: ContactSubmissionInsert = {
       full_name: v.name,
       email: v.email,
       company: v.company || null,
       message: `[${v.type}] ${v.message}`,
-    });
+    };
+    const { error } = await supabase.from("contact_submissions").insert(payload);
     setSubmitting(false);
     if (error) {
       setErrors({ message: "Submission failed. Please try again." });
@@ -68,8 +78,8 @@ export function ContactForm() {
     }
     setSuccess(true);
     setData({ name: "", email: "", company: "", type: typeOptions[0], message: "" });
-    if (typeof window !== "undefined" && (window as any).plausible) {
-      (window as any).plausible("contact_form_submit");
+    if (typeof window !== "undefined") {
+      window.plausible?.("contact_form_submit");
     }
   };
 

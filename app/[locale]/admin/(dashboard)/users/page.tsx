@@ -21,17 +21,21 @@ export default function UsersPage() {
 
   const supabase = useSupabaseBrowser();
 
-  const load = async () => {
-    const { data, error } = await supabase
+  const query = () =>
+    supabase
       .from("user_roles")
       .select("*")
       .order("created_at", { ascending: false });
+
+  const applyResult = ({ data, error }: Awaited<ReturnType<typeof query>>) => {
     if (error) show("error", error.message);
     else setRows(data ?? []);
   };
 
+  const load = async () => applyResult(await query());
+
   useEffect(() => {
-    load();
+    void query().then(applyResult);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -43,8 +47,8 @@ export default function UsersPage() {
       show("success", "Role granted");
       setUid("");
       load();
-    } catch (err: any) {
-      show("error", err.message);
+    } catch (err: unknown) {
+      show("error", err instanceof Error ? err.message : "Could not grant role");
     }
   };
 
@@ -54,8 +58,8 @@ export default function UsersPage() {
       await revokeRole(id);
       show("success", "Revoked");
       load();
-    } catch (err: any) {
-      show("error", err.message);
+    } catch (err: unknown) {
+      show("error", err instanceof Error ? err.message : "Could not revoke role");
     }
   };
 

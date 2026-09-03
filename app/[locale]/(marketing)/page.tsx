@@ -11,6 +11,15 @@ import { CTABand } from "@/components/cta-band";
 
 export const revalidate = 3600;
 
+/** Columns selected by the featured-case queries below. */
+interface FeaturedCaseRow {
+  id: string;
+  slug: string;
+  thumbnail: string | null;
+  results: { value: string; label: string }[] | null;
+  translations: { locale: string; client: string; title: string; context: string }[] | null;
+}
+
 async function getFeaturedCase(locale: string) {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
     return null;
@@ -37,14 +46,14 @@ async function getFeaturedCase(locale: string) {
       .limit(1)
       .maybeSingle();
     if (!fallback) return null;
-    return mapCase(fallback as any, locale);
+    return mapCase(fallback, locale);
   }
-  return mapCase(data as any, locale);
+  return mapCase(data, locale);
 }
 
-function mapCase(raw: any, locale: string) {
-  const tr = raw.translations?.find((t: any) => t.locale === locale)
-    ?? raw.translations?.find((t: any) => t.locale === "en");
+function mapCase(raw: FeaturedCaseRow, locale: string) {
+  const tr = raw.translations?.find((t) => t.locale === locale)
+    ?? raw.translations?.find((t) => t.locale === "en");
   if (!tr) return null;
   return {
     slug: raw.slug,

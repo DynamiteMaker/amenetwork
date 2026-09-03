@@ -35,7 +35,6 @@ export function PostsList({ type }: { type: "post" | "news" }) {
   const supabase = useSupabaseBrowser();
 
   const load = async () => {
-    setLoading(true);
     const { data, error } = await supabase
       .from("posts")
       .select("id,slug,status,is_featured,published_at,updated_at,translations:post_translations!left(locale,title)")
@@ -47,7 +46,7 @@ export function PostsList({ type }: { type: "post" | "news" }) {
   };
 
   useEffect(() => {
-    load();
+    void (async () => { await load(); })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [type]);
 
@@ -56,6 +55,7 @@ export function PostsList({ type }: { type: "post" | "news" }) {
     try {
       await deletePost(id, type);
       show("success", "Deleted");
+      setLoading(true);
       load();
     } catch (e: unknown) {
       show("error", e instanceof Error ? e.message : "Delete failed");

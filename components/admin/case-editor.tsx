@@ -25,6 +25,14 @@ interface TranslationForm {
   challenge: string;
 }
 
+interface CaseTranslationRow {
+  locale: string;
+  client: string;
+  title: string;
+  context: string | null;
+  challenge: string | null;
+}
+
 const emptyTr = (): TranslationForm => ({ client: "", title: "", context: "", challenge: "" });
 
 export function CaseEditor({ id }: { id?: string }) {
@@ -33,10 +41,9 @@ export function CaseEditor({ id }: { id?: string }) {
 
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
-  const [slugTouched, setSlugTouched] = useState(false);
+  const [slugInput, setSlugInput] = useState<string | null>(null);
   const [activeLocale, setActiveLocale] = useState<string>("en");
 
-  const [slug, setSlug] = useState("");
   const [tag, setTag] = useState("branding");
   const [status, setStatus] = useState<"draft" | "published">("draft");
   const [isFeatured, setIsFeatured] = useState(false);
@@ -55,6 +62,9 @@ export function CaseEditor({ id }: { id?: string }) {
     zh: emptyTr(),
   });
 
+  // Auto-slug from EN title until the slug is edited manually
+  const slug = slugInput ?? slugify(translations.en.title);
+
   const supabase = useSupabaseBrowser();
 
   useEffect(() => {
@@ -68,19 +78,19 @@ export function CaseEditor({ id }: { id?: string }) {
       setLoading(false);
       if (error || !data) { show("error", "Not found"); return; }
 
-      const d = data as any;
-      setSlugTouched(true);
-      setSlug(d.slug);
+      const d = data as typeof data & { translations: CaseTranslationRow[] };
+      setSlugInput(d.slug);
       setTag(d.tag);
-      setStatus(d.status);
+      setStatus(d.status === "published" ? "published" : "draft");
       setIsFeatured(d.is_featured);
       setSortOrder(d.sort_order);
       setThumbnail(d.thumbnail);
       setMetricValue(d.metric_value ?? "");
       setMetricLabel(d.metric_label ?? "");
-      setResults(d.results ?? []);
+      setResults((d.results as { value: string; label: string }[] | null) ?? []);
       setSolution(d.solution?.length ? d.solution : [""]);
-      if (d.testimonial) { setHasTestimonial(true); setTestimonial(d.testimonial); }
+      const loaded = d.testimonial as { quote: string; author: string; role: string } | null;
+      if (loaded) { setHasTestimonial(true); setTestimonial(loaded); }
 
       const trs: Record<string, TranslationForm> = {};
       for (const loc of LOCALES) trs[loc.code] = emptyTr();
@@ -90,11 +100,6 @@ export function CaseEditor({ id }: { id?: string }) {
       setTranslations(trs);
     })();
   }, [id, isNew]);
-
-  // Auto-slug from EN title
-  useEffect(() => {
-    if (!slugTouched) setSlug(slugify(translations.en.title));
-  }, [translations.en.title, slugTouched]);
 
   const updateTr = (locale: string, field: keyof TranslationForm, value: string) => {
     setTranslations((prev) => ({ ...prev, [locale]: { ...prev[locale], [field]: value } }));
@@ -131,9 +136,9 @@ export function CaseEditor({ id }: { id?: string }) {
         fd.set(`tr_${loc.code}_challenge`, tr.challenge);
       }
       await saveCase(fd);
-    } catch (e: any) {
+    } catch (e: unknown) {
       setSaving(false);
-      show("error", e.message || "Save failed");
+      show("error", e instanceof Error ? e.message : "Save failed");
     }
   };
 
@@ -337,7 +342,7 @@ export function CaseEditor({ id }: { id?: string }) {
             <AdminField label="Slug">
               <input
                 value={slug}
-                onChange={(e) => { setSlugTouched(true); setSlug(e.target.value); }}
+                onChange={(e) => setSlugInput(e.target.value)}
                 className="admin-input font-mono text-sm"
                 maxLength={120}
               />

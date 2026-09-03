@@ -27,7 +27,6 @@ export function CasesList() {
   const supabase = useSupabaseBrowser();
 
   const load = async () => {
-    setLoading(true);
     const { data, error } = await supabase
       .from("cases")
       .select(`id,slug,tag,status,is_featured,thumbnail,sort_order,updated_at,
@@ -38,16 +37,19 @@ export function CasesList() {
     else setRows((data as unknown as CaseRow[]) ?? []);
   };
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    void (async () => { await load(); })();
+  }, []);
 
   const onDelete = async (id: string) => {
     if (!confirm("Delete this case?")) return;
     try {
       await deleteCase(id);
       show("success", "Deleted");
+      setLoading(true);
       load();
-    } catch (e: any) {
-      show("error", e.message);
+    } catch (e: unknown) {
+      show("error", e instanceof Error ? e.message : "Delete failed");
     }
   };
 
@@ -130,7 +132,7 @@ export function CasesList() {
                           </a>
                         )}
                         <Link
-                          href={`/admin/cases/${c.id}/edit` as any}
+                          href={`/admin/cases/${c.id}/edit`}
                           className="p-1.5 rounded hover:bg-bg-2 text-ink-2"
                           title="Edit"
                         >

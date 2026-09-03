@@ -7,6 +7,28 @@ import { CasesGrid } from "./cases-client";
 
 export const revalidate = 3600;
 
+/** Columns selected by the case list query below. */
+interface CaseListRow {
+  id: string;
+  slug: string;
+  tag: string;
+  thumbnail: string | null;
+  metric_value: string | null;
+  metric_label: string | null;
+  translations: { locale: string; client: string; title: string }[] | null;
+}
+
+interface CaseCard {
+  id: string;
+  slug: string;
+  tag: string;
+  thumbnail: string | null;
+  metricValue: string | null;
+  metricLabel: string | null;
+  client: string;
+  title: string;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "seo.cases" });
@@ -18,7 +40,7 @@ export default async function CasesPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "cases" });
 
-  let cases: any[] = [];
+  let cases: CaseCard[] = [];
   try {
     const supabase = await createClient();
     const { data: rows } = await supabase
@@ -28,9 +50,9 @@ export default async function CasesPage({ params }: { params: Promise<{ locale: 
       .eq("status", "published")
       .order("sort_order");
 
-    cases = (rows ?? []).map((c: any) => {
-      const tr = (c.translations as any[])?.find((t: any) => t.locale === locale)
-        ?? (c.translations as any[])?.find((t: any) => t.locale === "en");
+    cases = (rows ?? []).map((c: CaseListRow) => {
+      const tr = c.translations?.find((t) => t.locale === locale)
+        ?? c.translations?.find((t) => t.locale === "en");
       return {
         id: c.id,
         slug: c.slug,

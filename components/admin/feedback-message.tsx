@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export type Feedback = { type: "success" | "error"; message: string } | null;
 
@@ -18,17 +18,7 @@ export function useFeedback() {
 }
 
 export function FeedbackMessage({ feedback }: { feedback: Feedback }) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    if (feedback) {
-      setVisible(true);
-      const t = setTimeout(() => setVisible(false), 3200);
-      return () => clearTimeout(t);
-    }
-  }, [feedback]);
-
-  if (!feedback || !visible) return null;
+  if (!feedback) return null;
 
   return (
     <div

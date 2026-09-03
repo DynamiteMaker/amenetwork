@@ -33,7 +33,7 @@ export function AdminSidebar({ role, email }: { role: string | null; email?: str
             return (
               <Link
                 key={it.href}
-                href={it.href as any}
+                href={it.href}
                 className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   active ? "bg-brand-soft text-brand" : "text-ink-2 hover:bg-bg-2"
                 }`}

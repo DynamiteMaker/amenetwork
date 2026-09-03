@@ -23,19 +23,25 @@ export default function ContactSubmissionsPage() {
 
   const supabase = useSupabaseBrowser();
 
-  const load = async () => {
-    setLoading(true);
-    const { data, error } = await supabase
+  const query = () =>
+    supabase
       .from("contact_submissions")
       .select("*")
       .order("created_at", { ascending: false });
+
+  const applyResult = ({ data, error }: Awaited<ReturnType<typeof query>>) => {
     setLoading(false);
     if (error) show("error", error.message);
     else setRows(data ?? []);
   };
 
+  const load = async () => {
+    setLoading(true);
+    applyResult(await query());
+  };
+
   useEffect(() => {
-    load();
+    void query().then(applyResult);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -45,8 +51,8 @@ export default function ContactSubmissionsPage() {
       await deleteSubmission(id);
       show("success", "Deleted");
       load();
-    } catch (e: any) {
-      show("error", e.message);
+    } catch (e: unknown) {
+      show("error", e instanceof Error ? e.message : "Delete failed");
     }
   };
 

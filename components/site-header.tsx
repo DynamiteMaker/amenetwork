@@ -93,28 +93,36 @@ function ServicesMenu() {
   const t = useTranslations("nav");
   const ns = useTranslations("navServices");
   const so = useTranslations("servicesOverview");
-  const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<number | null>(null);
   const pathname = usePathname();
   const isActive = pathname.startsWith("/services");
-
-  useEffect(() => { setOpen(false); }, [pathname]);
+  // Open state is scoped to the route it was opened on, so navigating closes the menu.
+  const [openForPath, setOpenForPath] = useState<string | null>(null);
+  const open = openForPath === pathname;
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpenForPath(null);
     };
     document.addEventListener("mousedown", onClick);
     return () => document.removeEventListener("mousedown", onClick);
   }, []);
 
+  // Back/forward can land on the very route the menu was opened on, which the
+  // route-scoped state would read as "still open".
+  useEffect(() => {
+    const onPopState = () => setOpenForPath(null);
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
   const openNow = () => {
     if (closeTimer.current) window.clearTimeout(closeTimer.current);
-    setOpen(true);
+    setOpenForPath(pathname);
   };
   const closeSoon = () => {
-    closeTimer.current = window.setTimeout(() => setOpen(false), 120);
+    closeTimer.current = window.setTimeout(() => setOpenForPath(null), 120);
   };
 
   const cards: { slug: string; title: string; desc: string }[] = so.raw("cards") as never;
@@ -123,7 +131,7 @@ function ServicesMenu() {
     <div className="relative" ref={ref} onMouseEnter={openNow} onMouseLeave={closeSoon}>
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => setOpenForPath((v) => (v === pathname ? null : pathname))}
         className={`inline-flex items-center gap-1 text-[15px] font-medium hover:text-brand transition-colors ${
           isActive ? "link-underline text-ink" : "text-ink"
         }`}
@@ -135,7 +143,7 @@ function ServicesMenu() {
       </button>
 
       {open && (
-        <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50">
+        <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50" onClick={() => setOpenForPath(null)}>
           <div className="w-[640px] rounded-2xl border border-line bg-surface shadow-warmLg p-4 animate-fade-up">
             <Link
               href="/services"
@@ -167,9 +175,12 @@ function ServicesMenu() {
 export function SiteHeader() {
   const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
+  // Both menus are scoped to the route they were opened on, so navigating closes them.
+  const [openForPath, setOpenForPath] = useState<string | null>(null);
+  const [servicesOpenForPath, setServicesOpenForPath] = useState<string | null>(null);
+  const open = openForPath === pathname;
+  const mobileServicesOpen = servicesOpenForPath === pathname;
   const ns = useTranslations("navServices");
   const so = useTranslations("servicesOverview");
 
@@ -181,9 +192,13 @@ export function SiteHeader() {
   }, []);
 
   useEffect(() => {
-    setOpen(false);
-    setMobileServicesOpen(false);
-  }, [pathname]);
+    const onPopState = () => {
+      setOpenForPath(null);
+      setServicesOpenForPath(null);
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -245,7 +260,7 @@ export function SiteHeader() {
           <LangSwitcher compact />
           <button
             className="text-ink p-2 -mr-2 rounded-full hover:bg-bg-2 transition-colors"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpenForPath((v) => (v === pathname ? null : pathname))}
             aria-label="Toggle menu"
             aria-expanded={open}
           >
@@ -255,13 +270,24 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="lg:hidden fixed inset-x-0 top-24 bottom-0 bg-bg overflow-y-auto animate-fade-up">
+        <div
+          className="lg:hidden fixed inset-x-0 top-24 bottom-0 bg-bg overflow-y-auto animate-fade-up"
+          // Following a link inside the overlay closes it. Deriving `open` from
+          // the route alone would leave the old path stored, so coming back to
+          // that same route later would pop the overlay open again.
+          onClick={(e) => {
+            if ((e.target as HTMLElement).closest("a")) {
+              setOpenForPath(null);
+              setServicesOpenForPath(null);
+            }
+          }}
+        >
           <div className="container-page py-8 space-y-6">
             <nav className="flex flex-col">
               <div className="border-b border-line">
                 <button
                   type="button"
-                  onClick={() => setMobileServicesOpen((v) => !v)}
+                  onClick={() => setServicesOpenForPath((v) => (v === pathname ? null : pathname))}
                   className="w-full flex items-center justify-between text-xl font-medium py-3 text-ink"
                   aria-expanded={mobileServicesOpen}
                 >
