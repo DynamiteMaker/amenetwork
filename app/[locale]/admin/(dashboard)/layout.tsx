@@ -3,6 +3,11 @@ import { redirect } from "next/navigation";
 import { getCurrentUser, getUserRole } from "@/lib/auth";
 import { AdminShell } from "@/components/admin/admin-shell";
 
+// Every page under here is behind a session check and reads per-user data, so
+// none of them may be prerendered: a build without Supabase env (CI) used to
+// die trying to render /admin as a static page.
+export const dynamic = "force-dynamic";
+
 export default async function DashboardLayout({
   children,
   params,
