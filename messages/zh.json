@@ -616,21 +616,26 @@
       }
     ],
     "officesEyebrow": "办公室",
-    "officesTitle": "三座城市的足迹。",
+    "officesTitle": "四座城市的足迹。",
     "offices": [
       {
         "city": "河内",
-        "address": "Gemek 1 大厦 2 层,An Khanh,Hoai Duc",
+        "address": "Gemek Tower 1 2层, An Khanh, 河内",
         "meta": "总部"
       },
       {
         "city": "岘港",
-        "address": "中部制作与创意工作室",
+        "address": "132 Xuan Thuy街, Cẩm Lệ, 岘港",
         "meta": "制作中心"
       },
       {
+        "city": "胡志明市",
+        "address": "67 Ban Co坊, 第3郡, 胡志明市",
+        "meta": "分部"
+      },
+      {
         "city": "东京",
-        "address": "日本与亚太市场代表处",
+        "address": "东京都丰岛区南池袋2-10-3",
         "meta": "Japan desk"
       }
     ]

@@ -616,21 +616,26 @@
       }
     ],
     "officesEyebrow": "拠点",
-    "officesTitle": "三つの都市に拠点。",
+    "officesTitle": "四つの都市に拠点。",
     "offices": [
       {
         "city": "ハノイ",
-        "address": "Gemek 1タワー2階, アンカイン, ホアイドゥック",
+        "address": "Gemek Tower 1 2階, アンカイン, ハノイ",
         "meta": "本社"
       },
       {
         "city": "ダナン",
-        "address": "中部地域の制作・クリエイティブスタジオ",
+        "address": "132 Xuan Thuy通り, カムレー区, ダナン",
         "meta": "制作拠点"
       },
       {
+        "city": "ホーチミン",
+        "address": "67 Ban Co Ward, District 3, ホーチミン",
+        "meta": "支社"
+      },
+      {
         "city": "東京",
-        "address": "日本・APAC市場の代表窓口",
+        "address": "東京都豊島区南池袋2-10-3",
         "meta": "Japan desk"
       }
     ]

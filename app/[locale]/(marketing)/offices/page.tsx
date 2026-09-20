@@ -1,10 +1,10 @@
-import { getTranslations } from "next-intl/server";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { CTABand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
-import { offices } from "@/data/offices";
+import { offices, type OfficeLocale } from "@/data/offices";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function OfficesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const loc = (routing.locales.includes(locale as OfficeLocale) ? locale : "en") as OfficeLocale;
 
   return (
     <>
@@ -39,8 +40,8 @@ export default async function OfficesPage({ params }: { params: Promise<{ locale
                     </span>
                   )}
                 </div>
-                <h2 className="font-display text-2xl mt-5 uppercase">{o.city}</h2>
-                <p className="mt-2 text-[15px] text-ink-2 flex-1">{o.address}</p>
+                <h2 className="font-display text-2xl mt-5 uppercase">{o.city[loc]}</h2>
+                <p className="mt-2 text-[15px] text-ink-2 flex-1">{o.address[loc]}</p>
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${o.mapsQuery}`}
                   target="_blank"

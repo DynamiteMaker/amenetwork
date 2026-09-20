@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import {
   FacebookIcon,
@@ -9,11 +9,12 @@ import {
   YoutubeIcon,
   WhatsappIcon,
 } from "@/components/social-icons";
-import { offices, CONTACT } from "@/data/offices";
+import { offices, CONTACT, type OfficeLocale } from "@/data/offices";
 
 export function SiteFooter() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
+  const loc = useLocale() as OfficeLocale;
   const fe = useTranslations("footerExtra");
 
   const aux: { label: string; href: string }[] = fe.raw("aux") as never;
@@ -44,7 +45,7 @@ export function SiteFooter() {
               <p className="font-semibold tracking-[0.16em] uppercase text-white/55 text-xs">
                 HEAD OFFICE
               </p>
-              <p>{offices[0].address}</p>
+              <p>{offices[0].address[loc]}</p>
               <p>
                 <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener" className="hover:text-peach">
                   {CONTACT.phoneDisplay} (WHATSAPP)
@@ -74,8 +75,7 @@ export function SiteFooter() {
               {offices.map((o) => (
                 <li key={o.id}>
                   <Link href="/offices" className="text-white/80 hover:text-peach transition-colors uppercase">
-                    {o.city}
-                    {o.isHeadOffice && <span className="ml-1 text-[10px] text-peach">(HQ)</span>}
+                    {o.city[loc]}
                   </Link>
                 </li>
               ))}

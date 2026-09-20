@@ -616,21 +616,26 @@
       }
     ],
     "officesEyebrow": "VĂN PHÒNG",
-    "officesTitle": "Hiện diện tại ba thành phố.",
+    "officesTitle": "Hiện diện tại bốn thành phố.",
     "offices": [
       {
         "city": "Hà Nội",
-        "address": "Tầng 2, Tòa Gemek 1, An Khánh, Hoài Đức",
+        "address": "Tầng 2, Gemek Tower 1, An Khánh, Hà Nội",
         "meta": "Trụ sở chính"
       },
       {
         "city": "Đà Nẵng",
-        "address": "Studio sản xuất & sáng tạo miền Trung",
+        "address": "132 đường Xuân Thủy, Cẩm Lệ, Đà Nẵng",
         "meta": "Production hub"
       },
       {
+        "city": "TP. HCM",
+        "address": "67 phường Bàn Cờ, Quận 3, TP. Hồ Chí Minh",
+        "meta": "Chi nhánh"
+      },
+      {
         "city": "Tokyo",
-        "address": "Đại diện thị trường Nhật Bản & APAC",
+        "address": "2-10-3 Minami-Ikebukuro, Toshima-ku, Tokyo",
         "meta": "Japan desk"
       }
     ]

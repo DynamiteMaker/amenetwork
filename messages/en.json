@@ -616,21 +616,26 @@
       }
     ],
     "officesEyebrow": "OFFICES",
-    "officesTitle": "Present in three cities.",
+    "officesTitle": "Present in four cities.",
     "offices": [
       {
         "city": "Hanoi",
-        "address": "Floor 2, Gemek 1 Tower, An Khanh, Hoai Duc",
+        "address": "2nd Floor, Gemek Tower 1, An Khanh, Hanoi",
         "meta": "Headquarters"
       },
       {
         "city": "Da Nang",
-        "address": "Production & creative studio, central Vietnam",
+        "address": "132 Xuan Thuy Street, Cam Le, Da Nang",
         "meta": "Production hub"
       },
       {
+        "city": "Ho Chi Minh City",
+        "address": "67 Ban Co Ward, District 3, Ho Chi Minh City",
+        "meta": "Branch"
+      },
+      {
         "city": "Tokyo",
-        "address": "Japan & APAC market representation",
+        "address": "2-10-3 Minami-Ikebukuro, Toshima-ku, Tokyo",
         "meta": "Japan desk"
       }
     ]
