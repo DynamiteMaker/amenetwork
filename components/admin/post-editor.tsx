@@ -56,12 +56,14 @@ const sharedSchema = z.object({
   category: z.string().max(80).optional().nullable(),
 });
 
+// No length caps on purpose: the DB columns are TEXT and the admin decides
+// how long titles and meta text run. Only a title is required.
 const translationSchema = z.object({
-  title: z.string().trim().min(1).max(200),
-  excerpt: z.string().trim().max(500),
-  content: z.string().max(100000),
-  meta_title: z.string().max(120),
-  meta_description: z.string().max(300),
+  title: z.string().trim().min(1),
+  excerpt: z.string().trim(),
+  content: z.string(),
+  meta_title: z.string(),
+  meta_description: z.string(),
 });
 
 export function PostEditor({ type, id }: { type: "post" | "news"; id?: string }) {
@@ -201,6 +203,7 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
       if (form.featured_image) fd.set("featured_image", form.featured_image);
       fd.set("is_featured", form.is_featured ? "on" : "off");
       fd.set("category", form.category);
+      fd.set("tags", JSON.stringify(form.tags.split(",").map((t) => t.trim()).filter(Boolean)));
       if (status === "scheduled") fd.set("publish_at", new Date(scheduleAt).toISOString());
 
       for (const loc of LOCALES) {
@@ -241,7 +244,12 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
       dst.content.trim() ||
       dst.meta_title.trim() ||
       dst.meta_description.trim();
-    if (hasAny && !confirm(`Replace all ${activeLabel} fields with the ${src.label} ones?`)) return;
+    if (
+      hasAny &&
+      !confirm(`Replace all ${activeLabel} fields with the ${src.label} ones?`)
+    ) {
+      return;
+    }
     setTranslations((prev) => ({ ...prev, [activeLocale]: { ...translations[src.code] } }));
     show("success", `Copied ${src.label} → ${activeLabel}`);
   };
@@ -419,7 +427,6 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
               value={tr.title}
               onChange={(e) => updateTr(activeLocale, "title", e.target.value)}
               className="admin-input text-lg font-display"
-              maxLength={200}
             />
           </AdminField>
           <AdminField label="Slug (shared by every language)">
@@ -439,7 +446,6 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
               onChange={(e) => updateTr(activeLocale, "excerpt", e.target.value)}
               className="admin-input"
               rows={3}
-              maxLength={500}
             />
           </AdminField>
           <AdminField label={`Content (${activeLabel})`}>
@@ -493,7 +499,6 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
                 value={tr.meta_title}
                 onChange={(e) => updateTr(activeLocale, "meta_title", e.target.value)}
                 className="admin-input"
-                maxLength={120}
               />
             </AdminField>
             <AdminField label="Meta description">
@@ -502,7 +507,6 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
                 onChange={(e) => updateTr(activeLocale, "meta_description", e.target.value)}
                 className="admin-input"
                 rows={3}
-                maxLength={300}
               />
             </AdminField>
           </div>
