@@ -74,7 +74,7 @@ describe("PostEditor one-click locale copy", () => {
     const select = screen.getByLabelText(/source language to copy from/i) as HTMLSelectElement;
     expect(select.value).toBe("vi");
 
-    fireEvent.click(screen.getByRole("button", { name: /copy/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^copy$/i }));
 
     // All five fields arrive at once — the whole TranslationForm structure.
     expect((screen.getByLabelText(/title \(english\)/i) as HTMLInputElement).value).toBe(
@@ -98,9 +98,74 @@ describe("PostEditor one-click locale copy", () => {
     await mount();
 
     fireEvent.click(screen.getByRole("button", { name: /english/i }));
-    fireEvent.click(screen.getByRole("button", { name: /copy/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^copy$/i }));
 
     expect(window.confirm).toHaveBeenCalled();
+    expect((screen.getByLabelText(/title \(english\)/i) as HTMLInputElement).value).toBe(
+      "Old EN title",
+    );
+  });
+});
+
+describe("PostEditor clipboard copy/paste", () => {
+  const writeText = vi.fn();
+  const readText = vi.fn();
+
+  beforeEach(() => {
+    maybeSingle.mockReset();
+    Object.assign(navigator, {
+      clipboard: { writeText, readText },
+    });
+    window.confirm = vi.fn(() => true);
+    writeText.mockReset();
+    readText.mockReset();
+  });
+
+  it("puts the whole active-tab structure on the clipboard", async () => {
+    await mount();
+
+    fireEvent.click(screen.getByRole("button", { name: /copy tab/i }));
+
+    await waitFor(() => expect(writeText).toHaveBeenCalledOnce());
+    const payload = JSON.parse(writeText.mock.calls[0][0] as string);
+    expect(payload.__ame_translation__).toBe(1);
+    expect(payload.title).toBe("Xin chào");
+    expect(payload.content).toBe("<p>Nội dung VI</p>");
+    expect(payload.meta_description).toBe("Mô tả VI");
+  });
+
+  it("pastes the 5 fields into another tab in one action", async () => {
+    await mount();
+    readText.mockResolvedValue(
+      JSON.stringify({
+        __ame_translation__: 1,
+        title: "Xin chào",
+        excerpt: "Tóm tắt VI",
+        content: "<p>Nội dung VI</p>",
+        meta_title: "Meta VI",
+        meta_description: "Mô tả VI",
+      }),
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: /english/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^paste$/i }));
+
+    expect(await screen.findByText(/pasted all fields into english/i)).toBeTruthy();
+    expect((screen.getByLabelText(/title \(english\)/i) as HTMLInputElement).value).toBe(
+      "Xin chào",
+    );
+    const prose = document.querySelector(".ProseMirror") as HTMLElement;
+    await waitFor(() => expect(prose.innerHTML).toContain("Nội dung VI"));
+  });
+
+  it("rejects clipboard content that is not a copied translation", async () => {
+    await mount();
+    readText.mockResolvedValue("just some text");
+
+    fireEvent.click(screen.getByRole("button", { name: /english/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^paste$/i }));
+
+    expect(await screen.findByText(/clipboard has no copied fields/i)).toBeTruthy();
     expect((screen.getByLabelText(/title \(english\)/i) as HTMLInputElement).value).toBe(
       "Old EN title",
     );

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/routing";
-import { ArrowLeft, Clock, Copy, Save } from "lucide-react";
+import { ArrowLeft, Clock, ClipboardCopy, ClipboardPaste, Copy, Save } from "lucide-react";
 import { z } from "zod";
 import { useSupabaseBrowser } from "@/hooks/use-supabase-browser";
 import { slugify } from "@/lib/slug";
@@ -34,7 +34,9 @@ const emptyTr = (): TranslationForm => ({
   meta_title: "",
   meta_description: "",
 });
-
+// Marks clipboard JSON as a copied translation so PASTE can tell it apart
+// from anything else the user has copied.
+const TR_CLIPBOARD_KEY = "__ame_translation__";
 /** ISO string -> value format for <input type="datetime-local"> in local time. */
 const toLocalInput = (iso: string | null): string => {
   if (!iso) return "";
@@ -244,6 +246,61 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
     show("success", `Copied ${src.label} → ${activeLabel}`);
   };
 
+  // Clipboard round-trip of the whole per-locale structure: copy on one tab
+  // (or even in another post's editor), paste into any tab in one action.
+  const copyTabToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(
+        JSON.stringify({ [TR_CLIPBOARD_KEY]: 1, ...translations[activeLocale] }),
+      );
+      show("success", `Copied all ${activeLabel} fields to clipboard`);
+    } catch {
+      show("error", "Could not write to the clipboard");
+    }
+  };
+
+  const pasteTabFromClipboard = async () => {
+    let text: string;
+    try {
+      text = await navigator.clipboard.readText();
+    } catch {
+      show("error", "Could not read the clipboard");
+      return;
+    }
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      show("error", "Clipboard has no copied fields");
+      return;
+    }
+    if (!parsed || typeof parsed !== "object" || !(TR_CLIPBOARD_KEY in parsed)) {
+      show("error", "Clipboard has no copied fields");
+      return;
+    }
+    const raw = parsed as Record<string, unknown>;
+    const incoming: TranslationForm = {
+      title: typeof raw.title === "string" ? raw.title : "",
+      excerpt: typeof raw.excerpt === "string" ? raw.excerpt : "",
+      content: typeof raw.content === "string" ? raw.content : "",
+      meta_title: typeof raw.meta_title === "string" ? raw.meta_title : "",
+      meta_description: typeof raw.meta_description === "string" ? raw.meta_description : "",
+    };
+    const dst = translations[activeLocale];
+    if (
+      (dst.title.trim() ||
+        dst.excerpt.trim() ||
+        dst.content.trim() ||
+        dst.meta_title.trim() ||
+        dst.meta_description.trim()) &&
+      !confirm(`Replace all ${activeLabel} fields with the clipboard ones?`)
+    ) {
+      return;
+    }
+    setTranslations((prev) => ({ ...prev, [activeLocale]: incoming }));
+    show("success", `Pasted all fields into ${activeLabel}`);
+  };
+
   return (
     <div className="space-y-6">
       <FeedbackMessage feedback={feedback} />
@@ -308,26 +365,49 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
                 </button>
               ))}
             </div>
-            {filledSources.length > 0 && (
-              <div className="flex items-center gap-2 pb-2 text-xs text-ink-3">
-                <span className="whitespace-nowrap">Copy all fields from</span>
-                <select
-                  value={effectiveSource ?? ""}
-                  onChange={(e) => setCopySource(e.target.value)}
-                  className="admin-input w-auto py-1 text-xs"
-                  aria-label="Source language to copy from"
-                >
-                  {filledSources.map((l) => (
-                    <option key={l.code} value={l.code}>
-                      {l.label}
-                    </option>
-                  ))}
-                </select>
-                <button type="button" onClick={copyIntoActive} className="btn-ghost-soft px-2.5 py-1 text-xs">
-                  <Copy size={12} /> COPY
-                </button>
-              </div>
-            )}
+            <div className="flex items-center gap-2 pb-2 text-xs text-ink-3">
+              {filledSources.length > 0 && (
+                <>
+                  <span className="whitespace-nowrap">Copy all fields from</span>
+                  <select
+                    value={effectiveSource ?? ""}
+                    onChange={(e) => setCopySource(e.target.value)}
+                    className="admin-input w-auto py-1 text-xs"
+                    aria-label="Source language to copy from"
+                  >
+                    {filledSources.map((l) => (
+                      <option key={l.code} value={l.code}>
+                        {l.label}
+                      </option>
+                    ))}
+                  </select>
+                  <button
+                    type="button"
+                    onClick={copyIntoActive}
+                    className="btn-ghost-soft px-2.5 py-1 text-xs"
+                  >
+                    <Copy size={12} /> COPY
+                  </button>
+                  <span className="h-4 w-px bg-line" aria-hidden="true" />
+                </>
+              )}
+              <button
+                type="button"
+                onClick={copyTabToClipboard}
+                className="btn-ghost-soft px-2.5 py-1 text-xs"
+                title="Copy all 5 fields of this tab to the clipboard"
+              >
+                <ClipboardCopy size={12} /> COPY TAB
+              </button>
+              <button
+                type="button"
+                onClick={pasteTabFromClipboard}
+                className="btn-ghost-soft px-2.5 py-1 text-xs"
+                title="Paste all 5 fields from the clipboard into this tab"
+              >
+                <ClipboardPaste size={12} /> PASTE
+              </button>
+            </div>
           </div>
           <p className="text-xs text-ink-3">
             A post is only shown in a language that has a title here. Leave a tab empty to hide the
