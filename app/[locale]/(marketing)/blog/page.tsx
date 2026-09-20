@@ -8,7 +8,8 @@ import { PageHero } from "@/components/page-hero";
 import { CTABand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
 
-export const revalidate = 3600;
+// Short window so posts published by the scheduler show up on time.
+export const revalidate = 60;
 
 interface PostRow {
   id: string;

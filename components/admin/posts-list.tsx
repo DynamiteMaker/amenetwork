@@ -120,11 +120,20 @@ export function PostsList({ type }: { type: "post" | "news" }) {
                   <td className="px-5 py-3">
                     <span
                       className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold ${
-                        p.status === "published" ? "bg-brand-soft text-brand" : "bg-bg-2 text-ink-3"
+                        p.status === "published"
+                          ? "bg-brand-soft text-brand"
+                          : p.status === "scheduled"
+                            ? "bg-peach-soft text-peach"
+                            : "bg-bg-2 text-ink-3"
                       }`}
                     >
                       {p.status}
                     </span>
+                    {p.status === "scheduled" && p.published_at && (
+                      <div className="text-xs text-ink-3 mt-1">
+                        {new Date(p.published_at).toLocaleString()}
+                      </div>
+                    )}
                   </td>
                   <td className="px-5 py-3 text-ink-3 text-xs">{new Date(p.updated_at).toLocaleString()}</td>
                   <td className="px-5 py-3 text-right">

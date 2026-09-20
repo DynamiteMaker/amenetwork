@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/routing";
-import { ArrowLeft, Save } from "lucide-react";
+import { ArrowLeft, Clock, Copy, Save } from "lucide-react";
 import { z } from "zod";
 import { useSupabaseBrowser } from "@/hooks/use-supabase-browser";
 import { slugify } from "@/lib/slug";
@@ -35,6 +35,15 @@ const emptyTr = (): TranslationForm => ({
   meta_description: "",
 });
 
+/** ISO string -> value format for <input type="datetime-local"> in local time. */
+const toLocalInput = (iso: string | null): string => {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+};
+
 const sharedSchema = z.object({
   slug: z
     .string()
@@ -61,6 +70,7 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
   const [saving, setSaving] = useState(false);
   const [slugTouched, setSlugTouched] = useState(false);
   const [activeLocale, setActiveLocale] = useState<string>("vi");
+  const [copySource, setCopySource] = useState<string | null>(null);
 
   const [form, setForm] = useState({
     slug: "",
@@ -68,7 +78,10 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
     is_featured: false,
     category: "",
     tags: "",
+    status: "draft" as "draft" | "scheduled" | "published",
+    published_at: null as string | null,
   });
+  const [scheduleAt, setScheduleAt] = useState("");
   const [translations, setTranslations] = useState<Record<string, TranslationForm>>({
     en: emptyTr(),
     vi: emptyTr(),
@@ -104,14 +117,16 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
           meta_description: string | null;
         }[];
       };
-      setSlugTouched(true);
       setForm({
         slug: d.slug,
         featured_image: d.featured_image,
         is_featured: d.is_featured,
         category: d.category ?? "",
         tags: (d.tags ?? []).join(", "),
+        status: d.status as "draft" | "scheduled" | "published",
+        published_at: d.published_at,
       });
+      setScheduleAt(toLocalInput(d.published_at));
 
       const trs: Record<string, TranslationForm> = {};
       for (const loc of LOCALES) trs[loc.code] = emptyTr();
@@ -142,8 +157,18 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
     if (field === "title" && !slugTouched) setForm((f) => ({ ...f, slug: slugify(value) }));
   };
 
-  const save = async (publish: boolean) => {
-    const status = publish ? "published" : "draft";
+  const save = async (status: "draft" | "scheduled" | "published") => {
+    if (status === "scheduled") {
+      const when = new Date(scheduleAt);
+      if (!scheduleAt || Number.isNaN(when.getTime())) {
+        show("error", "Pick a date and time to schedule");
+        return;
+      }
+      if (when.getTime() <= Date.now()) {
+        show("error", "Scheduled time must be in the future");
+        return;
+      }
+    }
 
     const shared = sharedSchema.safeParse({ slug: form.slug, category: form.category || null });
     if (!shared.success) {
@@ -174,7 +199,7 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
       if (form.featured_image) fd.set("featured_image", form.featured_image);
       fd.set("is_featured", form.is_featured ? "on" : "off");
       fd.set("category", form.category);
-      fd.set("tags", JSON.stringify(form.tags.split(",").map((t) => t.trim()).filter(Boolean)));
+      if (status === "scheduled") fd.set("publish_at", new Date(scheduleAt).toISOString());
 
       for (const loc of LOCALES) {
         const tr = translations[loc.code];
@@ -197,6 +222,28 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
   const tr = translations[activeLocale];
   const activeLabel = LOCALES.find((l) => l.code === activeLocale)?.label ?? activeLocale;
 
+  const filledSources = LOCALES.filter(
+    (l) => l.code !== activeLocale && translations[l.code].title.trim(),
+  );
+  const effectiveSource = filledSources.some((l) => l.code === copySource)
+    ? copySource
+    : filledSources[0]?.code;
+
+  const copyIntoActive = () => {
+    const src = filledSources.find((l) => l.code === effectiveSource);
+    if (!src) return;
+    const dst = translations[activeLocale];
+    const hasAny =
+      dst.title.trim() ||
+      dst.excerpt.trim() ||
+      dst.content.trim() ||
+      dst.meta_title.trim() ||
+      dst.meta_description.trim();
+    if (hasAny && !confirm(`Replace all ${activeLabel} fields with the ${src.label} ones?`)) return;
+    setTranslations((prev) => ({ ...prev, [activeLocale]: { ...translations[src.code] } }));
+    show("success", `Copied ${src.label} → ${activeLabel}`);
+  };
+
   return (
     <div className="space-y-6">
       <FeedbackMessage feedback={feedback} />
@@ -208,12 +255,33 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
           <h1 className="font-display text-2xl uppercase">
             {isNew ? "NEW" : "EDIT"} {type === "news" ? "NEWS" : "POST"}
           </h1>
+          {form.status === "scheduled" && form.published_at && (
+            <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-peach-soft text-peach text-xs font-semibold">
+              <Clock size={12} />
+              Scheduled {new Date(form.published_at).toLocaleString()}
+            </span>
+          )}
         </div>
-        <div className="flex gap-2">
-          <button onClick={() => save(false)} disabled={saving} className="btn-ghost-soft">
+        <div className="flex items-center gap-2 flex-wrap">
+          <input
+            type="datetime-local"
+            value={scheduleAt}
+            onChange={(e) => setScheduleAt(e.target.value)}
+            className="admin-input w-auto py-2 text-xs"
+            aria-label="Schedule time"
+          />
+          <button
+            onClick={() => save("scheduled")}
+            disabled={saving}
+            className="btn-ghost-soft"
+            title="Publish automatically at the chosen time"
+          >
+            <Clock size={14} /> SCHEDULE
+          </button>
+          <button onClick={() => save("draft")} disabled={saving} className="btn-ghost-soft">
             <Save size={14} /> SAVE DRAFT
           </button>
-          <button onClick={() => save(true)} disabled={saving} className="btn-peach">
+          <button onClick={() => save("published")} disabled={saving} className="btn-peach">
             {saving ? "..." : "PUBLISH"}
           </button>
         </div>
@@ -221,21 +289,45 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
 
       <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
         <div className="space-y-5 min-w-0">
-          <div className="flex gap-1 border-b border-line pb-0">
-            {LOCALES.map((loc) => (
-              <button
-                key={loc.code}
-                onClick={() => switchLocale(loc.code)}
-                className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
-                  activeLocale === loc.code
-                    ? "border-brand text-brand"
-                    : "border-transparent text-ink-3 hover:text-ink"
-                }`}
-              >
-                {loc.label}
-                {translations[loc.code].title.trim() && <span className="ml-1.5 text-brand">•</span>}
-              </button>
-            ))}
+          <div className="flex items-end justify-between gap-3 flex-wrap border-b border-line">
+            <div className="flex gap-1">
+              {LOCALES.map((loc) => (
+                <button
+                  key={loc.code}
+                  onClick={() => switchLocale(loc.code)}
+                  className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+                    activeLocale === loc.code
+                      ? "border-brand text-brand"
+                      : "border-transparent text-ink-3 hover:text-ink"
+                  }`}
+                >
+                  {loc.label}
+                  {translations[loc.code].title.trim() && (
+                    <span className="ml-1.5 text-brand">•</span>
+                  )}
+                </button>
+              ))}
+            </div>
+            {filledSources.length > 0 && (
+              <div className="flex items-center gap-2 pb-2 text-xs text-ink-3">
+                <span className="whitespace-nowrap">Copy all fields from</span>
+                <select
+                  value={effectiveSource ?? ""}
+                  onChange={(e) => setCopySource(e.target.value)}
+                  className="admin-input w-auto py-1 text-xs"
+                  aria-label="Source language to copy from"
+                >
+                  {filledSources.map((l) => (
+                    <option key={l.code} value={l.code}>
+                      {l.label}
+                    </option>
+                  ))}
+                </select>
+                <button type="button" onClick={copyIntoActive} className="btn-ghost-soft px-2.5 py-1 text-xs">
+                  <Copy size={12} /> COPY
+                </button>
+              </div>
+            )}
           </div>
           <p className="text-xs text-ink-3">
             A post is only shown in a language that has a title here. Leave a tab empty to hide the

@@ -8,7 +8,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 const ALLOWED_TYPES = ["post", "news"] as const;
-const ALLOWED_STATUSES = ["draft", "published"] as const;
+const ALLOWED_STATUSES = ["draft", "scheduled", "published"] as const;
 const POST_LOCALES = ["en", "vi", "ja", "zh"] as const;
 
 async function requireAdminRole() {
@@ -36,7 +36,18 @@ export async function savePost(formData: FormData) {
   const status = ALLOWED_STATUSES.find((s) => s === formData.get("status")) ?? "draft";
   const slug = (formData.get("slug") as string)?.trim();
 
-  if (!slug) throw new Error("Slug is required");
+  // "schedule" flow: the editor sends an ISO timestamp (converted from the
+  // admin's local datetime-local input on the client).
+  const publishAtRaw = (formData.get("publish_at") as string | null)?.trim();
+  const publishAt = publishAtRaw ? new Date(publishAtRaw) : null;
+  if (status === "scheduled") {
+    if (!publishAt || Number.isNaN(publishAt.getTime())) {
+      throw new Error("A valid date and time is required to schedule");
+    }
+    if (publishAt.getTime() <= Date.now()) {
+      throw new Error("Scheduled time must be in the future");
+    }
+  }
 
   let tags: string[] = [];
   try {
@@ -86,9 +97,28 @@ export async function savePost(formData: FormData) {
   const admin = createAdminClient();
   let result;
   if (id) {
+    const { data: current } = await admin
+      .from("posts")
+      .select("status, published_at")
+      .eq("id", id)
+      .single();
+    if (status === "scheduled") {
+      payload.published_at = publishAt!.toISOString();
+    } else if (status === "published") {
+      // First publish (or publishing early from scheduled) stamps now();
+      // re-saving an already published post keeps its original date.
+      if (current?.status !== "published" || !current.published_at) {
+        payload.published_at = new Date().toISOString();
+      }
+    }
     result = await admin.from("posts").update(payload).eq("id", id).select("id, slug").single();
   } else {
-    payload.published_at = status === "published" ? new Date().toISOString() : null;
+    payload.published_at =
+      status === "published"
+        ? new Date().toISOString()
+        : status === "scheduled"
+          ? publishAt!.toISOString()
+          : null;
     result = await admin.from("posts").insert(payload).select("id, slug").single();
   }
 

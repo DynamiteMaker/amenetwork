@@ -8,7 +8,8 @@ import { buildMetadata } from "@/lib/seo";
 import { CTABand } from "@/components/cta-band";
 import { ArticleJsonLd } from "@/components/structured-data";
 
-export const revalidate = 3600;
+// Short window so posts published by the scheduler show up on time.
+export const revalidate = 60;
 
 interface PostDetailRow {
   id: string;
