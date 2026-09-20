@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/routing";
-import { ArrowLeft, Clock, ClipboardCopy, ClipboardPaste, Copy, Save } from "lucide-react";
+import { ArrowLeft, Clock, ClipboardCopy, ClipboardPaste, Copy, FileCode2, Save } from "lucide-react";
+import { dump, load } from "js-yaml";
 import { z } from "zod";
 import { useSupabaseBrowser } from "@/hooks/use-supabase-browser";
 import { slugify } from "@/lib/slug";
@@ -92,6 +93,8 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
     ja: emptyTr(),
     zh: emptyTr(),
   });
+  const [yamlMode, setYamlMode] = useState(false);
+  const [yamlText, setYamlText] = useState("");
 
   const supabase = useSupabaseBrowser();
 
@@ -154,6 +157,20 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
     // rewrites a slug that is already published.
     if (form.slug) setSlugTouched(true);
     setActiveLocale(code);
+    // Entering another tab in YAML view re-serializes that tab's fields.
+    if (yamlMode) {
+      setYamlText(dump(translations[code], { styles: { "!!str": "literal" }, lineWidth: 0 }));
+    }
+  };
+
+  const toggleYamlMode = () => {
+    if (yamlMode) {
+      setYamlMode(false);
+      return;
+    }
+    // Multiline strings as literal blocks keep the HTML readable for an LLM.
+    setYamlText(dump(translations[activeLocale], { styles: { "!!str": "literal" }, lineWidth: 0 }));
+    setYamlMode(true);
   };
 
   const updateTr = (locale: string, field: keyof TranslationForm, value: string) => {
@@ -309,6 +326,59 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
     show("success", `Pasted all fields into ${activeLabel}`);
   };
 
+  // YAML view: serialize the active tab for machine translation (e.g. paste
+  // into ChatGPT), then paste the translated YAML back and apply in one go.
+  const applyYaml = () => {
+    let text = yamlText.trim();
+    // ChatGPT often wraps the answer in a code fence; strip it.
+    if (text.startsWith("```")) {
+      text = text.replace(/^```[a-z]*\n?/i, "").replace(/```\s*$/i, "");
+    }
+    let parsed: unknown;
+    try {
+      parsed = load(text);
+    } catch (e) {
+      const reason = e instanceof Error ? e.message.split("\n")[0] : "parse error";
+      show("error", `Invalid YAML: ${reason}`);
+      return;
+    }
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      show("error", "YAML must be the 5 translation fields");
+      return;
+    }
+    const raw = parsed as Record<string, unknown>;
+    const incoming: TranslationForm = {
+      title: typeof raw.title === "string" ? raw.title : "",
+      excerpt: typeof raw.excerpt === "string" ? raw.excerpt : "",
+      content: typeof raw.content === "string" ? raw.content : "",
+      meta_title: typeof raw.meta_title === "string" ? raw.meta_title : "",
+      meta_description: typeof raw.meta_description === "string" ? raw.meta_description : "",
+    };
+    const dst = translations[activeLocale];
+    if (
+      (dst.title.trim() ||
+        dst.excerpt.trim() ||
+        dst.content.trim() ||
+        dst.meta_title.trim() ||
+        dst.meta_description.trim()) &&
+      !confirm(`Replace all ${activeLabel} fields with the YAML content?`)
+    ) {
+      return;
+    }
+    setTranslations((prev) => ({ ...prev, [activeLocale]: incoming }));
+    setYamlMode(false);
+    show("success", `Applied YAML to ${activeLabel}`);
+  };
+
+  const copyYaml = async () => {
+    try {
+      await navigator.clipboard.writeText(yamlText);
+      show("success", "YAML copied");
+    } catch {
+      show("error", "Could not write to the clipboard");
+    }
+  };
+
   return (
     <div className="space-y-6">
       <FeedbackMessage feedback={feedback} />
@@ -415,6 +485,14 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
               >
                 <ClipboardPaste size={12} /> PASTE
               </button>
+              <button
+                type="button"
+                className="btn-ghost-soft px-2.5 py-1 text-xs"
+                title="Switch between the form and a YAML view of this tab"
+                onClick={toggleYamlMode}
+              >
+                <FileCode2 size={12} /> {yamlMode ? "FORM" : "YAML"}
+              </button>
             </div>
           </div>
           <p className="text-xs text-ink-3">
@@ -422,22 +500,42 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
             post in that language.
           </p>
 
+          {yamlMode ? (
+            <div className="card-soft p-4 hover:translate-y-0 space-y-3">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-ink-3">
+                  YAML — {activeLabel}
+                </h3>
+                <div className="flex gap-2">
+                  <button type="button" onClick={copyYaml} className="btn-ghost-soft px-2.5 py-1 text-xs">
+                    <ClipboardCopy size={12} /> COPY YAML
+                  </button>
+                  <button type="button" onClick={applyYaml} className="btn-peach px-3 py-1 text-xs">
+                    APPLY YAML
+                  </button>
+                </div>
+              </div>
+              <textarea
+                value={yamlText}
+                onChange={(e) => setYamlText(e.target.value)}
+                spellCheck={false}
+                className="admin-input font-mono text-xs leading-relaxed"
+                rows={24}
+                aria-label="YAML fields"
+              />
+              <p className="text-xs text-ink-3">
+                Copy this YAML, have it translated (e.g. by ChatGPT), switch to the target
+                language tab, paste the result here and click APPLY YAML. A code fence around
+                the answer is stripped automatically.
+              </p>
+            </div>
+          ) : (
+            <>
           <AdminField label={`Title (${activeLabel})`}>
             <input
               value={tr.title}
               onChange={(e) => updateTr(activeLocale, "title", e.target.value)}
               className="admin-input text-lg font-display"
-            />
-          </AdminField>
-          <AdminField label="Slug (shared by every language)">
-            <input
-              value={form.slug}
-              onChange={(e) => {
-                setSlugTouched(true);
-                setForm({ ...form, slug: e.target.value });
-              }}
-              className="admin-input font-mono text-sm"
-              maxLength={120}
             />
           </AdminField>
           <AdminField label={`Excerpt (${activeLabel})`}>
@@ -453,6 +551,19 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
               key={activeLocale}
               value={tr.content}
               onChange={(html) => updateTr(activeLocale, "content", html)}
+            />
+          </AdminField>
+            </>
+          )}
+          <AdminField label="Slug (shared by every language)">
+            <input
+              value={form.slug}
+              onChange={(e) => {
+                setSlugTouched(true);
+                setForm({ ...form, slug: e.target.value });
+              }}
+              className="admin-input font-mono text-sm"
+              maxLength={120}
             />
           </AdminField>
         </div>
@@ -489,7 +600,7 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
               />
             </AdminField>
           </div>
-
+          {!yamlMode && (
           <div className="card-soft p-4 hover:translate-y-0 space-y-3">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-ink-3">
               SEO ({activeLabel})
@@ -510,6 +621,7 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
               />
             </AdminField>
           </div>
+          )}
         </aside>
       </div>
     </div>
