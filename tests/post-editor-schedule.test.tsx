@@ -56,6 +56,8 @@ async function mount(overrides: Record<string, unknown> = {}) {
 }
 
 const scheduleInput = () => screen.getByLabelText(/schedule time/i) as HTMLInputElement;
+const openPicker = () => fireEvent.click(screen.getByRole("button", { name: /choose publish time/i }));
+const scheduleButton = () => screen.getByRole("button", { name: /^schedule$/i });
 
 describe("PostEditor scheduling", () => {
   beforeEach(() => {
@@ -66,24 +68,36 @@ describe("PostEditor scheduling", () => {
   it("sends status scheduled with a future ISO publish_at", async () => {
     await mount();
 
+    openPicker();
     fireEvent.change(scheduleInput(), { target: { value: "2030-06-01T09:30" } });
-    fireEvent.click(screen.getByRole("button", { name: /schedule/i }));
+    fireEvent.click(scheduleButton());
 
     await waitFor(() => expect(savePost).toHaveBeenCalledOnce());
     const fd = savePost.mock.calls[0][0] as FormData;
     expect(fd.get("status")).toBe("scheduled");
     const sent = new Date(String(fd.get("publish_at")));
-    // Interpreted in the admin's local timezone, stored as UTC ISO.
-    expect(sent.toISOString()).toBe(new Date("2030-06-01T09:30").toISOString());
+    // Interpreted as Vietnam time (GMT+7) regardless of device timezone.
+    expect(sent.toISOString()).toBe(new Date("2030-06-01T09:30+07:00").toISOString());
   });
 
   it("blocks scheduling without a time and shows an error", async () => {
     await mount();
 
-    fireEvent.click(screen.getByRole("button", { name: /schedule/i }));
+    fireEvent.click(scheduleButton());
 
     expect(savePost).not.toHaveBeenCalled();
     expect(await screen.findByText(/pick a date and time/i)).toBeTruthy();
+  });
+
+  it("fills the picker from a quick-pick preset", async () => {
+    await mount();
+
+    openPicker();
+    fireEvent.click(screen.getByRole("button", { name: /tomorrow 09:00/i }));
+
+    // Panel closes and the trigger shows the resolved Vietnam instant.
+    const trigger = screen.getByRole("button", { name: /choose publish time/i });
+    expect(trigger.textContent).toMatch(/^\d{2}\/\d{2}\/\d{4} 09:00 \(GMT\+7\)$/);
   });
 
   it("publishing sends status published", async () => {

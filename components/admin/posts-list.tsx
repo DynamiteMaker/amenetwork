@@ -5,6 +5,7 @@ import { Link } from "@/i18n/routing";
 import { Plus, Pencil, Trash2, ExternalLink } from "lucide-react";
 import { useFeedback, FeedbackMessage } from "@/components/admin/feedback-message";
 import { useSupabaseBrowser } from "@/hooks/use-supabase-browser";
+import { formatVnDateTime } from "@/lib/vn-time";
 import { deletePost } from "@/app/[locale]/admin/(dashboard)/actions";
 
 const LOCALE_ORDER = ["vi", "en", "ja", "zh"] as const;
@@ -131,7 +132,7 @@ export function PostsList({ type }: { type: "post" | "news" }) {
                     </span>
                     {p.status === "scheduled" && p.published_at && (
                       <div className="text-xs text-ink-3 mt-1">
-                        {new Date(p.published_at).toLocaleString()}
+                        {formatVnDateTime(p.published_at)} (GMT+7)
                       </div>
                     )}
                   </td>
