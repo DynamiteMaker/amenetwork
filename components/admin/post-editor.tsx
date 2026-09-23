@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "@/i18n/routing";
 import { ArrowLeft, Clock, ClipboardCopy, ClipboardPaste, Copy, FileCode2, Save } from "lucide-react";
 import { dump, load } from "js-yaml";
@@ -11,6 +11,7 @@ import { TipTapEditor } from "@/components/admin/tiptap-editor";
 import { ImageUpload } from "@/components/admin/image-upload";
 import { AdminField } from "@/components/admin/admin-field";
 import { useFeedback, FeedbackMessage } from "@/components/admin/feedback-message";
+import { SchedulePicker } from "@/components/admin/schedule-picker";
 import { formatVnDateTime, isoToVnInput, vnLocalToIso } from "@/lib/vn-time";
 import { savePost } from "@/app/[locale]/admin/(dashboard)/actions";
 
@@ -39,34 +40,6 @@ const emptyTr = (): TranslationForm => ({
 // Marks clipboard JSON as a copied translation so PASTE can tell it apart
 // from anything else the user has copied.
 const TR_CLIPBOARD_KEY = "__ame_translation__";
-
-/** "in 1d 3h 5m"-style relative duration for the schedule hint. */
-const relativeIn = (ms: number): string => {
-  const min = Math.max(1, Math.round(ms / 60000));
-  if (min < 60) return `${min}m`;
-  const h = Math.floor(min / 60);
-  if (h < 48) return `${h}h ${min % 60}m`;
-  const d = Math.floor(h / 24);
-  return `${d}d ${h % 24}h`;
-};
-
-const HOUR_MS = 3_600_000;
-const DAY_MS = 86_400_000;
-
-/** datetime-local value (Vietnam wall time) n whole hours from now, rounded up. */
-const inHoursVn = (nowMs: number, n: number) =>
-  isoToVnInput(new Date(Math.ceil((nowMs + 60_000) / HOUR_MS) * HOUR_MS + (n - 1) * HOUR_MS).toISOString());
-
-/** datetime-local value for the Vietnam-calendar date `offsetMs` from now, at HH:mm. */
-const vnDateAt = (nowMs: number, offsetMs: number, time: string) =>
-  `${isoToVnInput(new Date(nowMs + offsetMs).toISOString()).slice(0, 10)}T${time}`;
-
-/** datetime-local value for next Monday 09:00 VN (measured from tomorrow, so "today is Monday" still gives the next one). */
-const nextMondayVn = (nowMs: number) => {
-  const [y, m, d] = vnDateAt(nowMs, DAY_MS, "00:00").split(/[-T]/).map(Number);
-  const daysToMonday = ((1 - new Date(Date.UTC(y, m - 1, d)).getUTCDay()) + 7) % 7;
-  return `${isoToVnInput(new Date(Date.UTC(y, m - 1, d + daysToMonday)).toISOString()).slice(0, 10)}T09:00`;
-};
 
 const sharedSchema = z.object({
   slug: z
@@ -116,31 +89,6 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
   });
   const [yamlMode, setYamlMode] = useState(false);
   const [yamlText, setYamlText] = useState("");
-  // Ticking "now" keeps the schedule hint/min fresh without impure render calls.
-  const [nowMs, setNowMs] = useState(() => Date.now());
-  const [pickerOpen, setPickerOpen] = useState(false);
-  const pickerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const t = setInterval(() => setNowMs(Date.now()), 30_000);
-    return () => clearInterval(t);
-  }, []);
-
-  useEffect(() => {
-    if (!pickerOpen) return;
-    const onDown = (e: PointerEvent) => {
-      if (pickerRef.current && !pickerRef.current.contains(e.target as Node)) setPickerOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setPickerOpen(false);
-    };
-    document.addEventListener("pointerdown", onDown);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("pointerdown", onDown);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [pickerOpen]);
 
   const supabase = useSupabaseBrowser();
 
@@ -290,17 +238,6 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
   const backTo = type === "news" ? "/admin/news" : "/admin/posts";
   const tr = translations[activeLocale];
   const activeLabel = LOCALES.find((l) => l.code === activeLocale)?.label ?? activeLocale;
-
-  // Live confirmation of the picked instant so the admin sees exactly when the
-  // post will go live, always expressed in Vietnam time.
-  const scheduleIso = vnLocalToIso(scheduleAt);
-  const scheduleHint = (() => {
-    if (!scheduleAt) return "";
-    if (!scheduleIso) return "Invalid date and time";
-    const diffMs = new Date(scheduleIso).getTime() - nowMs;
-    const rel = diffMs > 0 ? `in ${relativeIn(diffMs)}` : "already passed — pick a later time";
-    return `${formatVnDateTime(scheduleIso)} Vietnam time (GMT+7) · ${rel}`;
-  })();
 
   const filledSources = LOCALES.filter(
     (l) => l.code !== activeLocale && translations[l.code].title.trim(),
@@ -456,85 +393,7 @@ export function PostEditor({ type, id }: { type: "post" | "news"; id?: string })
           )}
         </div>
         <div className="flex items-center gap-2 flex-wrap">
-          <div className="relative" ref={pickerRef}>
-            <button
-              type="button"
-              onClick={() => setPickerOpen((o) => !o)}
-              aria-expanded={pickerOpen}
-              aria-label="Choose publish time"
-              className={`admin-input w-auto py-2 text-xs flex items-center gap-2 text-left ${
-                pickerOpen ? "border-brand text-brand" : ""
-              }`}
-            >
-              <Clock size={14} className="shrink-0" />
-              {scheduleAt && scheduleIso
-                ? `${formatVnDateTime(scheduleIso)} (GMT+7)`
-                : "Schedule for…"}
-            </button>
-            {pickerOpen && (
-              <div className="absolute left-0 top-full mt-2 z-50 w-72 rounded-xl border border-line bg-surface shadow-lg p-4 space-y-3">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-[11px] font-semibold uppercase tracking-wide text-ink-3">
-                    Publish at — Vietnam (GMT+7)
-                  </span>
-                  {scheduleAt && (
-                    <button
-                      type="button"
-                      onClick={() => setScheduleAt("")}
-                      className="text-[11px] text-ink-3 hover:text-destructive"
-                    >
-                      Clear
-                    </button>
-                  )}
-                </div>
-                <div className="grid grid-cols-2 gap-1.5">
-                  {[
-                    { label: "In 1 hour", value: inHoursVn(nowMs, 1) },
-                    { label: "In 3 hours", value: inHoursVn(nowMs, 3) },
-                    { label: "Tomorrow 09:00", value: vnDateAt(nowMs, DAY_MS, "09:00") },
-                    { label: "Tomorrow 14:00", value: vnDateAt(nowMs, DAY_MS, "14:00") },
-                    { label: "Next Monday 09:00", value: nextMondayVn(nowMs) },
-                  ].map((p) => (
-                    <button
-                      key={p.label}
-                      type="button"
-                      onClick={() => {
-                        setScheduleAt(p.value);
-                        setPickerOpen(false);
-                      }}
-                      className={`px-2 py-1.5 rounded text-[11px] font-medium border border-line ${
-                        scheduleAt === p.value
-                          ? "bg-brand-soft text-brand border-brand"
-                          : "bg-bg-2 text-ink hover:bg-brand-soft hover:text-brand"
-                      }`}
-                    >
-                      {p.label}
-                    </button>
-                  ))}
-                </div>
-                <input
-                  type="datetime-local"
-                  value={scheduleAt}
-                  min={isoToVnInput(new Date(nowMs + 60_000).toISOString())}
-                  onChange={(e) => {
-                    setNowMs(Date.now());
-                    setScheduleAt(e.target.value);
-                  }}
-                  className="admin-input w-full py-2 text-xs"
-                  aria-label="Schedule time (Vietnam)"
-                />
-                {scheduleHint && (
-                  <span
-                    className={`text-[11px] ${
-                      /passed|Invalid/.test(scheduleHint) ? "text-destructive" : "text-ink-3"
-                    }`}
-                  >
-                    {scheduleHint}
-                  </span>
-                )}
-              </div>
-            )}
-          </div>
+          <SchedulePicker value={scheduleAt} onChange={setScheduleAt} />
           <button
             onClick={() => save("scheduled")}
             disabled={saving}

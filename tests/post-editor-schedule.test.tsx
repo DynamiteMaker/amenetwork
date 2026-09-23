@@ -55,29 +55,46 @@ async function mount(overrides: Record<string, unknown> = {}) {
   );
 }
 
-const scheduleInput = () => screen.getByLabelText(/schedule time/i) as HTMLInputElement;
-const openPicker = () => fireEvent.click(screen.getByRole("button", { name: /choose publish time/i }));
 const scheduleButton = () => screen.getByRole("button", { name: /^schedule$/i });
+const openPicker = () => fireEvent.click(screen.getByRole("button", { name: /choose publish time/i }));
 
 describe("PostEditor scheduling", () => {
   beforeEach(() => {
     maybeSingle.mockReset();
     savePost.mockReset();
   });
+  afterEach(() => vi.useRealTimers());
 
   it("sends status scheduled with a future ISO publish_at", async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    vi.setSystemTime(new Date("2026-09-01T03:00:00Z"));
     await mount();
 
     openPicker();
-    fireEvent.change(scheduleInput(), { target: { value: "2030-06-01T09:30" } });
+    fireEvent.click(screen.getByRole("button", { name: /tomorrow 09:00/i }));
     fireEvent.click(scheduleButton());
 
     await waitFor(() => expect(savePost).toHaveBeenCalledOnce());
     const fd = savePost.mock.calls[0][0] as FormData;
     expect(fd.get("status")).toBe("scheduled");
-    const sent = new Date(String(fd.get("publish_at")));
-    // Interpreted as Vietnam time (GMT+7) regardless of device timezone.
-    expect(sent.toISOString()).toBe(new Date("2030-06-01T09:30+07:00").toISOString());
+    // Tomorrow 09:00 Vietnam (GMT+7) == 02:00 UTC.
+    expect(fd.get("publish_at")).toBe("2026-09-02T02:00:00.000Z");
+  });
+
+  it("picks a day from the calendar and a time slot", async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    vi.setSystemTime(new Date("2026-09-01T03:00:00Z"));
+    await mount();
+
+    openPicker();
+    fireEvent.click(screen.getByRole("button", { name: "15/09/2026" }));
+    fireEvent.click(screen.getByRole("button", { name: "10:30" }));
+    fireEvent.click(scheduleButton());
+
+    await waitFor(() => expect(savePost).toHaveBeenCalledOnce());
+    const fd = savePost.mock.calls[0][0] as FormData;
+    // 15/09/2026 10:30 Vietnam == 03:30 UTC.
+    expect(fd.get("publish_at")).toBe("2026-09-15T03:30:00.000Z");
   });
 
   it("blocks scheduling without a time and shows an error", async () => {
