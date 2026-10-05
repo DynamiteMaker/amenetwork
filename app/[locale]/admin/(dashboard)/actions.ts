@@ -3,6 +3,12 @@
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getUserRole } from "@/lib/auth";
+import {
+  checkAccountMutation,
+  countOtherActiveAdmins,
+  getAccountRecord,
+  type AccountRole,
+} from "@/lib/accounts";
 import { extensionForContentType, parseRemoteImageUrl } from "@/lib/upload-media";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
@@ -159,20 +165,116 @@ export async function deleteSubmission(id: string) {
   return { success: true };
 }
 
-export async function grantRole(userId: string, role: "admin" | "editor") {
+// --- Accounts ---
+
+const ACCOUNT_ROLES = ["admin", "editor", "user"] as const;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MIN_PASSWORD_LENGTH = 8;
+// 876000h = 100 years, Supabase's convention for a permanent ban.
+const BAN_DURATION = "876000h";
+
+/**
+ * Loads the target account and enforces the shared mutation rules
+ * (no self-modification, last active admin is untouchable).
+ */
+async function requireMutableAccount(userId: string) {
+  const { user: actor } = await requireAdminOnly();
+  const admin = createAdminClient();
+  const [target, otherActiveAdmins] = await Promise.all([
+    getAccountRecord(admin, userId),
+    countOtherActiveAdmins(admin, userId),
+  ]);
+  if (!target) throw new Error("Account not found");
+  const problem = checkAccountMutation(actor.id, target, otherActiveAdmins);
+  if (problem) throw new Error(problem);
+  return { admin, target };
+}
+
+export async function createAccount(
+  email: string,
+  name: string,
+  password: string,
+  role: AccountRole,
+) {
   await requireAdminOnly();
 
+  const normalizedEmail = email.trim().toLowerCase();
+  if (!EMAIL_RE.test(normalizedEmail)) throw new Error("Invalid email address");
+  if (password.length < MIN_PASSWORD_LENGTH) {
+    throw new Error(`Password must be at least ${MIN_PASSWORD_LENGTH} characters`);
+  }
+  if (!ACCOUNT_ROLES.includes(role)) throw new Error("Invalid role");
+
   const admin = createAdminClient();
-  const { error } = await admin.from("user_roles").insert({ user_id: userId, role });
+  const { data, error } = await admin.auth.admin.createUser({
+    email: normalizedEmail,
+    password,
+    email_confirm: true,
+    user_metadata: name.trim() ? { name: name.trim() } : undefined,
+  });
+  if (error) throw new Error(error.message);
+
+  if (role !== "user") {
+    const { error: roleError } = await admin
+      .from("user_roles")
+      .insert({ user_id: data.user.id, role });
+    if (roleError) throw new Error(roleError.message);
+  }
+  return { success: true };
+}
+
+export async function setAccountRole(userId: string, role: AccountRole) {
+  const { admin, target } = await requireMutableAccount(userId);
+  if (!ACCOUNT_ROLES.includes(role)) throw new Error("Invalid role");
+
+  // One account = one role: clear any stale rows, then set the new one.
+  if (target.role !== "user") {
+    const { error: delError } = await admin
+      .from("user_roles")
+      .delete()
+      .eq("user_id", userId);
+    if (delError) throw new Error(delError.message);
+  }
+  if (role !== "user") {
+    const { error } = await admin
+      .from("user_roles")
+      .insert({ user_id: userId, role });
+    if (error) throw new Error(error.message);
+  }
+  return { success: true };
+}
+
+export async function resetAccountPassword(userId: string, password: string) {
+  const { user: actor } = await requireAdminOnly();
+  if (userId === actor.id) {
+    throw new Error("You cannot reset your own password here.");
+  }
+  if (password.length < MIN_PASSWORD_LENGTH) {
+    throw new Error(`Password must be at least ${MIN_PASSWORD_LENGTH} characters`);
+  }
+
+  const admin = createAdminClient();
+  const { error } = await admin.auth.admin.updateUserById(userId, { password });
   if (error) throw new Error(error.message);
   return { success: true };
 }
 
-export async function revokeRole(id: string) {
-  await requireAdminOnly();
+export async function setAccountActive(userId: string, active: boolean) {
+  await requireMutableAccount(userId);
 
   const admin = createAdminClient();
-  const { error } = await admin.from("user_roles").delete().eq("id", id);
+  const { error } = await admin.auth.admin.updateUserById(userId, {
+    ban_duration: active ? "none" : BAN_DURATION,
+  });
+  if (error) throw new Error(error.message);
+  return { success: true };
+}
+
+export async function removeAccount(userId: string) {
+  await requireMutableAccount(userId);
+
+  const admin = createAdminClient();
+  const { error } = await admin.auth.admin.deleteUser(userId);
   if (error) throw new Error(error.message);
   return { success: true };
 }

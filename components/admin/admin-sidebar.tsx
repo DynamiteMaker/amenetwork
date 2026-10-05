@@ -1,7 +1,7 @@
 "use client";
 
 import { Link, usePathname } from "@/i18n/routing";
-import { LayoutDashboard, FileText, Newspaper, Inbox, LogOut, Users, Briefcase } from "lucide-react";
+import { LayoutDashboard, FileText, Newspaper, Inbox, LogOut, UserCog, Briefcase } from "lucide-react";
 import { logout } from "@/app/[locale]/admin/login/actions";
 
 const items = [
@@ -10,7 +10,7 @@ const items = [
   { href: "/admin/news", label: "NEWS", icon: Newspaper },
   { href: "/admin/cases", label: "CASES", icon: Briefcase },
   { href: "/admin/contact-submissions", label: "SUBMISSIONS", icon: Inbox },
-  { href: "/admin/users", label: "USERS", icon: Users, adminOnly: true },
+  { href: "/admin/users", label: "ACCOUNTS", icon: UserCog, adminOnly: true },
 ];
 
 export function AdminSidebar({ role, email }: { role: string | null; email?: string }) {

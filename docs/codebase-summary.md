@@ -24,6 +24,13 @@ AME Marketing corporate website built with Next.js 16, Supabase auth/database, a
    - `getUserRole(userId)`: Queries `user_roles` table for role
    - `requireAdmin()`: Checks user + role, returns authorization status
 
+
+4. **Account Management** (admin only, `/admin/users`):
+   - One admin manages every account: list (`lib/accounts.ts` merges `auth.users` with `user_roles`), create (email + display name + password + role, auto email-confirmed), change role, reset password, deactivate/reactivate (Supabase ban), remove.
+   - Server actions in `app/[locale]/admin/(dashboard)/actions.ts` all re-check `requireAdminOnly()`.
+   - Guards (`lib/accounts.ts` `checkAccountMutation`): an admin cannot modify their own account, and the last active admin cannot be demoted, disabled or removed.
+   - Effective role is folded from `user_roles` rows (admin > editor > user); `user` gets no dashboard access.
+
 ### Database Schema
 
 **Supabase PostgreSQL** with following tables:
